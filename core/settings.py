@@ -4,7 +4,14 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-your-key-here'
 DEBUG = True
-ALLOWED_HOSTS = ['*'] # Kiosk uchun ochiq qoldiramiz
+
+# 1. Ruxsat etilgan domenlar
+ALLOWED_HOSTS = [
+    'web-production-ba75.up.railway.app', 
+    '127.0.0.1', 
+    'localhost',
+    '*' # Test jarayonida muammo bo'lmasligi uchun
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -21,7 +28,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware', # Eng tepada
+    'corsheaders.middleware.CorsMiddleware', # Eng tepada turishi shart
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -55,6 +62,15 @@ DATABASES = {
     }
 }
 
+# 2. CSRF va CORS xavfsizlik sozlamalari (403 xatosini yo'qotadi)
+CSRF_TRUSTED_ORIGINS = [
+    'https://web-production-ba75.up.railway.app',
+    'http://127.0.0.1:8000',
+    'http://localhost:8000',
+]
+
+CORS_ALLOW_ALL_ORIGINS = True
+
 # Til va vaqt
 LANGUAGE_CODE = 'uz-uz'
 TIME_ZONE = 'Asia/Tashkent'
@@ -63,8 +79,9 @@ USE_TZ = True
 
 # Statik va Media fayllar
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-CORS_ALLOW_ALL_ORIGINS = True
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
