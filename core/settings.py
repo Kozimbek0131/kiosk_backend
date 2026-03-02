@@ -5,12 +5,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-your-key-here'
 DEBUG = True
 
-# 1. Ruxsat etilgan domenlar
 ALLOWED_HOSTS = [
     'web-production-ba75.up.railway.app', 
     '127.0.0.1', 
     'localhost',
-    '*' # Test jarayonida muammo bo'lmasligi uchun
+    '*'
 ]
 
 INSTALLED_APPS = [
@@ -28,9 +27,9 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware', # Eng tepada turishi shart
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', # Statik fayllar uchun
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -63,13 +62,8 @@ DATABASES = {
     }
 }
 
-# 2. CSRF va CORS xavfsizlik sozlamalari (403 xatosini yo'qotadi)
-CSRF_TRUSTED_ORIGINS = [
-    'https://web-production-ba75.up.railway.app',
-    'http://127.0.0.1:8000',
-    'http://localhost:8000',
-]
-
+# CSRF va CORS sozlamalari
+CSRF_TRUSTED_ORIGINS = ['https://web-production-ba75.up.railway.app']
 CORS_ALLOW_ALL_ORIGINS = True
 
 # Til va vaqt
@@ -78,17 +72,14 @@ TIME_ZONE = 'Asia/Tashkent'
 USE_I18N = True
 USE_TZ = True
 
-# Statik va Media fayllar
+# Statik fayllar (Admin panel dizayni uchun)
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# WhiteNoise statik fayllarni siqish va keshlashen uchun
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+# Media fayllar (Xodimlar rasmlari uchun)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-# settings.py faylining oxiriga:
-import os
-
-STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
