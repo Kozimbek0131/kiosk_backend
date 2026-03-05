@@ -4,10 +4,10 @@ from pathlib import Path
 # Loyihaning asosiy yo'li
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Xavfsizlik kaliti (Production uchun .env da saqlash tavsiya etiladi)
+# Xavfsizlik kaliti
 SECRET_KEY = 'django-insecure-your-key-here'
 
-# Debug rejimi (Eslatma: Productionda False bo'lishi kerak)
+# Debug rejimi (Production uchun True qolishi mumkin, lekin ehtiyot bo'ling)
 DEBUG = True
 
 # Ruxsat berilgan hostlar
@@ -15,7 +15,7 @@ ALLOWED_HOSTS = [
     'web-production-ba75.up.railway.app', 
     '127.0.0.1', 
     'localhost',
-    '*' # Railway uchun vaqtinchalik ochiq qoldiramiz
+    '*'
 ]
 
 # Ilovalar ro'yxati
@@ -63,6 +63,7 @@ TEMPLATES = [
     },
 ]
 
+# Ma'lumotlar bazasi (Railway-da SQLite ishlatilyapti)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -70,18 +71,14 @@ DATABASES = {
     }
 }
 
-# --- CORS va CSRF SOZLAMALARI ---
-# Vercel manzilingizni bu yerga qat'iy qo'shing
-CORS_ALLOW_ALL_ORIGINS = True # Hozircha hamma so'rovlarga ruxsat (test uchun)
+# --- CORS va CSRF SOZLAMALARI (Frontend uchun muhim) ---
+CORS_ALLOW_ALL_ORIGINS = True # Barcha frontend so'rovlariga ruxsat berish
 
 CSRF_TRUSTED_ORIGINS = [
     'https://web-production-ba75.up.railway.app',
-    'https://akadeyima-kiosk.vercel.app', # Vercel skrinshotingizdagi haqiqiy manzil
+    'https://akadeyima-kiosk.vercel.app', # Vercel-dagi asosiy manzilingiz
     'https://akademiya-kiosk.vercel.app'
 ]
-
-# Frontend bilan cookie almashish uchun (zarur bo'lsa)
-CORS_ALLOW_CREDENTIALS = True
 
 # --- Til va vaqt ---
 LANGUAGE_CODE = 'uz-uz'
