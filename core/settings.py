@@ -2,17 +2,10 @@ import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 SECRET_KEY = 'django-insecure-your-key-here'
+DEBUG = True 
 
-DEBUG = True # Productionda False qiling
-
-ALLOWED_HOSTS = [
-    'web-production-ba75.up.railway.app', 
-    '127.0.0.1', 
-    'localhost',
-    '*'
-]
+ALLOWED_HOSTS = ['web-production-ba75.up.railway.app', '127.0.0.1', 'localhost', '*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -21,16 +14,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
     'rest_framework',
     'corsheaders',
+    'import_export',
     'api',
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware', # Doimo eng tepada qolsin
+    'corsheaders.middleware.CorsMiddleware', 
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware', # Statik fayllar uchun
+    'whitenoise.middleware.WhiteNoiseMiddleware', 
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -65,7 +58,6 @@ DATABASES = {
 
 # --- CORS va CSRF SOZLAMALARI ---
 CORS_ALLOW_ALL_ORIGINS = True 
-
 CSRF_TRUSTED_ORIGINS = [
     'https://web-production-ba75.up.railway.app',
     'https://akadeyima-kiosk.vercel.app', 
@@ -82,13 +74,13 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# TO'G'IRLANGAN QISM: WhiteNoise uchun eng xavfsiz sozlama
+# WhiteNoise sozlamalari (Django 4.2+ uchun to'g'ri format)
 STORAGES = {
     "default": {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
     },
     "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage", # Manifest qismi olib tashlandi
+        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
     },
 }
 
