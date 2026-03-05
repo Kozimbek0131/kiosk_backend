@@ -14,9 +14,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    # Qo'shimcha kutubxonalar
     'rest_framework',
     'corsheaders',
-    'import_export',
+    'django_filters', # Qidiruv va filtr uchun
+    'import_export',   # Excel import uchun
     'api',
 ]
 
@@ -34,21 +37,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'core.urls'
 
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
-    },
-]
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -56,7 +44,7 @@ DATABASES = {
     }
 }
 
-# --- CORS va CSRF SOZLAMALARI ---
+# CORS va CSRF (Vercel va Railway bog'lanishi uchun)
 CORS_ALLOW_ALL_ORIGINS = True 
 CSRF_TRUSTED_ORIGINS = [
     'https://web-production-ba75.up.railway.app',
@@ -64,24 +52,12 @@ CSRF_TRUSTED_ORIGINS = [
     'https://akademiya-kiosk.vercel.app'
 ]
 
-# --- Til va vaqt ---
-LANGUAGE_CODE = 'uz-uz'
-TIME_ZONE = 'Asia/Tashkent'
-USE_I18N = True
-USE_TZ = True
-
-# --- Statik va Media fayllar ---
+# Statik va Media fayllar
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# WhiteNoise sozlamalari (Django 4.2+ uchun to'g'ri format)
 STORAGES = {
-    "default": {
-        "BACKEND": "django.core.files.storage.FileSystemStorage",
-    },
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
-    },
+    "default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
+    "staticfiles": {"BACKEND": "whitenoise.storage.CompressedStaticFilesStorage"},
 }
 
 MEDIA_URL = '/media/'
