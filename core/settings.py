@@ -1,16 +1,12 @@
 import os
 from pathlib import Path
 
-# Loyihaning asosiy yo'li
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Xavfsizlik kaliti
 SECRET_KEY = 'django-insecure-your-key-here'
 
-# Debug rejimi (Production uchun True qolishi mumkin, lekin ehtiyot bo'ling)
-DEBUG = True
+DEBUG = True # Productionda False qiling
 
-# Ruxsat berilgan hostlar
 ALLOWED_HOSTS = [
     'web-production-ba75.up.railway.app', 
     '127.0.0.1', 
@@ -18,7 +14,6 @@ ALLOWED_HOSTS = [
     '*'
 ]
 
-# Ilovalar ro'yxati
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -27,15 +22,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
-    # Qo'shimcha kutubxonalar
     'rest_framework',
     'corsheaders',
     'api',
 ]
 
-# Middleware sozlamalari (Tartib juda muhim!)
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware', # CORS har doim eng tepada bo'lishi shart
+    'corsheaders.middleware.CorsMiddleware', # Doimo eng tepada qolsin
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware', # Statik fayllar uchun
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -63,7 +56,6 @@ TEMPLATES = [
     },
 ]
 
-# Ma'lumotlar bazasi (Railway-da SQLite ishlatilyapti)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -71,12 +63,12 @@ DATABASES = {
     }
 }
 
-# --- CORS va CSRF SOZLAMALARI (Frontend uchun muhim) ---
-CORS_ALLOW_ALL_ORIGINS = True # Barcha frontend so'rovlariga ruxsat berish
+# --- CORS va CSRF SOZLAMALARI ---
+CORS_ALLOW_ALL_ORIGINS = True 
 
 CSRF_TRUSTED_ORIGINS = [
     'https://web-production-ba75.up.railway.app',
-    'https://akadeyima-kiosk.vercel.app', # Vercel-dagi asosiy manzilingiz
+    'https://akadeyima-kiosk.vercel.app', 
     'https://akademiya-kiosk.vercel.app'
 ]
 
@@ -90,10 +82,16 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# WhiteNoise statik fayllarni siqish va keshlashen uchun
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# TO'G'IRLANGAN QISM: WhiteNoise uchun eng xavfsiz sozlama
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage", # Manifest qismi olib tashlandi
+    },
+}
 
-# Media fayllar (Xodimlar rasmlari uchun)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
