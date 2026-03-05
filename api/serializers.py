@@ -7,9 +7,7 @@ class DepartmentSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class EmployeeSerializer(serializers.ModelSerializer):
-    # Bo'lim nomini matn ko'rinishida chiqarish
     department_name = serializers.ReadOnlyField(source='department.name_uz')
-    # To'liq rasm URL manzili
     image_url = serializers.SerializerMethodField()
 
     class Meta:
@@ -23,7 +21,6 @@ class EmployeeSerializer(serializers.ModelSerializer):
         return None
 
 class LeadershipSerializer(serializers.ModelSerializer):
-    # Rahbarlar uchun ham to'liq rasm URL
     image_url = serializers.SerializerMethodField()
 
     class Meta:
