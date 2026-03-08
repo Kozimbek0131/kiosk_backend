@@ -2,25 +2,21 @@ from rest_framework import serializers
 from .models import Employee, Department, Leadership
 
 class EmployeeSerializer(serializers.ModelSerializer):
-    # Har bir tildagi nomlarni bazadan olib beramiz
-    department_uz = serializers.ReadOnlyField(source='department.name_uz')
-    department_ru = serializers.ReadOnlyField(source='department.name_ru')
-    department_en = serializers.ReadOnlyField(source='department.name_en')
-    
+    # Bo'lim nomini xavfsiz olish (agar bo'lim o'chib ketgan bo'lsa ham xato bermaydi)
+    department_name = serializers.CharField(source='department.name_uz', read_only=True, default="")
     image_url = serializers.SerializerMethodField()
 
     class Meta:
         model = Employee
-        # fields ichida barcha maydonlar aniq yozilishi shart
-        fields = [
-            'id', 'full_name_uz', 'full_name_ru', 'full_name_en', 
-            'position_uz', 'position_ru', 'position_en', 
-            'department_uz', 'department_ru', 'department_en', 
-            'floor', 'room', 'phone', 'image_url'
-        ]
+        fields = '__all__'
 
     def get_image_url(self, obj):
         if obj.image:
             request = self.context.get('request')
             return request.build_absolute_uri(obj.image.url) if request else obj.image.url
         return None
+
+class LeadershipSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Leadership
+        fields = '__all__'
