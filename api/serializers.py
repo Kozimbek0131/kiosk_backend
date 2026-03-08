@@ -1,13 +1,15 @@
 class EmployeeSerializer(serializers.ModelSerializer):
-    # 1. Bo'lim nomini ID raqami emas, matn ko'rinishida chiqaradi
+    # ID raqami o'rniga bo'lim nomini matn ko'rinishida chiqarish
     department = serializers.ReadOnlyField(source='department.name_uz')
     
-    # 2. Rasmning to'liq manzili (URL) hosil bo'lishini ta'minlaydi
+    # Telefon raqami bo'sh bo'lishiga ruxsat beramiz
+    phone = serializers.CharField(required=False, allow_null=True, allow_blank=True)
+    
     image_url = serializers.SerializerMethodField()
 
     class Meta:
         model = Employee
-        # 3. 'phone' maydoni JSON'da chiqishi uchun uni aniq ko'rsatib qo'yamiz
+        # Hamma maydonlar ro'yxatda borligini tekshiring
         fields = [
             'id', 'full_name_uz', 'full_name_ru', 'full_name_en', 
             'position_uz', 'position_ru', 'position_en', 
