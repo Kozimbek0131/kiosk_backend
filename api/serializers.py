@@ -1,28 +1,20 @@
 class EmployeeSerializer(serializers.ModelSerializer):
-    # Departmentni dinamik qilish uchun MethodField ishlatamiz
-    department = serializers.SerializerMethodField()
+    # Har bir til uchun alohida maydon yaratamiz
+    department_uz = serializers.ReadOnlyField(source='department.name_uz')
+    department_ru = serializers.ReadOnlyField(source='department.name_ru')
+    department_en = serializers.ReadOnlyField(source='department.name_en')
+    
     image_url = serializers.SerializerMethodField()
 
     class Meta:
         model = Employee
-        fields = '__all__'
-
-    def get_department(self, obj):
-        # Frontenddan kelayotgan tilni aniqlaymiz (Accept-Language header orqali)
-        request = self.context.get('request')
-        lang = 'uz' # Standart til
-        
-        if request and 'Accept-Language' in request.headers:
-            # Masalan: 'ru', 'en' yoki 'uz'
-            lang = request.headers['Accept-Language'][:2] 
-        
-        # Tilga qarab tegishli maydonni qaytaramiz
-        if lang == 'ru':
-            return obj.department.name_ru
-        elif lang == 'en':
-            return obj.department.name_en
-        else:
-            return obj.department.name_uz
+        # fields ichiga yangi yaratgan maydonlarimizni qo'shamiz
+        fields = [
+            'id', 'full_name_uz', 'full_name_ru', 'full_name_en', 
+            'position_uz', 'position_ru', 'position_en', 
+            'department_uz', 'department_ru', 'department_en', 
+            'floor', 'room', 'phone', 'image_url'
+        ]
 
     def get_image_url(self, obj):
         if obj.image:
