@@ -1,31 +1,28 @@
-from rest_framework import serializers
-from .models import Employee, Department, Leadership
-
 class EmployeeSerializer(serializers.ModelSerializer):
-    # Bo'lim ID raqami o'rniga nomini ko'rsatish
-    department = serializers.ReadOnlyField(source='department.name_uz')
+    # Departmentni dinamik qilish uchun MethodField ishlatamiz
+    department = serializers.SerializerMethodField()
     image_url = serializers.SerializerMethodField()
 
     class Meta:
         model = Employee
-        fields = [
-            'id', 'full_name_uz', 'full_name_ru', 'full_name_en', 
-            'position_uz', 'position_ru', 'position_en', 
-            'department', 'floor', 'room', 'phone', 'image_url'
-        ]
-
-    def get_image_url(self, obj):
-        if obj.image:
-            request = self.context.get('request')
-            return request.build_absolute_uri(obj.image.url) if request else obj.image.url
-        return None
-
-class LeadershipSerializer(serializers.ModelSerializer):
-    image_url = serializers.SerializerMethodField()
-
-    class Meta:
-        model = Leadership
         fields = '__all__'
+
+    def get_department(self, obj):
+        # Frontenddan kelayotgan tilni aniqlaymiz (Accept-Language header orqali)
+        request = self.context.get('request')
+        lang = 'uz' # Standart til
+        
+        if request and 'Accept-Language' in request.headers:
+            # Masalan: 'ru', 'en' yoki 'uz'
+            lang = request.headers['Accept-Language'][:2] 
+        
+        # Tilga qarab tegishli maydonni qaytaramiz
+        if lang == 'ru':
+            return obj.department.name_ru
+        elif lang == 'en':
+            return obj.department.name_en
+        else:
+            return obj.department.name_uz
 
     def get_image_url(self, obj):
         if obj.image:
