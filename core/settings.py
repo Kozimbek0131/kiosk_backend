@@ -18,8 +18,8 @@ INSTALLED_APPS = [
     # Qo'shimcha kutubxonalar
     'rest_framework',
     'corsheaders',
-    'django_filters', # Qidiruv va filtr uchun
-    'import_export',   # Excel import uchun
+    'django_filters',
+    'import_export',
     'api',
 ]
 
@@ -37,7 +37,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'core.urls'
 
-# --- 🛠 TEMPLATES SOZLAMALARI (Xatolikni tuzatuvchi blok) ---
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -85,5 +84,11 @@ STORAGES = {
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# --- SUPABASE SOZLAMALARI ---
+# Supabase dashboard → Settings → API Keys dan oling
+SUPABASE_URL = "https://ywqrlfufkrdokpbdodav.supabase.co"
+SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "")
+SUPABASE_BUCKET = "employees"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
