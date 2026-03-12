@@ -1,11 +1,12 @@
 import os
+import dj_database_url
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-your-key-here'
-DEBUG = True 
+DEBUG = True
 
-ALLOWED_HOSTS = ['web-production-ba75.up.railway.app', '127.0.0.1', 'localhost', '*']
+ALLOWED_HOSTS = ['web-production-ba75.up.railway.app', 'web-production-8dce.up.railway.app', '127.0.0.1', 'localhost', '*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -14,8 +15,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-    # Qo'shimcha kutubxonalar
     'rest_framework',
     'corsheaders',
     'django_filters',
@@ -24,9 +23,9 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware', 
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware', 
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -53,28 +52,30 @@ TEMPLATES = [
     },
 ]
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+DATABASE_URL = os.environ.get('DATABASE_URL', '')
+if DATABASE_URL:
+    DATABASES = {'default': dj_database_url.parse(DATABASE_URL)}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
 
-# --- CORS va CSRF SOZLAMALARI ---
-CORS_ALLOW_ALL_ORIGINS = True 
+CORS_ALLOW_ALL_ORIGINS = True
 CSRF_TRUSTED_ORIGINS = [
     'https://web-production-ba75.up.railway.app',
-    'https://akadeyima-kiosk.vercel.app', 
+    'https://web-production-8dce.up.railway.app',
+    'https://akadeyima-kiosk.vercel.app',
     'https://akademiya-kiosk.vercel.app'
 ]
 
-# --- TIL VA VAQT ---
 LANGUAGE_CODE = 'uz-uz'
 TIME_ZONE = 'Asia/Tashkent'
 USE_I18N = True
 USE_TZ = True
 
-# --- STATIK VA MEDIA FAYLLAR ---
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STORAGES = {
@@ -85,10 +86,8 @@ STORAGES = {
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# --- SUPABASE SOZLAMALARI ---
-# Supabase dashboard → Settings → API Keys dan oling
 SUPABASE_URL = "https://ywqrlfufkrdokpbdodav.supabase.co"
-SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "")
+SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "sb_secret_fBdo9Cs-gOxmehSQ8xJvSA_7JrzNGbJ")
 SUPABASE_BUCKET = "employees"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
