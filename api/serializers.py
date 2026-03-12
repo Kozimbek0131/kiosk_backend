@@ -3,11 +3,6 @@ from .models import Employee, Department, Leadership
 
 
 class DepartmentSerializer(serializers.ModelSerializer):
-    """
-    GET /api/departments/?lang=uz  → name = "Moliya bo'limi"
-    GET /api/departments/?lang=ru  → name = "Финансовый отдел"
-    GET /api/departments/?lang=en  → name = "Finance Department"
-    """
     name = serializers.SerializerMethodField()
 
     class Meta:
@@ -25,15 +20,9 @@ class DepartmentSerializer(serializers.ModelSerializer):
 
 
 class EmployeeSerializer(serializers.ModelSerializer):
-    """
-    GET /api/employees/?lang=uz
-    GET /api/employees/?lang=ru
-    GET /api/employees/?lang=en
-    """
     department_name = serializers.SerializerMethodField()
     full_name       = serializers.SerializerMethodField()
     position        = serializers.SerializerMethodField()
-    image           = serializers.SerializerMethodField()
 
     class Meta:
         model = Employee
@@ -75,24 +64,11 @@ class EmployeeSerializer(serializers.ModelSerializer):
             'en': obj.position_en,
         }.get(self._lang(), obj.position_uz)
 
-    def get_image(self, obj):
-        if not obj.image:
-            return None
-        image_str = str(obj.image)
-        # Agar Supabase URL bo'lsa — to'g'ridan qaytaramiz
-        if image_str.startswith('http'):
-            return image_str
-        # Agar local path bo'lsa — to'liq URL qilamiz
-        request = self.context.get('request')
-        if request:
-            return request.build_absolute_uri(obj.image.url)
-        return image_str
-
 
 class LeadershipSerializer(serializers.ModelSerializer):
     full_name = serializers.SerializerMethodField()
     position  = serializers.SerializerMethodField()
-    image     = serializers.SerializerMethodField()
+    rank      = serializers.SerializerMethodField()
 
     class Meta:
         model = Leadership
@@ -102,6 +78,8 @@ class LeadershipSerializer(serializers.ModelSerializer):
             'full_name_uz', 'full_name_ru', 'full_name_en',
             'position',
             'position_uz', 'position_ru', 'position_en',
+            'rank',
+            'rank_uz', 'rank_ru', 'rank_en',
             'image', 'order',
         ]
 
@@ -115,15 +93,5 @@ class LeadershipSerializer(serializers.ModelSerializer):
     def get_position(self, obj):
         return getattr(obj, f'position_{self._lang()}', None) or obj.position_uz
 
-    def get_image(self, obj):
-        if not obj.image:
-            return None
-        image_str = str(obj.image)
-        # Agar Supabase URL bo'lsa — to'g'ridan qaytaramiz
-        if image_str.startswith('http'):
-            return image_str
-        # Agar local path bo'lsa — to'liq URL qilamiz
-        request = self.context.get('request')
-        if request:
-            return request.build_absolute_uri(obj.image.url)
-        return image_str
+    def get_rank(self, obj):
+        return getattr(obj, f'rank_{self._lang()}', None) or obj.rank_uz
