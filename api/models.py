@@ -31,6 +31,9 @@ class Leadership(models.Model):
     position_uz = models.CharField("Lavozimi (UZ)", max_length=255)
     position_ru = models.CharField("Должность (RU)", max_length=255, blank=True, null=True)
     position_en = models.CharField("Position (EN)", max_length=255, blank=True, null=True)
+    rank_uz = models.CharField("Darajasi (UZ)", max_length=255, blank=True, null=True)
+    rank_ru = models.CharField("Звание (RU)", max_length=255, blank=True, null=True)
+    rank_en = models.CharField("Rank (EN)", max_length=255, blank=True, null=True)
     image = models.URLField("Rasm URL", max_length=500, blank=True, null=True)
     order = models.IntegerField("Tartib raqami", default=0)
 
