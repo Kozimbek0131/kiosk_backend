@@ -59,7 +59,8 @@ class EmployeeAdmin(ImportExportModelAdmin):
         if request.method == 'POST' and request.FILES.get('photo'):
             photo = request.FILES['photo']
             ext = photo.name.split('.')[-1].lower()
-            path_str = f"employee_{employee_id}.{ext}"
+          import time
+path_str = f"employee_{employee_id}_{int(time.time())}.{ext}"
             try:
                 supabase.storage.from_(settings.SUPABASE_BUCKET).upload(
                     path=path_str, file=photo.read(),
