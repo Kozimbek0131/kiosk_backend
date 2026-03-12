@@ -2,13 +2,16 @@ from rest_framework import generics, filters
 from django_filters.rest_framework import DjangoFilterBackend
 from .models import Employee, Department, Leadership
 from .serializers import EmployeeSerializer, DepartmentSerializer, LeadershipSerializer
+from django.conf import settings
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_http_methods
+from supabase import create_client
+
+supabase = create_client(settings.SUPABASE_URL, settings.SUPABASE_KEY) if settings.SUPABASE_KEY else None
+ALLOWED_EXTENSIONS = ["jpg", "jpeg", "png", "webp"]
 
 
-# ─────────────────────────────────────────────────────────
-# 1. BO'LIMLAR RO'YXATI
-# GET /api/departments/
-# GET /api/departments/?lang=ru
-# ─────────────────────────────────────────────────────────
 class DepartmentListView(generics.ListAPIView):
     queryset = Department.objects.all()
     serializer_class = DepartmentSerializer
@@ -19,45 +22,21 @@ class DepartmentListView(generics.ListAPIView):
         return context
 
 
-# ─────────────────────────────────────────────────────────
-# 2. XODIMLAR RO'YXATI (qidiruv + filtr + til)
-# GET /api/employees/
-# GET /api/employees/?lang=ru
-# GET /api/employees/?search=Karimov
-# GET /api/employees/?floor=2&department=3
-# ─────────────────────────────────────────────────────────
 class EmployeeListView(generics.ListAPIView):
     queryset = Employee.objects.select_related('department').all()
     serializer_class = EmployeeSerializer
-
-    filter_backends = [
-        DjangoFilterBackend,
-        filters.SearchFilter,
-        filters.OrderingFilter,
-    ]
-
-    search_fields = [
-        'full_name_uz', 'full_name_ru', 'full_name_en',
-        'position_uz', 'phone',
-    ]
-
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
+    search_fields = ['full_name_uz', 'full_name_ru', 'full_name_en', 'position_uz', 'phone']
     filterset_fields = ['floor', 'department']
-
     ordering_fields = ['floor', 'room', 'full_name_uz']
     ordering = ['floor', 'room']
 
     def get_serializer_context(self):
-        # Tilni serializer'ga uzatish uchun MUHIM
         context = super().get_serializer_context()
         context['request'] = self.request
         return context
 
 
-# ─────────────────────────────────────────────────────────
-# 3. RAHBARIYAT RO'YXATI
-# GET /api/leadership/
-# GET /api/leadership/?lang=en
-# ─────────────────────────────────────────────────────────
 class LeadershipListView(generics.ListAPIView):
     queryset = Leadership.objects.all()
     serializer_class = LeadershipSerializer
@@ -67,14 +46,6 @@ class LeadershipListView(generics.ListAPIView):
         context['request'] = self.request
         return context
 
-from django.conf import settings
-from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
-from django.views.decorators.http import require_http_methods
-from supabase import create_client
-
-supabase = create_client(settings.SUPABASE_URL, settings.SUPABASE_KEY)
-ALLOWED_EXTENSIONS = ["jpg", "jpeg", "png", "webp"]
 
 def _upload_to_supabase(file, folder, record_id):
     ext = file.name.split(".")[-1].lower()
@@ -82,8 +53,12 @@ def _upload_to_supabase(file, folder, record_id):
         raise ValueError(f"Faqat {', '.join(ALLOWED_EXTENSIONS)} formatlar ruxsat etilgan")
     file_path = f"{folder}/{record_id}.{ext}"
     file_bytes = file.read()
-    supabase.storage.from_(settings.SUPABASE_BUCKET).upload(path=file_path, file=file_bytes, file_options={"content-type": file.content_type, "upsert": "true"})
+    supabase.storage.from_(settings.SUPABASE_BUCKET).upload(
+        path=file_path, file=file_bytes,
+        file_options={"content-type": file.content_type, "upsert": "true"}
+    )
     return supabase.storage.from_(settings.SUPABASE_BUCKET).get_public_url(file_path)
+
 
 @csrf_exempt
 @require_http_methods(["POST"])
@@ -102,6 +77,7 @@ def upload_employee_photo(request, employee_id):
     employee.image = photo_url
     employee.save(update_fields=["image"])
     return JsonResponse({"success": True, "employee_id": employee_id, "photo_url": photo_url})
+
 
 @csrf_exempt
 @require_http_methods(["POST"])
