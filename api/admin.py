@@ -41,7 +41,9 @@ class EmployeeAdmin(ImportExportModelAdmin):
     def upload_button(self, obj):
         return format_html(
             '<form method="post" enctype="multipart/form-data" action="/admin/upload-photo/{}/" style="display:inline">'
-            '<input type="file" name="photo" accept="image/*" style="font-size:11px;width:140px" onchange="this.form.submit()">'
+            '<input type="hidden" name="csrfmiddlewaretoken" value="">'
+            '<input type="file" name="photo" accept="image/*" style="font-size:11px;width:140px" '
+            'onchange="this.previousElementSibling.value=document.cookie.match(/csrftoken=([^;]+)/)[1];this.form.submit()">'
             '</form>',
             obj.id
         )
@@ -86,7 +88,9 @@ class LeadershipAdmin(ImportExportModelAdmin):
     def upload_button(self, obj):
         return format_html(
             '<form method="post" enctype="multipart/form-data" action="/admin/upload-leadership/{}/" style="display:inline">'
-            '<input type="file" name="photo" accept="image/*" style="font-size:11px;width:140px" onchange="this.form.submit()">'
+            '<input type="hidden" name="csrfmiddlewaretoken" value="">'
+            '<input type="file" name="photo" accept="image/*" style="font-size:11px;width:140px" '
+            'onchange="this.previousElementSibling.value=document.cookie.match(/csrftoken=([^;]+)/)[1];this.form.submit()">'
             '</form>',
             obj.id
         )
