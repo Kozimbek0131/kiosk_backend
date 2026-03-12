@@ -87,7 +87,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 SUPABASE_URL = "https://ywqrlfufkrdokpbdodav.supabase.co"
-SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "sb_secret_fBdo9Cs-gOxmehSQ8xJvSA_7JrzNGbJ")
+SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "")
 SUPABASE_BUCKET = "employees"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
