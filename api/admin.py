@@ -1,3 +1,4 @@
+import time
 from django.contrib import admin
 from django.utils.html import format_html
 from django.urls import path
@@ -59,8 +60,7 @@ class EmployeeAdmin(ImportExportModelAdmin):
         if request.method == 'POST' and request.FILES.get('photo'):
             photo = request.FILES['photo']
             ext = photo.name.split('.')[-1].lower()
-          import time
-path_str = f"employee_{employee_id}_{int(time.time())}.{ext}"
+            path_str = f"employee_{employee_id}_{int(time.time())}.{ext}"
             try:
                 supabase.storage.from_(settings.SUPABASE_BUCKET).upload(
                     path=path_str, file=photo.read(),
@@ -107,7 +107,7 @@ class LeadershipAdmin(ImportExportModelAdmin):
         if request.method == 'POST' and request.FILES.get('photo'):
             photo = request.FILES['photo']
             ext = photo.name.split('.')[-1].lower()
-            path_str = f"leadership_{leader_id}.{ext}"
+            path_str = f"leadership_{leader_id}_{int(time.time())}.{ext}"
             try:
                 supabase.storage.from_(settings.SUPABASE_BUCKET).upload(
                     path=path_str, file=photo.read(),
