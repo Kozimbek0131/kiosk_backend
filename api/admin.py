@@ -26,36 +26,6 @@ class EmployeeResource(resources.ModelResource):
                   'department', 'floor', 'room', 'phone')
 
 
-def get_upload_js():
-    return """
-<script>
-function uploadPhoto(input, url) {
-    var token = null;
-    var cookies = document.cookie.split(';');
-    for (var i = 0; i < cookies.length; i++) {
-        var c = cookies[i].trim();
-        if (c.startsWith('csrftoken=')) {
-            token = c.substring('csrftoken='.length);
-            break;
-        }
-    }
-    if (!token) {
-        var el = document.querySelector('[name=csrfmiddlewaretoken]');
-        if (el) token = el.value;
-    }
-    if (!token) { alert('CSRF token topilmadi!'); return; }
-    var f = new FormData();
-    f.append('photo', input.files[0]);
-    f.append('csrfmiddlewaretoken', token);
-    fetch(url, {method: 'POST', body: f})
-        .then(function(r){ return r.json(); })
-        .then(function(d){ if(d.success){ location.reload(); } else { alert('Xato: ' + d.error); } })
-        .catch(function(e){ alert('Xato: ' + e); });
-}
-</script>
-"""
-
-
 @admin.register(Employee)
 class EmployeeAdmin(ImportExportModelAdmin):
     resource_class = EmployeeResource
@@ -74,11 +44,18 @@ class EmployeeAdmin(ImportExportModelAdmin):
     photo_preview.short_description = 'Joriy rasm'
 
     def upload_button(self, obj):
-        js = get_upload_js()
         return format_html(
-            '{}<input type="file" name="photo" accept="image/*" style="font-size:11px;width:140px" '
-            'onchange="uploadPhoto(this, \'/admin/api/employee/upload-photo/{}/\')">',
-            js, obj.id
+            '<form method="post" enctype="multipart/form-data" '
+            'action="/admin/api/employee/upload-photo/{}/" style="display:inline">'
+            '<input type="hidden" name="csrfmiddlewaretoken" id="csrf_{}" value="">'
+            '<input type="file" name="photo" accept="image/*" style="font-size:11px;width:140px" '
+            'onchange="'
+            'var t=document.querySelector(\'[name=csrfmiddlewaretoken]\');'
+            'var c=document.cookie.split(\';\');'
+            'for(var i=0;i<c.length;i++){{var x=c[i].trim();if(x.startsWith(\'csrftoken=\')){{t.value=x.split(\'=\')[1];break;}}}}'
+            'this.form.submit()">'
+            '</form>',
+            obj.id, obj.id
         )
     upload_button.short_description = 'Rasm yuklash'
 
@@ -88,6 +65,7 @@ class EmployeeAdmin(ImportExportModelAdmin):
         return custom + urls
 
     def upload_photo_view(self, request, employee_id):
+        from django.shortcuts import redirect
         from django.http import JsonResponse
         if request.method == 'POST' and request.FILES.get('photo'):
             photo = request.FILES['photo']
@@ -100,10 +78,10 @@ class EmployeeAdmin(ImportExportModelAdmin):
                 )
                 url = supabase.storage.from_(settings.SUPABASE_BUCKET).get_public_url(path_str)
                 Employee.objects.filter(id=employee_id).update(image=url)
-                return JsonResponse({"success": True, "url": url})
+                self.message_user(request, f"Rasm yuklandi!")
             except Exception as e:
-                return JsonResponse({"error": str(e)}, status=500)
-        return JsonResponse({"error": "No file"}, status=400)
+                self.message_user(request, f"Xato: {e}", level='error')
+        return redirect('/admin/api/employee/')
 
 
 @admin.register(Leadership)
@@ -123,11 +101,18 @@ class LeadershipAdmin(ImportExportModelAdmin):
     photo_preview.short_description = 'Joriy rasm'
 
     def upload_button(self, obj):
-        js = get_upload_js()
         return format_html(
-            '{}<input type="file" name="photo" accept="image/*" style="font-size:11px;width:140px" '
-            'onchange="uploadPhoto(this, \'/admin/api/leadership/upload-leadership/{}/\')">',
-            js, obj.id
+            '<form method="post" enctype="multipart/form-data" '
+            'action="/admin/api/leadership/upload-leadership/{}/" style="display:inline">'
+            '<input type="hidden" name="csrfmiddlewaretoken" value="">'
+            '<input type="file" name="photo" accept="image/*" style="font-size:11px;width:140px" '
+            'onchange="'
+            'var t=this.form.querySelector(\'[name=csrfmiddlewaretoken]\');'
+            'var c=document.cookie.split(\';\');'
+            'for(var i=0;i<c.length;i++){{var x=c[i].trim();if(x.startsWith(\'csrftoken=\')){{t.value=x.split(\'=\')[1];break;}}}}'
+            'this.form.submit()">'
+            '</form>',
+            obj.id
         )
     upload_button.short_description = 'Rasm yuklash'
 
@@ -137,7 +122,7 @@ class LeadershipAdmin(ImportExportModelAdmin):
         return custom + urls
 
     def upload_photo_view(self, request, leader_id):
-        from django.http import JsonResponse
+        from django.shortcuts import redirect
         if request.method == 'POST' and request.FILES.get('photo'):
             photo = request.FILES['photo']
             ext = photo.name.split('.')[-1].lower()
@@ -149,10 +134,10 @@ class LeadershipAdmin(ImportExportModelAdmin):
                 )
                 url = supabase.storage.from_(settings.SUPABASE_BUCKET).get_public_url(path_str)
                 Leadership.objects.filter(id=leader_id).update(image=url)
-                return JsonResponse({"success": True, "url": url})
+                self.message_user(request, "Rasm yuklandi!")
             except Exception as e:
-                return JsonResponse({"error": str(e)}, status=500)
-        return JsonResponse({"error": "No file"}, status=400)
+                self.message_user(request, f"Xato: {e}", level='error')
+        return redirect('/admin/api/leadership/')
 
 
 @admin.register(Department)
