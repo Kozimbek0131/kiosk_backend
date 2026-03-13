@@ -26,27 +26,59 @@ class EmployeeResource(resources.ModelResource):
                   'department', 'floor', 'room', 'phone')
 
 
+def get_upload_js():
+    return """
+<script>
+function uploadPhoto(input, url) {
+    var token = null;
+    var cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+        var c = cookies[i].trim();
+        if (c.startsWith('csrftoken=')) {
+            token = c.substring('csrftoken='.length);
+            break;
+        }
+    }
+    if (!token) {
+        var el = document.querySelector('[name=csrfmiddlewaretoken]');
+        if (el) token = el.value;
+    }
+    if (!token) { alert('CSRF token topilmadi!'); return; }
+    var f = new FormData();
+    f.append('photo', input.files[0]);
+    f.append('csrfmiddlewaretoken', token);
+    fetch(url, {method: 'POST', body: f})
+        .then(function(r){ return r.json(); })
+        .then(function(d){ if(d.success){ location.reload(); } else { alert('Xato: ' + d.error); } })
+        .catch(function(e){ alert('Xato: ' + e); });
+}
+</script>
+"""
+
+
 @admin.register(Employee)
 class EmployeeAdmin(ImportExportModelAdmin):
     resource_class = EmployeeResource
     list_display = ('full_name_uz', 'department', 'floor', 'room', 'photo_preview', 'upload_button')
     search_fields = ('full_name_uz', 'phone')
     list_filter = ('department', 'floor')
+    readonly_fields = ('photo_preview',)
+    fields = ('full_name_uz', 'full_name_ru', 'full_name_en',
+              'position_uz', 'position_ru', 'position_en',
+              'department', 'floor', 'room', 'phone', 'image', 'photo_preview')
 
     def photo_preview(self, obj):
         if obj.image:
-            return format_html('<img src="{}" width="50" height="60" style="object-fit:cover;border-radius:4px"/>', obj.image)
+            return format_html('<img src="{}" width="100" height="120" style="object-fit:cover;border-radius:4px"/>', obj.image)
         return '—'
-    photo_preview.short_description = 'Rasm'
+    photo_preview.short_description = 'Joriy rasm'
 
     def upload_button(self, obj):
+        js = get_upload_js()
         return format_html(
-            '<input type="file" name="photo" accept="image/*" style="font-size:11px;width:140px" '
-            'onchange="var f=new FormData();f.append(\'photo\',this.files[0]);'
-            'f.append(\'csrfmiddlewaretoken\',document.cookie.match(/csrftoken=([^;]+)/)[1]);'
-            'fetch(\'/admin/api/employee/upload-photo/{}/\',{{method:\'POST\',body:f}})'
-            '.then(()=>location.reload())">',
-            obj.id
+            '{}<input type="file" name="photo" accept="image/*" style="font-size:11px;width:140px" '
+            'onchange="uploadPhoto(this, \'/admin/api/employee/upload-photo/{}/\')">',
+            js, obj.id
         )
     upload_button.short_description = 'Rasm yuklash'
 
@@ -56,7 +88,6 @@ class EmployeeAdmin(ImportExportModelAdmin):
         return custom + urls
 
     def upload_photo_view(self, request, employee_id):
-        from django.shortcuts import redirect
         from django.http import JsonResponse
         if request.method == 'POST' and request.FILES.get('photo'):
             photo = request.FILES['photo']
@@ -80,21 +111,23 @@ class LeadershipAdmin(ImportExportModelAdmin):
     list_display = ('full_name_uz', 'position_uz', 'order', 'photo_preview', 'upload_button')
     list_editable = ('order',)
     search_fields = ('full_name_uz', 'position_uz')
+    readonly_fields = ('photo_preview',)
+    fields = ('full_name_uz', 'full_name_ru', 'full_name_en',
+              'position_uz', 'position_ru', 'position_en',
+              'order', 'image', 'photo_preview')
 
     def photo_preview(self, obj):
         if obj.image:
-            return format_html('<img src="{}" width="50" height="60" style="object-fit:cover;border-radius:4px"/>', obj.image)
+            return format_html('<img src="{}" width="100" height="120" style="object-fit:cover;border-radius:4px"/>', obj.image)
         return '—'
-    photo_preview.short_description = 'Rasm'
+    photo_preview.short_description = 'Joriy rasm'
 
     def upload_button(self, obj):
+        js = get_upload_js()
         return format_html(
-            '<input type="file" name="photo" accept="image/*" style="font-size:11px;width:140px" '
-            'onchange="var f=new FormData();f.append(\'photo\',this.files[0]);'
-            'f.append(\'csrfmiddlewaretoken\',document.cookie.match(/csrftoken=([^;]+)/)[1]);'
-            'fetch(\'/admin/api/leadership/upload-leadership/{}/\',{{method:\'POST\',body:f}})'
-            '.then(()=>location.reload())">',
-            obj.id
+            '{}<input type="file" name="photo" accept="image/*" style="font-size:11px;width:140px" '
+            'onchange="uploadPhoto(this, \'/admin/api/leadership/upload-leadership/{}/\')">',
+            js, obj.id
         )
     upload_button.short_description = 'Rasm yuklash'
 
