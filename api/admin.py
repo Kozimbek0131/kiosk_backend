@@ -41,11 +41,11 @@ class EmployeeAdmin(ImportExportModelAdmin):
 
     def upload_button(self, obj):
         return format_html(
-            '<form method="post" enctype="multipart/form-data" action="/admin/api/employee/upload-photo/{}/" style="display:inline">'
-            '<input type="hidden" name="csrfmiddlewaretoken" value="">'
             '<input type="file" name="photo" accept="image/*" style="font-size:11px;width:140px" '
-            'onchange="this.previousElementSibling.value=document.cookie.match(/csrftoken=([^;]+)/)[1];this.form.submit()">'
-            '</form>',
+            'onchange="var f=new FormData();f.append(\'photo\',this.files[0]);'
+            'f.append(\'csrfmiddlewaretoken\',document.cookie.match(/csrftoken=([^;]+)/)[1]);'
+            'fetch(\'/admin/api/employee/upload-photo/{}/\',{{method:\'POST\',body:f}})'
+            '.then(()=>location.reload())">',
             obj.id
         )
     upload_button.short_description = 'Rasm yuklash'
@@ -57,6 +57,7 @@ class EmployeeAdmin(ImportExportModelAdmin):
 
     def upload_photo_view(self, request, employee_id):
         from django.shortcuts import redirect
+        from django.http import JsonResponse
         if request.method == 'POST' and request.FILES.get('photo'):
             photo = request.FILES['photo']
             ext = photo.name.split('.')[-1].lower()
@@ -68,10 +69,10 @@ class EmployeeAdmin(ImportExportModelAdmin):
                 )
                 url = supabase.storage.from_(settings.SUPABASE_BUCKET).get_public_url(path_str)
                 Employee.objects.filter(id=employee_id).update(image=url)
-                self.message_user(request, "Rasm yuklandi!")
+                return JsonResponse({"success": True, "url": url})
             except Exception as e:
-                self.message_user(request, f"Xato: {e}", level='error')
-        return redirect('/admin/api/employee/')
+                return JsonResponse({"error": str(e)}, status=500)
+        return JsonResponse({"error": "No file"}, status=400)
 
 
 @admin.register(Leadership)
@@ -88,11 +89,11 @@ class LeadershipAdmin(ImportExportModelAdmin):
 
     def upload_button(self, obj):
         return format_html(
-            '<form method="post" enctype="multipart/form-data" action="/admin/api/leadership/upload-leadership/{}/" style="display:inline">'
-            '<input type="hidden" name="csrfmiddlewaretoken" value="">'
             '<input type="file" name="photo" accept="image/*" style="font-size:11px;width:140px" '
-            'onchange="this.previousElementSibling.value=document.cookie.match(/csrftoken=([^;]+)/)[1];this.form.submit()">'
-            '</form>',
+            'onchange="var f=new FormData();f.append(\'photo\',this.files[0]);'
+            'f.append(\'csrfmiddlewaretoken\',document.cookie.match(/csrftoken=([^;]+)/)[1]);'
+            'fetch(\'/admin/api/leadership/upload-leadership/{}/\',{{method:\'POST\',body:f}})'
+            '.then(()=>location.reload())">',
             obj.id
         )
     upload_button.short_description = 'Rasm yuklash'
@@ -103,7 +104,7 @@ class LeadershipAdmin(ImportExportModelAdmin):
         return custom + urls
 
     def upload_photo_view(self, request, leader_id):
-        from django.shortcuts import redirect
+        from django.http import JsonResponse
         if request.method == 'POST' and request.FILES.get('photo'):
             photo = request.FILES['photo']
             ext = photo.name.split('.')[-1].lower()
@@ -115,10 +116,10 @@ class LeadershipAdmin(ImportExportModelAdmin):
                 )
                 url = supabase.storage.from_(settings.SUPABASE_BUCKET).get_public_url(path_str)
                 Leadership.objects.filter(id=leader_id).update(image=url)
-                self.message_user(request, "Rasm yuklandi!")
+                return JsonResponse({"success": True, "url": url})
             except Exception as e:
-                self.message_user(request, f"Xato: {e}", level='error')
-        return redirect('/admin/api/leadership/')
+                return JsonResponse({"error": str(e)}, status=500)
+        return JsonResponse({"error": "No file"}, status=400)
 
 
 @admin.register(Department)
