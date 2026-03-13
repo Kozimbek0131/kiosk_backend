@@ -2,6 +2,7 @@ import time
 from django.contrib import admin
 from django.utils.html import format_html
 from django.urls import path
+from django.views.decorators.csrf import csrf_exempt
 from import_export import resources, fields
 from import_export.widgets import ForeignKeyWidget
 from import_export.admin import ImportExportModelAdmin
@@ -47,26 +48,21 @@ class EmployeeAdmin(ImportExportModelAdmin):
         return format_html(
             '<form method="post" enctype="multipart/form-data" '
             'action="/admin/api/employee/upload-photo/{}/" style="display:inline">'
-            '<input type="hidden" name="csrfmiddlewaretoken" id="csrf_{}" value="">'
             '<input type="file" name="photo" accept="image/*" style="font-size:11px;width:140px" '
-            'onchange="'
-            'var t=document.querySelector(\'[name=csrfmiddlewaretoken]\');'
-            'var c=document.cookie.split(\';\');'
-            'for(var i=0;i<c.length;i++){{var x=c[i].trim();if(x.startsWith(\'csrftoken=\')){{t.value=x.split(\'=\')[1];break;}}}}'
-            'this.form.submit()">'
+            'onchange="this.form.submit()">'
             '</form>',
-            obj.id, obj.id
+            obj.id
         )
     upload_button.short_description = 'Rasm yuklash'
 
     def get_urls(self):
         urls = super().get_urls()
-        custom = [path('upload-photo/<int:employee_id>/', self.admin_site.admin_view(self.upload_photo_view))]
+        custom = [path('upload-photo/<int:employee_id>/',
+                       csrf_exempt(self.admin_site.admin_view(self.upload_photo_view)))]
         return custom + urls
 
     def upload_photo_view(self, request, employee_id):
         from django.shortcuts import redirect
-        from django.http import JsonResponse
         if request.method == 'POST' and request.FILES.get('photo'):
             photo = request.FILES['photo']
             ext = photo.name.split('.')[-1].lower()
@@ -78,7 +74,7 @@ class EmployeeAdmin(ImportExportModelAdmin):
                 )
                 url = supabase.storage.from_(settings.SUPABASE_BUCKET).get_public_url(path_str)
                 Employee.objects.filter(id=employee_id).update(image=url)
-                self.message_user(request, f"Rasm yuklandi!")
+                self.message_user(request, "Rasm yuklandi!")
             except Exception as e:
                 self.message_user(request, f"Xato: {e}", level='error')
         return redirect('/admin/api/employee/')
@@ -104,13 +100,8 @@ class LeadershipAdmin(ImportExportModelAdmin):
         return format_html(
             '<form method="post" enctype="multipart/form-data" '
             'action="/admin/api/leadership/upload-leadership/{}/" style="display:inline">'
-            '<input type="hidden" name="csrfmiddlewaretoken" value="">'
             '<input type="file" name="photo" accept="image/*" style="font-size:11px;width:140px" '
-            'onchange="'
-            'var t=this.form.querySelector(\'[name=csrfmiddlewaretoken]\');'
-            'var c=document.cookie.split(\';\');'
-            'for(var i=0;i<c.length;i++){{var x=c[i].trim();if(x.startsWith(\'csrftoken=\')){{t.value=x.split(\'=\')[1];break;}}}}'
-            'this.form.submit()">'
+            'onchange="this.form.submit()">'
             '</form>',
             obj.id
         )
@@ -118,7 +109,8 @@ class LeadershipAdmin(ImportExportModelAdmin):
 
     def get_urls(self):
         urls = super().get_urls()
-        custom = [path('upload-leadership/<int:leader_id>/', self.admin_site.admin_view(self.upload_photo_view))]
+        custom = [path('upload-leadership/<int:leader_id>/',
+                       csrf_exempt(self.admin_site.admin_view(self.upload_photo_view)))]
         return custom + urls
 
     def upload_photo_view(self, request, leader_id):
