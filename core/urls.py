@@ -1,14 +1,22 @@
 from django.contrib import admin
-from django.urls import path, include # include qo'shildi
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.static import serve # Bu qator rasmlarni xavfsiz ochish uchun kerak
+import re
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # MANA SHU QATORNI ALBATTA QO'SHING:
     path('api/', include('api.urls')), 
 ]
 
-# Rasm va statik fayllar uchun (Production va Debug rejimlari uchun)
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+# Rasmlar va statik fayllarni istalgan rejimda (Debug True yoki False) ishlashi uchun:
+urlpatterns += [
+    re.path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+    re.path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
+]
+
+# Qo'shimcha xavfsizlik uchun standart usulni ham qoldiramiz
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

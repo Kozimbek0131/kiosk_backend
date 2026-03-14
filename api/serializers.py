@@ -1,8 +1,26 @@
 from rest_framework import serializers
 from .models import Employee, Department, Leadership
 
+class BaseLanguageSerializer(serializers.ModelSerializer):
+    """Tilni aniqlash va xavfsiz ma'lumot olish uchun yordamchi klass"""
+    def get_lang(self):
+        request = self.context.get('request')
+        if request:
+            # ?lang=ru yoki header orqali tilni aniqlash
+            return request.query_params.get('lang') or request.headers.get('Accept-Language', 'uz')[:2]
+        return 'uz'
 
-class DepartmentSerializer(serializers.ModelSerializer):
+    def translate(self, obj, field_prefix):
+        """Ma'lumotni tanlangan tilda qaytaradi, agar bo'sh bo'lsa uz variantini beradi"""
+        lang = self.get_lang()
+        # Masalan: getattr(obj, 'name_ru')
+        val = getattr(obj, f'{field_prefix}_{lang}', None)
+        # Agar tanlangan tilda ma'lumot bo'lmasa, 'uz' variantini qaytaramiz
+        if not val:
+            val = getattr(obj, f'{field_prefix}_uz', "")
+        return val
+
+class DepartmentSerializer(BaseLanguageSerializer):
     name = serializers.SerializerMethodField()
 
     class Meta:
@@ -10,88 +28,62 @@ class DepartmentSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'name_uz', 'name_ru', 'name_en']
 
     def get_name(self, obj):
-        request = self.context.get('request')
-        lang = request.query_params.get('lang', 'uz') if request else 'uz'
-        return {
-            'uz': obj.name_uz,
-            'ru': obj.name_ru,
-            'en': obj.name_en,
-        }.get(lang, obj.name_uz)
+        return self.translate(obj, 'name')
 
-
-class EmployeeSerializer(serializers.ModelSerializer):
+class EmployeeSerializer(BaseLanguageSerializer):
     department_name = serializers.SerializerMethodField()
-    full_name       = serializers.SerializerMethodField()
-    position        = serializers.SerializerMethodField()
+    full_name = serializers.SerializerMethodField()
+    position = serializers.SerializerMethodField()
+    image_url = serializers.SerializerMethodField()
 
     class Meta:
         model = Employee
         fields = [
-            'id',
-            'department',
-            'department_name',
-            'full_name',
-            'full_name_uz', 'full_name_ru', 'full_name_en',
-            'position',
-            'position_uz', 'position_ru', 'position_en',
-            'floor', 'room', 'phone', 'image',
+            'id', 'department', 'department_name', 
+            'full_name', 'full_name_uz', 'full_name_ru', 'full_name_en',
+            'position', 'position_uz', 'position_ru', 'position_en',
+            'floor', 'room', 'phone', 'image', 'image_url'
         ]
 
-    def _lang(self):
-        request = self.context.get('request')
-        return request.query_params.get('lang', 'uz') if request else 'uz'
-
     def get_department_name(self, obj):
-        if not obj.department:
-            return ''
-        return {
-            'uz': obj.department.name_uz,
-            'ru': obj.department.name_ru,
-            'en': obj.department.name_en,
-        }.get(self._lang(), obj.department.name_uz)
+        if obj.department:
+            return self.translate(obj.department, 'name')
+        return ""
 
     def get_full_name(self, obj):
-        return {
-            'uz': obj.full_name_uz,
-            'ru': obj.full_name_ru,
-            'en': obj.full_name_en,
-        }.get(self._lang(), obj.full_name_uz)
+        return self.translate(obj, 'full_name')
 
     def get_position(self, obj):
-        return {
-            'uz': obj.position_uz,
-            'ru': obj.position_ru,
-            'en': obj.position_en,
-        }.get(self._lang(), obj.position_uz)
+        return self.translate(obj, 'position')
 
+    def get_image_url(self, obj):
+        if obj.image:
+            request = self.context.get('request')
+            # Rasmning to'liq URL manzilini hosil qilish
+            return request.build_absolute_uri(obj.image.url) if request else obj.image.url
+        return None
 
-class LeadershipSerializer(serializers.ModelSerializer):
+class LeadershipSerializer(BaseLanguageSerializer):
     full_name = serializers.SerializerMethodField()
-    position  = serializers.SerializerMethodField()
-    rank      = serializers.SerializerMethodField()
+    position = serializers.SerializerMethodField()
+    image_url = serializers.SerializerMethodField()
 
     class Meta:
         model = Leadership
         fields = [
-            'id',
-            'full_name',
-            'full_name_uz', 'full_name_ru', 'full_name_en',
-            'position',
-            'position_uz', 'position_ru', 'position_en',
-            'rank',
-            'rank_uz', 'rank_ru', 'rank_en',
-            'image', 'order',
+            'id', 'full_name', 'full_name_uz', 'full_name_ru', 'full_name_en',
+            'position', 'position_uz', 'position_ru', 'position_en',
+            'image', 'image_url', 'order'
         ]
 
-    def _lang(self):
-        request = self.context.get('request')
-        return request.query_params.get('lang', 'uz') if request else 'uz'
-
     def get_full_name(self, obj):
-        return getattr(obj, f'full_name_{self._lang()}', None) or obj.full_name_uz
+        return self.translate(obj, 'full_name')
 
     def get_position(self, obj):
-        return getattr(obj, f'position_{self._lang()}', None) or obj.position_uz
+        return self.translate(obj, 'position')
 
-    def get_rank(self, obj):
-        return getattr(obj, f'rank_{self._lang()}', None) or obj.rank_uz
+    def get_image_url(self, obj):
+        if obj.image:
+            request = self.context.get('request')
+            return request.build_absolute_uri(obj.image.url) if request else obj.image.url
+        return None

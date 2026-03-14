@@ -1,12 +1,12 @@
 import os
-import dj_database_url
 from pathlib import Path
+import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-your-key-here'
-DEBUG = True
+DEBUG = True # Ishga tushgandan keyin False qiling
 
-ALLOWED_HOSTS = ['web-production-ba75.up.railway.app', 'web-production-8dce.up.railway.app', '127.0.0.1', 'localhost', '*']
+ALLOWED_HOSTS = ['*'] # Railway uchun ochiq qoldiramiz
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -16,14 +16,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'corsheaders',
+    'corsheaders', # Muhim
     'django_filters',
     'import_export',
     'api',
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware', # Eng tepada bo'lishi shart
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -34,60 +34,27 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'core.urls'
+ROOT_URLCONF = 'core.urls' # Loyihangiz nomiga qarab tekshiring
 
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
-    },
-]
+# CORS sozlamalari (Vercel'da xato chiqmasligi uchun)
+CORS_ALLOW_ALL_ORIGINS = True 
+CORS_ALLOW_CREDENTIALS = True
 
-DATABASE_URL = os.environ.get('DATABASE_URL', '')
-if DATABASE_URL:
-    DATABASES = {'default': dj_database_url.parse(DATABASE_URL)}
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
+DATABASES = {
+    'default': dj_database_url.config(default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}", conn_max_age=600)
+}
 
-CORS_ALLOW_ALL_ORIGINS = True
-CSRF_TRUSTED_ORIGINS = [
-    'https://web-production-ba75.up.railway.app',
-    'https://web-production-8dce.up.railway.app',
-    'https://akadeyima-kiosk.vercel.app',
-    'https://akademiya-kiosk.vercel.app'
-]
-
-LANGUAGE_CODE = 'uz-uz'
+# Til sozlamalari
+LANGUAGE_CODE = 'uz'
 TIME_ZONE = 'Asia/Tashkent'
 USE_I18N = True
 USE_TZ = True
 
+# Static va Media fayllar (Railway uchun)
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STORAGES = {
-    "default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
-    "staticfiles": {"BACKEND": "whitenoise.storage.CompressedStaticFilesStorage"},
-}
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-SUPABASE_URL = "https://ywqrlfufkrdokpbdodav.supabase.co"
-SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "")
-SUPABASE_BUCKET = "employees"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

@@ -1,0 +1,4215 @@
+[
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$DpTeG88xp7exXUqSNfZy1h$FtSFqRj3Tjnr9L64LL1nCi21OsFIlhiLxQbgZiZLEMo=",
+    "last_login": "2026-02-28T06:43:34.005Z",
+    "is_superuser": true,
+    "username": "user",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-02-28T06:40:17.576Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$UaVh0atuDQl3hgx85M6DiI$ADiczyIpSE3QEFhRDOXxOTsEKtB7Itff2soygpR5X6o=",
+    "last_login": null,
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-02-28T06:49:15.126Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$4qhn7km7lJ86EVjYZiFzCR$9+HvTyEONoeWtTm3JfkYVXBXWcLidqAnWBX8I5od9j8=",
+    "last_login": null,
+    "is_superuser": true,
+    "username": "admin1",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-03-02T07:34:17.492Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "gd81r7k2pe8azz727e6am82ralnwgrnh",
+  "fields": {
+    "session_data": ".eJxVjDEOwjAMRe-SGUW1kzYWIztniGwnkAJKpaadEHdHkTrA-t97_20i71uJe8trnJM5GzCn301Yn7l2kB5c74vVpW7rLLYr9qDNXpeUX5fD_Tso3EqvQ2ZwQQUmL4gkDOgQBqFEDhBu4v1IDKgU1CM6l4XFoQ6T9yOQ-XwBzOk24g:1vwE34:Nw7xdglWnRXXu-wtGN2catOvCIaYVUg-P9SwJUod8Os",
+    "expire_date": "2026-03-14T06:43:34.014Z"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 2,
+  "fields": {
+    "name_uz": "Rahbariyat",
+    "name_ru": "Руководство",
+    "name_en": "Leadership"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 3,
+  "fields": {
+    "name_uz": "Kadrlar bo‘limi",
+    "name_ru": "Отдел кадров",
+    "name_en": "Human Resources Department"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 4,
+  "fields": {
+    "name_uz": "Tashkiliy-nazorat va faoliyat samaradorligini baholash bo‘limi",
+    "name_ru": "Отдел организационно-контрольной работы и оценки эффективности деятельности",
+    "name_en": "Department of Organizational Control and Performance Evaluation"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 5,
+  "fields": {
+    "name_uz": "Shaxsiy xavfsizlik bo‘limi",
+    "name_ru": "Отдел собственной безопасности",
+    "name_en": "Internal Security Department"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 6,
+  "fields": {
+    "name_uz": "Jamoatchilik bilan aloqalar bo‘limi",
+    "name_ru": "Отдел по связям с общественностью",
+    "name_en": "Public Relations Department"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 7,
+  "fields": {
+    "name_uz": "Yuridik bo‘lim",
+    "name_ru": "Юридический отдел",
+    "name_en": "Legal Department"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 8,
+  "fields": {
+    "name_uz": "Birinchi va ikkinchi bo‘lim",
+    "name_ru": "Первый и второй отделы",
+    "name_en": "First and Second Divisions"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 9,
+  "fields": {
+    "name_uz": "O‘quv-uslubiy boshqarma",
+    "name_ru": "Учебно-методическое управление",
+    "name_en": "Educational and Methodological Department"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 10,
+  "fields": {
+    "name_uz": "Elektron ta’lim bo‘limi",
+    "name_ru": "Отдел электронного обучения",
+    "name_en": "E-Learning Department"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 11,
+  "fields": {
+    "name_uz": "Ofis-registrator markazi",
+    "name_ru": "Центр «Офис-регистратор»",
+    "name_en": "Registrar's Office Center"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 12,
+  "fields": {
+    "name_uz": "Bakalavriat fakulteti",
+    "name_ru": "Факультет бакалавриата",
+    "name_en": "Faculty of Bachelor's Degree"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 13,
+  "fields": {
+    "name_uz": "Magistratura fakulteti",
+    "name_ru": "Факультет магистратуры",
+    "name_en": "Faculty of Master's Degree"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 14,
+  "fields": {
+    "name_uz": "Qayta tayyorlash va malaka oshirish fakulteti",
+    "name_ru": "Факультет переподготовки и повышения квалификации",
+    "name_en": "Faculty of Retraining and Professional Development"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 15,
+  "fields": {
+    "name_uz": "Huquqni muhofaza qilish faoliyati muammolarini ilmiy-amaliy tadqiq etish markazi",
+    "name_ru": "Центр научно-прикладных исследований проблем правоохранительной деятельности",
+    "name_en": "Center for Scientific and Practical Research on Law Enforcement Problems"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 16,
+  "fields": {
+    "name_uz": "Ilmiy innovatsion tadqiqotlarni muvofiqlashtirish va ilmiy xodimlarni tayyorlash markazi",
+    "name_ru": "Центр координации научно-инновационных исследований и подготовки научных кадров",
+    "name_en": "Center for Coordination of Scientific and Innovative Research and Training of Scientific Personnel"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 17,
+  "fields": {
+    "name_uz": "Korrupsiyaga qarshi kurashish ilmiy-ta’lim markazi",
+    "name_ru": "Научно-образовательный центр по противодействию коррупции",
+    "name_en": "Scientific and Educational Anti-Corruption Center"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 18,
+  "fields": {
+    "name_uz": "Buxgalteriya va reja-moliya bo‘limi",
+    "name_ru": "Бухгалтерия и планово-финансовый отдел",
+    "name_en": "Accounting and Planning-Finance Department"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 19,
+  "fields": {
+    "name_uz": "Ishlar boshqaruvi bo‘limi",
+    "name_ru": "Отдел управления делами",
+    "name_en": "General Services Department"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 20,
+  "fields": {
+    "name_uz": "Tahririy nashriyot bo‘limi",
+    "name_ru": "Редакционно-издательский отдел",
+    "name_en": "Editorial and Publishing Department"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 21,
+  "fields": {
+    "name_uz": "Axborot-kommunikatsiya texnologiyalari va axborot xavfsizligini ta’minlash bo‘limi",
+    "name_ru": "Отдел информационно-коммуникационных технологий и обеспечения информационной безопасности",
+    "name_en": "Information and Communication Technologies and Information Security Department"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 22,
+  "fields": {
+    "name_uz": "Yoshlar bilan ishlash, ma’naviyat va ma’rifat bo‘limi",
+    "name_ru": "Отдел по работе с молодежью, духовности и просвещения",
+    "name_en": "Department of Youth Affairs, Spirituality and Enlightenment"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 23,
+  "fields": {
+    "name_uz": "Xalqaro hamkorlik bo‘limi",
+    "name_ru": "Отдел международного сотрудничества",
+    "name_en": "International Cooperation Department"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 24,
+  "fields": {
+    "name_uz": "Loyiha boshqaruvi bo‘limi",
+    "name_ru": "Отдел управления проектами",
+    "name_en": "Project Management Department"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 25,
+  "fields": {
+    "name_uz": "Jinoyat huquqi va kriminologiya kafedrasi",
+    "name_ru": "Кафедра уголовного права и криминологии",
+    "name_en": "Department of Criminal Law and Criminology"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 26,
+  "fields": {
+    "name_uz": "Dastlabki tergov va surishtiruv kafedrasi",
+    "name_ru": "Кафедра предварительного следствия и дознания",
+    "name_en": "Department of Preliminary Investigation and Inquiry"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 27,
+  "fields": {
+    "name_uz": "Kriminalistika va sud ekspertizalari kafedrasi",
+    "name_ru": "Кафедра криминалистики и судебных экспертиз",
+    "name_en": "Department of Criminalistics and Forensic Expertise"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 28,
+  "fields": {
+    "name_uz": "Prokurorlik faoliyati va prokuror nazorati kafedrasi",
+    "name_ru": "Кафедра прокурорской деятельности и прокурорского надзора",
+    "name_en": "Department of Prosecutorial Activity and Prosecutorial Supervision"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 29,
+  "fields": {
+    "name_uz": "Tezkor-qidiruv faoliyati va kiberhuquq kafedrasi",
+    "name_ru": "Кафедра оперативно-розыскной деятельности и киберправа",
+    "name_en": "Department of Operational-Search Activity and Cyber Law"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 30,
+  "fields": {
+    "name_uz": "Sudlarda prokuror vakolatini ta’minlash hamda ijro ishi yurituvi kafedrasi",
+    "name_ru": "Кафедра обеспечения полномочий прокурора в судах и исполнительного производства",
+    "name_en": "Department of Support of Prosecution Authority in Courts and Enforcement Proceedings"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 31,
+  "fields": {
+    "name_uz": "Davlat-huquqiy fanlar kafedrasi",
+    "name_ru": "Кафедра государственно-правовых наук",
+    "name_en": "Department of State-Legal Sciences"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 32,
+  "fields": {
+    "name_uz": "Kasbiy psixologiya va boshqaruv faoliyati kafedrasi",
+    "name_ru": "Кафедра профессиональной психологии и управленческой деятельности",
+    "name_en": "Department of Professional Psychology and Management Activity"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 33,
+  "fields": {
+    "name_uz": "Xalqaro huquq va inson huquqlarini himoya qilish kafedrasi",
+    "name_ru": "Кафедра международного права и защиты прав человека",
+    "name_en": "Department of International Law and Human Rights Protection"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 34,
+  "fields": {
+    "name_uz": "Ijtimoiy-gumanitar fanlar kafedrasi",
+    "name_ru": "Кафедра социально-гуманитарных наук",
+    "name_en": "Department of Social and Humanitarian Sciences"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 35,
+  "fields": {
+    "name_uz": "Til o‘rgatish kafedrasi",
+    "name_ru": "Кафедра обучения языкам",
+    "name_en": "Department of Language Training"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 36,
+  "fields": {
+    "name_uz": "Devonxona va arxiv",
+    "name_ru": "Канцелярия и архив",
+    "name_en": "Chancellery and Archives"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 37,
+  "fields": {
+    "name_uz": "Harbiy va jismoniy tayyorgarlik kafedrasi",
+    "name_ru": "Кафедра военной и физической подготовки",
+    "name_en": "Department of Military and Physical Training"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 38,
+  "fields": {
+    "name_uz": "Iqtisodiy jinoyatlarga va jinoiy daromadlarni legallashtirishga qarshi kurash kafedrasi",
+    "name_ru": "Кафедра по борьбе с экономическими преступлениями и легализацией преступных доходов",
+    "name_en": "Department of Combatting Economic Crimes and Money Laundering"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 39,
+  "fields": {
+    "name_uz": "Raqamli kriminalistika ilmiy-tadqiqot institutining Kiberjinoyatlarga qarshi kurashishga va raqamli tergovga ko‘maklashish markazi",
+    "name_ru": "Центр содействия расследованию цифровых преступлений и борьбе с киберпреступностью НИИ цифровой криминалистики",
+    "name_en": "Center for Countering Cybercrime and Assisting Digital Investigation of the Digital Criminalistics Research Institute"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 40,
+  "fields": {
+    "name_uz": "Raqamli kriminalistika ilmiy-tadqiqot instituti Ixtisoslashtirilgan raqamli tadqiqot markazi",
+    "name_ru": "Специализированный центр цифровых исследований Научно-исследовательского института цифровой криминалистики",
+    "name_en": "Specialized Digital Research Center of the Digital Criminalistics Research Institute"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 41,
+  "fields": {
+    "name_uz": "Raqamli kriminalistika ilmiy-tadqiqot instituti Uslubiy yordam ko‘rsatish bo‘limi",
+    "name_ru": "Отдел методической помощи Научно-исследовательского института цифровой криминалистики",
+    "name_en": "Methodological Assistance Department of the Digital Criminalistics Research Institute"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 42,
+  "fields": {
+    "name_uz": "Raqamli kriminalistika ilmiy-tadqiqot instituti Raqamli kriminalistika laboratoriyasi",
+    "name_ru": "Лаборатория цифровой криминалистики Научно-исследовательского института цифровой криминалистики",
+    "name_en": "Digital Criminalistics Laboratory of the Digital Criminalistics Research Institute"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 43,
+  "fields": {
+    "name_uz": "Raqamli kriminalistika ilmiy-tadqiqot instituti Uslubiy yordam koʼrsatish boʼlim",
+    "name_ru": "Отдел методической помощи Научно-исследовательского института цифровой криминалистики",
+    "name_en": "Methodological Assistance Department of the Digital Criminalistics Research Institute"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 2,
+  "fields": {
+    "department": 2,
+    "full_name_uz": "Kolenko Yevgeniy Vyacheslavovich",
+    "full_name_ru": "Коленко Евгений Вячеславович",
+    "full_name_en": "Kolenko Evgeniy Vyacheslavovich",
+    "position_uz": "Huquqni muhofaza qilish akademiyasi boshligʼining birinchi oʼrinbosari",
+    "position_ru": "Первый заместитель начальника Академии правоохранительных органов",
+    "position_en": "First Deputy Head of the Law Enforcement Academy",
+    "floor": "5",
+    "room": "",
+    "phone": "1710",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_2.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 3,
+  "fields": {
+    "department": 2,
+    "full_name_uz": "Turaxonov Durbek Lermonovich",
+    "full_name_ru": "Турахонов Дурбек Лермонович",
+    "full_name_en": "Turaxonov Durbek Lermontovich",
+    "position_uz": "Huquqni muhofaza qilish akademiyasi boshligʼi oʼrinbosari",
+    "position_ru": "Заместитель начальника Академии правоохранительных органов",
+    "position_en": "Deputy Head of the Law Enforcement Academy",
+    "floor": "5",
+    "room": "",
+    "phone": "1711",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_3.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 4,
+  "fields": {
+    "department": 2,
+    "full_name_uz": "Odinaev Аdham Saʼdulloevich",
+    "full_name_ru": "Одинаев Адҳам Саъдуллоевич",
+    "full_name_en": "Odinayev Adham Sa'dulloyevich",
+    "position_uz": "Huquqni muhofaza qilish akademiyasi boshligʼi oʼrinbosari",
+    "position_ru": "Заместитель начальника Академии правоохранительных органов",
+    "position_en": "Deputy Head of the Law Enforcement Academy",
+    "floor": "5",
+    "room": "",
+    "phone": "1713",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_4.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 5,
+  "fields": {
+    "department": 2,
+    "full_name_uz": "Nigmadjanov Uyg'un Uchkunovich",
+    "full_name_ru": "Нигмаджанов Уйгун Учкунович",
+    "full_name_en": "Nig'madjanov Uyg'un Uchqunovich",
+    "position_uz": "Huquqni muhofaza qilish akademiyasi boshligʼi oʼrinbosari",
+    "position_ru": "Заместитель начальника Академии правоохранительных органов",
+    "position_en": "Deputy Head of the Law Enforcement Academy",
+    "floor": "5",
+    "room": "",
+    "phone": "1712",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_5.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 6,
+  "fields": {
+    "department": 2,
+    "full_name_uz": "Xabiljonov Sheroz Xabiljon oʼgʼli",
+    "full_name_ru": "Хабилжонов Шероз Хабилжон ўғли",
+    "full_name_en": "Xabiljonov Sheroz Xabiljon o'g'li",
+    "position_uz": "Huquqni muhofaza qilish akademiyasi boshligʼi yordamchici",
+    "position_ru": "Помощник начальника Академии правоохранительных органов",
+    "position_en": "Assistant to the Head of the Law Enforcement Academy",
+    "floor": "5",
+    "room": "",
+    "phone": "1911",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_6.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 7,
+  "fields": {
+    "department": 2,
+    "full_name_uz": "Аhmadqulov Diyorbek Jasurjon oʼgʼli",
+    "full_name_ru": "Аҳмадқулов Диёрбек Жасуржон ўғли",
+    "full_name_en": "Ahmadqulov Diyorbek Jasurjon o'g'li",
+    "position_uz": "Huquqni muhofaza qilish akademiyasi kotib-ish yurituvchi",
+    "position_ru": "Секретарь-делопроизводитель Академии правоохранительных органов",
+    "position_en": "Secretary-Clerk of the Law Enforcement Academy",
+    "floor": "5",
+    "room": "",
+    "phone": "1978",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_7.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 8,
+  "fields": {
+    "department": 2,
+    "full_name_uz": "Mamatov Doston Xalil oʼgʼli",
+    "full_name_ru": "Маматов Достон Халил ўғли",
+    "full_name_en": "Mamatov Doston Xalil o'g'li",
+    "position_uz": "Huquqni muhofaza qilish akademiyasi kotib-ish yurituvchi",
+    "position_ru": "Секретарь-делопроизводитель Академии правоохранительных органов",
+    "position_en": "Secretary-Clerk of the Law Enforcement Academy",
+    "floor": "5",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_8.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 9,
+  "fields": {
+    "department": 2,
+    "full_name_uz": "Sulaymonov Zokir Shokir oʼgʼli",
+    "full_name_ru": "Сулаймонов Зокир Шокир ўғли",
+    "full_name_en": "Sulaymonov Zokir Shokir o'g'li",
+    "position_uz": "Huquqni muhofaza qilish akademiyasi kotib-ish yurituvchi",
+    "position_ru": "Секретарь-делопроизводитель Академии правоохранительных органов",
+    "position_en": "Secretary-Clerk of the Law Enforcement Academy",
+    "floor": "5",
+    "room": "",
+    "phone": "1796",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_9.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 10,
+  "fields": {
+    "department": 2,
+    "full_name_uz": "Usmonov Аlisher Botirjon oʼgʼli",
+    "full_name_ru": "Усмонов Алишер Ботиржон ўғли",
+    "full_name_en": "Usmonov Alisher Botirjon o'g'li",
+    "position_uz": "Huquqni muhofaza qilish akademiyasi kotib-ish yurituvchi",
+    "position_ru": "Секретарь-делопроизводитель Академии правоохранительных органов",
+    "position_en": "Secretary-Clerk of the Law Enforcement Academy",
+    "floor": "5",
+    "room": "",
+    "phone": "1788",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_10.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 11,
+  "fields": {
+    "department": 3,
+    "full_name_uz": "Xolmatov Muxtor Muxamedovich",
+    "full_name_ru": "Холматов Мухтор Мухамедович",
+    "full_name_en": "Xolmatov Muxtor Muhammadovich",
+    "position_uz": "Kadrlar boʼlimi boshligʼi",
+    "position_ru": "Начальник отдела кадров",
+    "position_en": "Head of the Human Resources Department",
+    "floor": "5",
+    "room": "",
+    "phone": "1706",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_11.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 12,
+  "fields": {
+    "department": 3,
+    "full_name_uz": "Gafurov Rustam Baxtiyarovich",
+    "full_name_ru": "Гафуров Рустам Бахтиярович",
+    "full_name_en": "G'afurov Rustam Baxtiyarovich",
+    "position_uz": "Kadrlar boʼlimi katta prokurori",
+    "position_ru": "Старший прокурор отдела кадров",
+    "position_en": "Senior Prosecutor of the Human Resources Department",
+    "floor": "5",
+    "room": "",
+    "phone": "1731",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_12.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 13,
+  "fields": {
+    "department": 3,
+    "full_name_uz": "Maxmadustov Jamshid Аbdumajit oʼgʼli",
+    "full_name_ru": "Махмадустов Жамшид Абдумажит ўғли",
+    "full_name_en": "Maxmadustov Jamshid Abdumajit o'g'li",
+    "position_uz": "Kadrlar boʼlimi ish yuritish boʼyicha inspektori",
+    "position_ru": "Инспектор по делопроизводству отдела кадров",
+    "position_en": "Clerical Work Inspector of the Human Resources Department",
+    "floor": "5",
+    "room": "",
+    "phone": "1778",
+    "image": ""
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 14,
+  "fields": {
+    "department": 4,
+    "full_name_uz": "Hamidov Аzizbek Olimjonovich",
+    "full_name_ru": "Ҳамидов Азизбек Олимжонович",
+    "full_name_en": "Hamidov Azizbek Olimjonovich",
+    "position_uz": "Tashkiliy-nazorat va faoliyat samaradorligini baholash boʼlimi boshligʼi",
+    "position_ru": "Начальник отдела организационно-контрольной работы и оценки эффективности деятельности",
+    "position_en": "Head of the Organizational Control and Performance Evaluation Department",
+    "floor": "5",
+    "room": "",
+    "phone": "1775",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_14.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 15,
+  "fields": {
+    "department": 4,
+    "full_name_uz": "Sharipov Zafar Umurzakovich",
+    "full_name_ru": "Шарипов Зафар Умурзакович",
+    "full_name_en": "Sharipov Zafar Umurzaqovich",
+    "position_uz": "Tashkiliy-nazorat va faoliyat samaradorligini baholash boʼlimi katta prokurori",
+    "position_ru": "Старший прокурор отдела организационно-контрольной работы и оценки эффективности деятельности",
+    "position_en": "Senior Prosecutor of the Organizational Control and Performance Evaluation Department",
+    "floor": "5",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_15.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 16,
+  "fields": {
+    "department": 4,
+    "full_name_uz": "Zayniddinov Farrux Madazim oʼgʼli",
+    "full_name_ru": "Зайниддинов Фаррух Мадазим ўғли",
+    "full_name_en": "Zayniddinov Farrux Madazim o'g'li",
+    "position_uz": "Tashkiliy-nazorat va faoliyat samaradorligini baholash boʼlimi ish yuritish boʼyicha inspektori",
+    "position_ru": "Инспектор по делопроизводству отдела организационно-контрольной работы и оценки эффективности деятельности",
+    "position_en": "Clerical Work Inspector of the Organizational Control and Performance Evaluation Department",
+    "floor": "5",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_16.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 17,
+  "fields": {
+    "department": 5,
+    "full_name_uz": "Sheraliev Ulugʼbek Bekmirzaevich",
+    "full_name_ru": "Шералиев Улуғбек Бекмирзаевич",
+    "full_name_en": "Sheraliyev Ulug'bek Bekmirzayevich",
+    "position_uz": "Shaxsiy xavfsizlik boʼlimi boshligʼi",
+    "position_ru": "Начальник отдела собственной безопасности",
+    "position_en": "Head of the Internal Security Department",
+    "floor": "2",
+    "room": "",
+    "phone": "1917",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_17.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 18,
+  "fields": {
+    "department": 6,
+    "full_name_uz": "Mansurova Sanobarxon Аtxamovna",
+    "full_name_ru": "Мансурова Санобархон Атхамовна",
+    "full_name_en": "Mansurova Sanobarxon Atxamovna",
+    "position_uz": "Jamoatchilik bilan aloqalar boʼlimi boshligʼi",
+    "position_ru": "Начальник отдела по связям с общественностью",
+    "position_en": "Head of the Public Relations Department",
+    "floor": "2",
+    "room": "",
+    "phone": "1737",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_18.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 19,
+  "fields": {
+    "department": 7,
+    "full_name_uz": "Doʼstqoriev Muzaffar Boyboʼtaevich",
+    "full_name_ru": "Дўстқориев Музаффар Бойбўтаевич",
+    "full_name_en": "Do'stqoriyev Muzaffar Boybo'tayevich",
+    "position_uz": "Yuridik boʼlim boshligʼi",
+    "position_ru": "Начальник юридического отдела",
+    "position_en": "Head of the Legal Department",
+    "floor": "2",
+    "room": "",
+    "phone": "1722",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_19.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 20,
+  "fields": {
+    "department": 8,
+    "full_name_uz": "Аbrorov Oybek Turgunovich",
+    "full_name_ru": "Аброров Ойбек Тургунович",
+    "full_name_en": "Abrorov Oybek Turg'unovich",
+    "position_uz": "Birinchi va ikkinchi boʼlim boshligʼi",
+    "position_ru": "Начальник первого и второго отдела",
+    "position_en": "Head of the First and Second Divisions",
+    "floor": "2",
+    "room": "",
+    "phone": "1973",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_20.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 21,
+  "fields": {
+    "department": 8,
+    "full_name_uz": "Ismailov Xasan Faxritdin oʼgʼli",
+    "full_name_ru": "Исмаилов Хасан Фахритдин ўғли",
+    "full_name_en": "Ismailov Xasan Faxritdin o'g'li",
+    "position_uz": "Birinchi va ikkinchi boʼlim muhandisi",
+    "position_ru": "Инженер первого и второго отдела",
+    "position_en": "Engineer of the First and Second Divisions",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_21.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 22,
+  "fields": {
+    "department": 9,
+    "full_name_uz": "Palvanov Marat Biembetovich",
+    "full_name_ru": "Палванов Марат Биембетович",
+    "full_name_en": "Palvanov Marat Biembetovich",
+    "position_uz": "Oʼquv-uslubiy boshqarma boshligʼi",
+    "position_ru": "Начальник учебно-методического управления",
+    "position_en": "Head of the Educational and Methodological Department",
+    "floor": "1",
+    "room": "",
+    "phone": "1999",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_22.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 23,
+  "fields": {
+    "department": 9,
+    "full_name_uz": "Nuridinov Baxodirjon Sabirovich",
+    "full_name_ru": "Нуридинов Баходиржон Сабирович",
+    "full_name_en": "Nuridinov Bahodirjon Sabirovich",
+    "position_uz": "Oʼquv-uslubiy boshqarma katta prokurori",
+    "position_ru": "Старший прокурор учебно-методического управления",
+    "position_en": "Senior Prosecutor of the Educational and Methodological Department",
+    "floor": "1",
+    "room": "",
+    "phone": "",
+    "image": ""
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 24,
+  "fields": {
+    "department": 9,
+    "full_name_uz": "Dovletov Shoxrat Аllabergenovich",
+    "full_name_ru": "Довлетов Шохрат Аллабергенович",
+    "full_name_en": "Dovletov Shoxrat Allabergenovich",
+    "position_uz": "Oʼquv-uslubiy boshqarma katta prokurori",
+    "position_ru": "Старший прокурор учебно-методического управления",
+    "position_en": "Senior Prosecutor of the Educational and Methodological Department",
+    "floor": "1",
+    "room": "",
+    "phone": "1760",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_24.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 25,
+  "fields": {
+    "department": 9,
+    "full_name_uz": "Ibadullaev Sarvarbek Shuxrat oʼgʼli",
+    "full_name_ru": "Ибадуллаев Сарварбек Шухрат ўғли",
+    "full_name_en": "Ibadullayev Sarvarbek Shuxrat o'g'li",
+    "position_uz": "Oʼquv-uslubiy boshqarma prokurori",
+    "position_ru": "Прокурор учебно-методического управления",
+    "position_en": "Prosecutor of the Educational and Methodological Department",
+    "floor": "1",
+    "room": "",
+    "phone": "1981",
+    "image": ""
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 26,
+  "fields": {
+    "department": 9,
+    "full_name_uz": "Eshmurodov Elbek Xxx",
+    "full_name_ru": "Эшмуродов Элбек Ххх",
+    "full_name_en": "Eshmurodov Elbek Xxx",
+    "position_uz": "Oʼquv-uslubiy boshqarma prokurori",
+    "position_ru": "Прокурор учебно-методического управления",
+    "position_en": "Prosecutor of the Educational and Methodological Department",
+    "floor": "1",
+    "room": "",
+    "phone": "1926",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_26.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 27,
+  "fields": {
+    "department": 9,
+    "full_name_uz": "Rizaev Xudoynazar Аmirulla oʼgʼli",
+    "full_name_ru": "Ризаев Худойназар Амирулла ўғли",
+    "full_name_en": "Rizayev Xudoynazar Amirulla o'g'li",
+    "position_uz": "Oʼquv-uslubiy boshqarma prokurori",
+    "position_ru": "Прокурор учебно-методического управления",
+    "position_en": "Prosecutor of the Educational and Methodological Department",
+    "floor": "1",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_27.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 28,
+  "fields": {
+    "department": 9,
+    "full_name_uz": "Xusanov Suxrob Sherzod oʼgʼli",
+    "full_name_ru": "Хусанов Сухроб Шерзод ўғли",
+    "full_name_en": "Xusanov Suxrob Sherzod o'g'li",
+    "position_uz": "Oʼquv-uslubiy boshqarma ish yuritish boʼyicha inspektori",
+    "position_ru": "Инспектор по делопроизводству учебно-методического управления",
+    "position_en": "Clerical Work Inspector of the Educational and Methodological Department",
+    "floor": "1",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_28.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 29,
+  "fields": {
+    "department": 10,
+    "full_name_uz": "Ibraymov Аskar Yesbosinovich",
+    "full_name_ru": "Ибраймов Аскар Есбосинович",
+    "full_name_en": "Ibraymov Asqar Yesbosinovich",
+    "position_uz": "Elektron taʼlim boʼlimi boshligʼi",
+    "position_ru": "Начальник отдела электронного обучения",
+    "position_en": "Head of the E-Learning Department",
+    "floor": "1",
+    "room": "",
+    "phone": "1755",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_29.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 30,
+  "fields": {
+    "department": 10,
+    "full_name_uz": "Xurramov Bahodir Sapparovich",
+    "full_name_ru": "Хуррамов Баҳодир Саппарович",
+    "full_name_en": "Xurramov Bahodir Sapparovich",
+    "position_uz": "Elektron taʼlim boʼlimi prokurori",
+    "position_ru": "Прокурор отдела электронного обучения",
+    "position_en": "Prosecutor of the E-Learning Department",
+    "floor": "1",
+    "room": "",
+    "phone": "1928",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_30.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 31,
+  "fields": {
+    "department": 10,
+    "full_name_uz": "Аlisherova Nozima Nizamidin qizi",
+    "full_name_ru": "Алишерова Нозима Низамидин қизи",
+    "full_name_en": "Alisherova Nozima Nizamidinqizi",
+    "position_uz": "Elektron taʼlim boʼlimi katta prokurori",
+    "position_ru": "Старший прокурор отдела электронного обучения",
+    "position_en": "Senior Prosecutor of the E-Learning Department",
+    "floor": "1",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_31.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 32,
+  "fields": {
+    "department": 10,
+    "full_name_uz": "Аʼzamova Gulbahor Аzam qizi",
+    "full_name_ru": "Аъзамова Гулбаҳор Азам қизи",
+    "full_name_en": "A'zamova Gulbahor Azamqizi",
+    "position_uz": "Elektron taʼlim boʼlimi Ish yuritish boʼyicha inspektori",
+    "position_ru": "Инспектор по делопроизводству отдела электронного обучения",
+    "position_en": "Clerical Work Inspector of the E-Learning Department",
+    "floor": "1",
+    "room": "",
+    "phone": "",
+    "image": ""
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 33,
+  "fields": {
+    "department": 10,
+    "full_name_uz": "Saburov Jahongir Ravshanbek oʼgʼli",
+    "full_name_ru": "Сабуров Жаҳонгир Равшанбек ўғли",
+    "full_name_en": "Saburov Jahongir Ravshanbek o'g'li",
+    "position_uz": "Elektron taʼlim boʼlimi texnigi",
+    "position_ru": "Техник отдела электронного обучения",
+    "position_en": "Technician of the E-Learning Department",
+    "floor": "1",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_33.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 34,
+  "fields": {
+    "department": 11,
+    "full_name_uz": "Kadirov Ilyosjon Ibragimovich",
+    "full_name_ru": "Кадиров Илёсжон Ибрагимович",
+    "full_name_en": "Kadirov Ilyosjon Ibragimovich",
+    "position_uz": "Ofis-registrator markazi boshligʼi",
+    "position_ru": "Начальник центра «Офис-регистратор»",
+    "position_en": "Head of the Registrar's Office Center",
+    "floor": "",
+    "room": "",
+    "phone": "1776",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_34.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 35,
+  "fields": {
+    "department": 11,
+    "full_name_uz": "Radjabov Ulugbek Аbduraxmanovich",
+    "full_name_ru": "Раджабов Улугбек Абдурахманович",
+    "full_name_en": "Rajabov Ulug'bek Abduraxmonovich",
+    "position_uz": "Ofis-registrator markazi katta prokurori",
+    "position_ru": "Старший прокурор центра «Офис-регистратор»",
+    "position_en": "Senior Prosecutor of the Registrar's Office Center",
+    "floor": "",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_35.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 36,
+  "fields": {
+    "department": 12,
+    "full_name_uz": "Kayumov Baxtiyor Erkinjonovich",
+    "full_name_ru": "Каюмов Бахтиёр Эркинжонович",
+    "full_name_en": "Qayumov Baxtiyor Erkinjonovich",
+    "position_uz": "Bakalavriat fakulteti boshligʼi",
+    "position_ru": "Начальник факультета бакалавриата",
+    "position_en": "Head of the Undergraduate Faculty",
+    "floor": "1",
+    "room": "",
+    "phone": "1727",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_36.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 37,
+  "fields": {
+    "department": 12,
+    "full_name_uz": "Ochilov Samariddin Kamoliddinovich",
+    "full_name_ru": "Очилов Самариддин Камолиддинович",
+    "full_name_en": "Ochilov Samariddin Kamoliddinovich",
+    "position_uz": "Bakalavriat fakulteti katta prokurori",
+    "position_ru": "Старший прокурор факультета бакалавриата",
+    "position_en": "Senior Prosecutor of the Undergraduate Faculty",
+    "floor": "1",
+    "room": "",
+    "phone": "1933",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_37.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 38,
+  "fields": {
+    "department": 12,
+    "full_name_uz": "Karimov Аlibek Valievich",
+    "full_name_ru": "Каримов Алибек Валиевич",
+    "full_name_en": "Karimov Alibek Valiyevich",
+    "position_uz": "Bakalavriat fakulteti prokurori",
+    "position_ru": "Прокурор факультета бакалавриата",
+    "position_en": "Prosecutor of the Undergraduate Faculty",
+    "floor": "1",
+    "room": "",
+    "phone": "1979",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_38.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 39,
+  "fields": {
+    "department": 12,
+    "full_name_uz": "Xalbaev Janibek Zeripboy oʼgʼli",
+    "full_name_ru": "Халбаев Жанибек Зерипбой ўғли",
+    "full_name_en": "Xalbayev Janibek Zeripboy o'g'li",
+    "position_uz": "Bakalavriat fakulteti ish yurituvchisi",
+    "position_ru": "Делопроизводитель факультета бакалавриата",
+    "position_en": "Clerk of the Undergraduate Faculty",
+    "floor": "1",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_39.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 40,
+  "fields": {
+    "department": 13,
+    "full_name_uz": "Xidoyatullaev Аlisher Toirovich",
+    "full_name_ru": "Хидоятуллаев Алишер Тоирович",
+    "full_name_en": "Xidoyatullayev Alisher Toirovich",
+    "position_uz": "Magistratura fakulteti boshligʼi",
+    "position_ru": "Начальник факультета магистратуры",
+    "position_en": "Head of the Graduate (Master's) Faculty",
+    "floor": "1",
+    "room": "",
+    "phone": "1716",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_40.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 41,
+  "fields": {
+    "department": 13,
+    "full_name_uz": "Sattarov Jaʼsurbek Аvazbekovich",
+    "full_name_ru": "Саттаров Жаъсурбек Авазбекович",
+    "full_name_en": "Sattarov Ja'surbek Avazbekovich",
+    "position_uz": "Magistratura fakulteti katta prokurori",
+    "position_ru": "Старший прокурор факультета магистратуры",
+    "position_en": "Senior Prosecutor of the Graduate Faculty",
+    "floor": "1",
+    "room": "",
+    "phone": "1795",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_41.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 42,
+  "fields": {
+    "department": 13,
+    "full_name_uz": "Salomov Аzimjon Omongeldi oʼgʼli",
+    "full_name_ru": "Саломов Азимжон Омонгелди ўғли",
+    "full_name_en": "Salomov Azimjon Omongeldi o'g'li",
+    "position_uz": "Magistratura fakulteti ish yuritish boʼyicha inspektori",
+    "position_ru": "Инспектор по делопроизводству факультета магистратуры",
+    "position_en": "Clerical Work Inspector of the Graduate Faculty",
+    "floor": "1",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_42.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 43,
+  "fields": {
+    "department": 14,
+    "full_name_uz": "Usmanov Saidakbar Saidaxmedovich",
+    "full_name_ru": "Усманов Саидакбар Саидахмедович",
+    "full_name_en": "Usmanov Saidakbar Saidaxmedovich",
+    "position_uz": "Qayta tayyorlash va malaka oshirish fakulteti boshligʼi",
+    "position_ru": "Начальник факультета переподготовки и повышения квалификации",
+    "position_en": "Head of the Retraining and Professional Development Faculty",
+    "floor": "2",
+    "room": "",
+    "phone": "1758",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_43.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 44,
+  "fields": {
+    "department": 14,
+    "full_name_uz": "Bekmirzaev Islombek Oybek oʼgʼli",
+    "full_name_ru": "Бекмирзаев Исломбек Ойбек ўғли",
+    "full_name_en": "Bekmirzayev Islombek Oybek o'g'li",
+    "position_uz": "Qayta tayyorlash va malaka oshirish fakulteti ish yurituvchisi",
+    "position_ru": "Делопроизводитель факультета переподготовки и повышения квалификации",
+    "position_en": "Clerk of the Retraining and Professional Development Faculty",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_44.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 45,
+  "fields": {
+    "department": 15,
+    "full_name_uz": "Mustafaev Shuxratjon Burievich",
+    "full_name_ru": "Мустафаев Шухратжон Буриевич",
+    "full_name_en": "Mustafayev Shuxratjon Buriyevich",
+    "position_uz": "Huquqni muhofaza qilish faoliyati muammolarini ilmiy-amaliy tadqiq etish markazi boshligʼi",
+    "position_ru": "Начальник Центра научно-прикладных исследований проблем правоохранительной деятельности",
+    "position_en": "Head of the Center for Scientific and Applied Research on Law Enforcement Issues",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_45.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 46,
+  "fields": {
+    "department": 15,
+    "full_name_uz": "Kim Oleg Vladimirovich",
+    "full_name_ru": "Ким Олег Владимирович",
+    "full_name_en": "Kim Oleg Vladimirovich",
+    "position_uz": "Huquqni muhofaza qilish faoliyati muammolarini ilmiy-amaliy tadqiq etish markazi katta prokurori",
+    "position_ru": "Старший прокурор Центра научно-прикладных исследований проблем правоохранительной деятельности",
+    "position_en": "Senior Prosecutor of the Center for Scientific and Applied Research",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": ""
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 47,
+  "fields": {
+    "department": 15,
+    "full_name_uz": "Miraxmedov Jaxongir Mirxanovich",
+    "full_name_ru": "Мирахмедов Жахонгир Мирханович",
+    "full_name_en": "Miraxmedov Jahongir Mirxonovich",
+    "position_uz": "Huquqni muhofaza qilish faoliyati muammolarini ilmiy-amaliy tadqiq etish markazi katta prokurori",
+    "position_ru": "Старший прокурор Центра научно-прикладных исследований проблем правоохранительной деятельности",
+    "position_en": "Senior Prosecutor of the Center for Scientific and Applied Research",
+    "floor": "2",
+    "room": "",
+    "phone": "1783",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_47.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 48,
+  "fields": {
+    "department": 15,
+    "full_name_uz": "Turabov Vaxid Turabovich",
+    "full_name_ru": "Турабов Вахид Турабович",
+    "full_name_en": "Turabov Vaxid Turabovich",
+    "position_uz": "Huquqni muhofaza qilish faoliyati muammolarini ilmiy-amaliy tadqiq etish markazi prokurori",
+    "position_ru": "Прокурор Центра научно-прикладных исследований проблем правоохранительной деятельности",
+    "position_en": "Prosecutor of the Center for Scientific and Applied Research",
+    "floor": "2",
+    "room": "",
+    "phone": "1784",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_48.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 49,
+  "fields": {
+    "department": 15,
+    "full_name_uz": "Raxmanov Elbek Xusniddinovich",
+    "full_name_ru": "Рахманов Элбек Хусниддинович",
+    "full_name_en": "Raxmonov Elbek Xusniddinovich",
+    "position_uz": "Huquqni muhofaza qilish faoliyati muammolarini ilmiy-amaliy tadqiq etish markazi prokurori",
+    "position_ru": "Прокурор Центра научно-прикладных исследований проблем правоохранительной деятельности",
+    "position_en": "Prosecutor of the Center for Scientific and Applied Research",
+    "floor": "2",
+    "room": "",
+    "phone": "1782",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_49.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 50,
+  "fields": {
+    "department": 16,
+    "full_name_uz": "Shayzakov Shodiyar Ibragimovich",
+    "full_name_ru": "Шайзаков Шодияр Ибрагимович",
+    "full_name_en": "Shayzaqov Shodiyar Ibragimovich",
+    "position_uz": "Ilmiy innovatsion tadqiqotlarni muvofiqlashtirish va ilmiy xodimlarni tayyorlash markazi boshligʼi",
+    "position_ru": "Начальник Центра координации научно-инновационных исследований и подготовки научных кадров",
+    "position_en": "Head of the Center for Coordination of Scientific and Innovative Research and Training of Scientific Personnel",
+    "floor": "4",
+    "room": "",
+    "phone": "1752",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_50.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 51,
+  "fields": {
+    "department": 16,
+    "full_name_uz": "Shodiev Gʼulom Maxammatovich",
+    "full_name_ru": "Шодиев Ғулом Махамматович",
+    "full_name_en": "Shodiyev G'ulom Maxammatovich",
+    "position_uz": "Ilmiy innovatsion tadqiqotlarni muvofiqlashtirish va ilmiy xodimlarni tayyorlash markazi katta prokurori",
+    "position_ru": "Старший прокурор Центра координации научно-инновационных исследований и подготовки научных кадров",
+    "position_en": "Senior Prosecutor of the Center for Coordination of Scientific Research and Training",
+    "floor": "4",
+    "room": "",
+    "phone": "1730",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_51.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 52,
+  "fields": {
+    "department": 16,
+    "full_name_uz": "Radjapov Doniyor Baxtiyarovich",
+    "full_name_ru": "Раджапов Дониёр Бахтиярович",
+    "full_name_en": "Rajapov Doniyor Baxtiyarovich",
+    "position_uz": "Ilmiy innovatsion tadqiqotlarni muvofiqlashtirish va ilmiy xodimlarni tayyorlash markazi prokurori",
+    "position_ru": "Прокурор Центра координации научно-инновационных исследований и подготовки научных кадров",
+    "position_en": "Prosecutor of the Center for Coordination of Scientific Research and Training",
+    "floor": "4",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_52.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 53,
+  "fields": {
+    "department": 16,
+    "full_name_uz": "Quchqarov Xamidullo Аbdurasulovich",
+    "full_name_ru": "Қучқаров Хамидулло Абдурасулович",
+    "full_name_en": "Quchqarov Xamidullo Abdurasulovich",
+    "position_uz": "Ilmiy innovatsion tadqiqotlarni muvofiqlashtirish va ilmiy xodimlarni tayyorlash markazi prokurori",
+    "position_ru": "Прокурор Центра координации научно-инновационных исследований и подготовки научных кадров",
+    "position_en": "Prosecutor of the Center for Coordination of Scientific Research and Training",
+    "floor": "4",
+    "room": "",
+    "phone": "1791",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_53.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 54,
+  "fields": {
+    "department": 16,
+    "full_name_uz": "Xolmirzaev Ramazon Ravshan oʼgʼli",
+    "full_name_ru": "Холмирзаев Рамазон Равшан ўғли",
+    "full_name_en": "Xolmirzayev Ramazon Ravshan o'g'li",
+    "position_uz": "Ilmiy innovatsion tadqiqotlarni muvofiqlashtirish va ilmiy xodimlarni tayyorlash markazi texnigi",
+    "position_ru": "Техник Центра координации научно-инновационных исследований и подготовки научных кадров",
+    "position_en": "Technician of the Center for Coordination of Scientific Research and Training",
+    "floor": "4",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_54.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 55,
+  "fields": {
+    "department": 17,
+    "full_name_uz": "Tursunbekov Xudayberdi",
+    "full_name_ru": "Турсунбеков Худайберди",
+    "full_name_en": "Tursunbekov Xudayberdi",
+    "position_uz": "Korruptsiyaga qarshi kurashish ilmiy-taʼlim markazi boshligʼi",
+    "position_ru": "Начальник Научно-образовательного центра по противодействию коррупции",
+    "position_en": "Head of the Scientific and Educational Anti-Corruption Center",
+    "floor": "2",
+    "room": "",
+    "phone": "1736",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_55.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 56,
+  "fields": {
+    "department": 17,
+    "full_name_uz": "Safarov Temur Uktamovich",
+    "full_name_ru": "Сафаров Темур Уктамович",
+    "full_name_en": "Safarov Temur Uktamovich",
+    "position_uz": "Korruptsiyaga qarshi kurashish ilmiy-taʼlim markazi katta prokurori",
+    "position_ru": "Старший прокурор Научно-образовательного центра по противодействию коррупции",
+    "position_en": "Senior Prosecutor of the Scientific and Educational Anti-Corruption Center",
+    "floor": "2",
+    "room": "",
+    "phone": "1718",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_56.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 57,
+  "fields": {
+    "department": 17,
+    "full_name_uz": "Borsieva Zamirat Xasanbekovna",
+    "full_name_ru": "Борсиева Замират Хасанбековна",
+    "full_name_en": "Borsiyeva Zamirat Xasanbekovna",
+    "position_uz": "Korruptsiyaga qarshi kurashish ilmiy-taʼlim markazi prokurori",
+    "position_ru": "Прокурор Научно-образовательного центра по противодействию коррупции",
+    "position_en": "Prosecutor of the Scientific and Educational Anti-Corruption Center",
+    "floor": "2",
+    "room": "",
+    "phone": "1793",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_57.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 58,
+  "fields": {
+    "department": 17,
+    "full_name_uz": "Аhmadov Аlimardon Аxmadovich",
+    "full_name_ru": "Аҳмадов Алимардон Ахмадович",
+    "full_name_en": "Ahmadov Alimardon Ahmadovich",
+    "position_uz": "Korruptsiyaga qarshi kurashish ilmiy-taʼlim markazi prokurori",
+    "position_ru": "Прокурор Научно-образовательного центра по противодействию коррупции",
+    "position_en": "Prosecutor of the Scientific and Educational Anti-Corruption Center",
+    "floor": "2",
+    "room": "",
+    "phone": "1932",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_58.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 59,
+  "fields": {
+    "department": 17,
+    "full_name_uz": "Yazdonov Ixtiyor Baxtiyorovich",
+    "full_name_ru": "Яздонов Ихтиёр Бахтиёрович",
+    "full_name_en": "Yazdonov Ixtiyor Baxtiyorovich",
+    "position_uz": "Korruptsiyaga qarshi kurashish ilmiy-taʼlim markazi ish yuritish boʼyicha inspektori",
+    "position_ru": "Инспектор по делопроизводству Научно-образовательного центра по противодействию коррупции",
+    "position_en": "Clerical Work Inspector of the Anti-Corruption Center",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_59.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 60,
+  "fields": {
+    "department": 18,
+    "full_name_uz": "Xakimov Nodir Nazarovich",
+    "full_name_ru": "Хакимов Нодир Назарович",
+    "full_name_en": "Xakimov Nodir Nazarovich",
+    "position_uz": "Buxgalteriya va reja-moliya boʼlimi boshligʼi",
+    "position_ru": "Начальник отдела бухгалтерии и планово-финансового отдела",
+    "position_en": "Head of the Accounting, Planning, and Finance Department",
+    "floor": "2",
+    "room": "",
+    "phone": "1740",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_60.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 61,
+  "fields": {
+    "department": 18,
+    "full_name_uz": "Usmonova Xulkara Аskarovna",
+    "full_name_ru": "Усмонова Хулкара Аскаровна",
+    "full_name_en": "Usmonova Xulkara Askarovna",
+    "position_uz": "Buxgalteriya va reja-moliya boʼlimi katta prokurori",
+    "position_ru": "Старший прокурор отдела бухгалтерии и планово-финансового отдела",
+    "position_en": "Senior Prosecutor of the Accounting, Planning, and Finance Department",
+    "floor": "2",
+    "room": "",
+    "phone": "1743",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_61.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 62,
+  "fields": {
+    "department": 18,
+    "full_name_uz": "Rajabova Feruza Ravshanovna",
+    "full_name_ru": "Ражабова Феруза Равшановна",
+    "full_name_en": "Rajabova Feruza Ravshanovna",
+    "position_uz": "Buxgalteriya va reja-moliya boʼlimi prokurori",
+    "position_ru": "Прокурор отдела бухгалтерии и планово-финансового отдела",
+    "position_en": "Prosecutor of the Accounting, Planning, and Finance Department",
+    "floor": "2",
+    "room": "",
+    "phone": "1734",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_62.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 63,
+  "fields": {
+    "department": 18,
+    "full_name_uz": "Nigʼmatov Raxmatilla Fatxulla oʼgʼli",
+    "full_name_ru": "Ниғматов Рахматилла Фатхулла ўғли",
+    "full_name_en": "Nig'matov Raxmatilla Fatxulla o'g'li",
+    "position_uz": "Buxgalteriya va reja-moliya boʼlimi gʼaznachisi",
+    "position_ru": "Казначей отдела бухгалтерии и планово-финансового отдела",
+    "position_en": "Treasurer of the Accounting, Planning, and Finance Department",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_63.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 64,
+  "fields": {
+    "department": 18,
+    "full_name_uz": "Dedakuzieva Zoxida Boxodirovna",
+    "full_name_ru": "Дедакузиева Зохида Боходировна",
+    "full_name_en": "Dedakuziyeva Zoxida Boxodirovna",
+    "position_uz": "Buxgalteriya va reja-moliya boʼlimi Ish yuritish boʼyicha inspektori",
+    "position_ru": "Инспектор по делопроизводству отдела бухгалтерии и планово-финансового отдела",
+    "position_en": "Clerical Work Inspector of the Accounting, Planning, and Finance Department",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_64.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 65,
+  "fields": {
+    "department": 19,
+    "full_name_uz": "Nematjanov Zafar Israiljanovich",
+    "full_name_ru": "Нематжанов Зафар Исраилжанович",
+    "full_name_en": "Nematjanov Zafar Isroiljanovich",
+    "position_uz": "Ishlar boshqaruvi boʼlimi boshligʼi",
+    "position_ru": "Начальник хозяйственного отдела (Управления делами)",
+    "position_en": "Head of the Maintenance and General Services Department (Management of Affairs)",
+    "floor": "2",
+    "room": "",
+    "phone": "1733",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_65.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 66,
+  "fields": {
+    "department": 19,
+    "full_name_uz": "Xudayberdiev Xayotbek Gulommirzaevich",
+    "full_name_ru": "Худайбердиев Хаётбек Гуломмирзаевич",
+    "full_name_en": "Xudayberdiyev Xayotbek G'ulommirzayevich",
+    "position_uz": "Ishlar boshqaruvi boʼlimi katta prokurori",
+    "position_ru": "Старший прокурор хозяйственного отдела",
+    "position_en": "Senior Prosecutor of the Maintenance and General Services Department",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_66.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 67,
+  "fields": {
+    "department": 19,
+    "full_name_uz": "Аripov Muradjan Madjitovich",
+    "full_name_ru": "Арипов Мураджан Маджитович",
+    "full_name_en": "Aripov Muradjan Madjitovich",
+    "position_uz": "Ishlar boshqaruvi boʼlimi omborchisi",
+    "position_ru": "Кладовщик хозяйственного отдела",
+    "position_en": "Warehouse Keeper of the Maintenance and General Services Department",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": ""
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 68,
+  "fields": {
+    "department": 19,
+    "full_name_uz": "Mirzaitova Zuxra Mansurdjanovna",
+    "full_name_ru": "Мирзаитова Зухра Мансурджановна",
+    "full_name_en": "Mirzaitova Zuxra Mansurjanovna",
+    "position_uz": "Ishlar boshqaruvi boʼlimi komendanti",
+    "position_ru": "Комендант хозяйственного отдела",
+    "position_en": "Commandant of the Maintenance and General Services Department",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_68.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 69,
+  "fields": {
+    "department": 19,
+    "full_name_uz": "Qosimova Navbaxor Xxx",
+    "full_name_ru": "Қосимова Навбахор Xxx",
+    "full_name_en": "Qosimova Navbaxor Xxx",
+    "position_uz": "Ishlar boshqaruvi boʼlimi komendanti",
+    "position_ru": "Комендант хозяйственного отдела",
+    "position_en": "Commandant of the Maintenance and General Services Department",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_69.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 70,
+  "fields": {
+    "department": 19,
+    "full_name_uz": "Yuldashov Аxmadjon Farxodxojaevich",
+    "full_name_ru": "Юлдашов Ахмаджон Фарходхожаевич",
+    "full_name_en": "Yuldashov Axmadjon Farxodxo'jayevich",
+    "position_uz": "Ishlar boshqaruvi boʼlimi chilangar-santexnik",
+    "position_ru": "Слесарь-сантехник хозяйственного отдела",
+    "position_en": "Plumber-Technician of the Maintenance and General Services Department",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_70.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 71,
+  "fields": {
+    "department": 19,
+    "full_name_uz": "Rustamov Doniyor Botirovich",
+    "full_name_ru": "Рустамов Дониёр Ботирович",
+    "full_name_en": "Rustamov Doniyor Botirovich",
+    "position_uz": "Ishlar boshqaruvi boʼlimi chilangar-santexnik",
+    "position_ru": "Слесарь-сантехник хозяйственного отдела",
+    "position_en": "Plumber-Technician of the Maintenance and General Services Department",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_71.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 72,
+  "fields": {
+    "department": 19,
+    "full_name_uz": "Xaytullaev Kamoliddin Sharobitdinovich",
+    "full_name_ru": "Хайтуллаев Камолиддин Шаробитдинович",
+    "full_name_en": "Xaytullayev Kamoliddin Sharobiddinovich",
+    "position_uz": "Ishlar boshqaruvi boʼlimi elektromontyori",
+    "position_ru": "Электромонтер хозяйственного отдела",
+    "position_en": "Electrician of the Maintenance and General Services Department",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_72.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 73,
+  "fields": {
+    "department": 19,
+    "full_name_uz": "Shukurova Xilola Аgzamovna",
+    "full_name_ru": "Шукурова Хилола Агзамовна",
+    "full_name_en": "Shuqurova Xilola Agzamovna",
+    "position_uz": "Ishlar boshqaruvi boʼlimi farroshi",
+    "position_ru": "Уборщица хозяйственного отдела",
+    "position_en": "Cleaner of the Maintenance and General Services Department",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_73.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 74,
+  "fields": {
+    "department": 19,
+    "full_name_uz": "Toshmatova Feruza Ismaildjanovna",
+    "full_name_ru": "Тошматова Феруза Исмаилджановна",
+    "full_name_en": "Toshmatova Feruza Ismaildjanovna",
+    "position_uz": "Ishlar boshqaruvi boʼlimi farroshi",
+    "position_ru": "Уборщица хозяйственного отдела",
+    "position_en": "Cleaner of the Maintenance and General Services Department",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_74.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 75,
+  "fields": {
+    "department": 19,
+    "full_name_uz": "Toshmatova Shaxzoda Shuxratovna",
+    "full_name_ru": "Тошматова Шахзода Шухратовна",
+    "full_name_en": "Toshmatova Shahzoda Shuxratovna",
+    "position_uz": "Ishlar boshqaruvi boʼlimi farroshi",
+    "position_ru": "Уборщица хозяйственного отдела",
+    "position_en": "Cleaner of the Maintenance and General Services Department",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_75.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 76,
+  "fields": {
+    "department": 19,
+    "full_name_uz": "Аbdisatarova Zilola Izatilla qizi",
+    "full_name_ru": "Абдисатарова Зилола Изатилла қизи",
+    "full_name_en": "Abdisatarova Zilola Izatillaqizi",
+    "position_uz": "Ishlar boshqaruvi boʼlimi farroshi",
+    "position_ru": "Уборщица хозяйственного отдела",
+    "position_en": "Cleaner of the Maintenance and General Services Department",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": ""
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 77,
+  "fields": {
+    "department": 19,
+    "full_name_uz": "Kabildjanova Nigora Tolibjanovna",
+    "full_name_ru": "Кабилджанова Нигора Толибжановна",
+    "full_name_en": "Kabildjanova Nigora Tolibjanovna",
+    "position_uz": "Ishlar boshqaruvi boʼlimi farroshi",
+    "position_ru": "Уборщица хозяйственного отдела",
+    "position_en": "Cleaner of the Maintenance and General Services Department",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_77.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 78,
+  "fields": {
+    "department": 19,
+    "full_name_uz": "Muydinova Mukarram Raxmatovna",
+    "full_name_ru": "Муйдинова Мукаррам Рахматовна",
+    "full_name_en": "Muydinova Mukarram Raxmatovna",
+    "position_uz": "Ishlar boshqaruvi boʼlimi farroshi",
+    "position_ru": "Уборщица хозяйственного отдела",
+    "position_en": "Cleaner of the Maintenance and General Services Department",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_78.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 79,
+  "fields": {
+    "department": 19,
+    "full_name_uz": "Аdilov Zavkiy Kabilovich",
+    "full_name_ru": "Адилов Завкий Кабилович",
+    "full_name_en": "Adilov Zavkiy Kabilovich",
+    "position_uz": "Ishlar boshqaruvi boʼlimi texnigi",
+    "position_ru": "Техник хозяйственного отдела",
+    "position_en": "Technician of the Maintenance and General Services Department",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_79.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 80,
+  "fields": {
+    "department": 19,
+    "full_name_uz": "Djoraeva Kamola Gafurdjanovna",
+    "full_name_ru": "Джораева Камола Гафурджановна",
+    "full_name_en": "Jorayeva Kamola G'afurdjanovna",
+    "position_uz": "Ishlar boshqaruvi boʼlimi Hovli supuruvchisi",
+    "position_ru": "Дворник хозяйственного отдела",
+    "position_en": "Yard Sweeper of the Maintenance and General Services Department",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_80.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 81,
+  "fields": {
+    "department": 19,
+    "full_name_uz": "Ruzmetov Аxmadjan Djuraevich",
+    "full_name_ru": "Рузметов Ахмаджан Джураевич",
+    "full_name_en": "Ruzmetov Axmadjan Djurayevich",
+    "position_uz": "Ishlar boshqaruvi boʼlimi texnigi",
+    "position_ru": "Техник хозяйственного отдела",
+    "position_en": "Technician of the Maintenance and General Services Department",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": ""
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 82,
+  "fields": {
+    "department": 19,
+    "full_name_uz": "Ikramov Аbdivaxab Maxkamovich",
+    "full_name_ru": "Икрамов Абдивахаб Махкамович",
+    "full_name_en": "Ikramov Abdivaxab Maxkamovich",
+    "position_uz": "Ishlar boshqaruvi boʼlimi texnigi",
+    "position_ru": "Техник хозяйственного отдела",
+    "position_en": "Technician of the Maintenance and General Services Department",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_82.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 83,
+  "fields": {
+    "department": 19,
+    "full_name_uz": "Mirzaxmedov Аbdishkur Аbdurazakovich",
+    "full_name_ru": "Мирзахмедов Абдишкур Абдуразакович",
+    "full_name_en": "Mirzaxmedov Abdishkur Abdurazaqovich",
+    "position_uz": "Ishlar boshqaruvi boʼlimi texnigi",
+    "position_ru": "Техник хозяйственного отдела",
+    "position_en": "Technician of the Maintenance and General Services Department",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_83.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 84,
+  "fields": {
+    "department": 19,
+    "full_name_uz": "Kasimxodjaev Salaxitdin Kamardinovich",
+    "full_name_ru": "Касимходжаев Салахитдин Камардинович",
+    "full_name_en": "Kasimxo'jayev Salaxitdin Kamardinovich",
+    "position_uz": "Ishlar boshqaruvi boʼlimi texnigi",
+    "position_ru": "Техник хозяйственного отдела",
+    "position_en": "Technician of the Maintenance and General Services Department",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_84.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 85,
+  "fields": {
+    "department": 19,
+    "full_name_uz": "Shoilyosov Shorasul Shojalil oʼgʼli",
+    "full_name_ru": "Шоилёсов Шорасул Шожалил ўғли",
+    "full_name_en": "Shoilyosov Shorasul Shojalil o'g'li",
+    "position_uz": "Ishlar boshqaruvi boʼlimi texnigi",
+    "position_ru": "Техник хозяйственного отдела",
+    "position_en": "Technician of the Maintenance and General Services Department",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_85.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 86,
+  "fields": {
+    "department": 19,
+    "full_name_uz": "Yoʼldoshov Jasur Bohodir oʼgʼli",
+    "full_name_ru": "Йўлдошов Жасур Боҳодир ўғли",
+    "full_name_en": "Yo'ldoshov Jasur Bohodir o'g'li",
+    "position_uz": "Ishlar boshqaruvi boʼlimi Yotoqxona talabalar turar joyi mudiri",
+    "position_ru": "Заведующий студенческим общежитием",
+    "position_en": "Manager of the Student Dormitory",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_86.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 87,
+  "fields": {
+    "department": 19,
+    "full_name_uz": "Mardanov Xojiakbar Maxmud oʼgʼli",
+    "full_name_ru": "Марданов Хожиакбар Махмуд ўғли",
+    "full_name_en": "Mardonov Xo'jiakbar Maxmud o'g'li",
+    "position_uz": "Ishlar boshqaruvi boʼlimi Fuqaro muhofazasi va favqulodda vaziyatlar boʼyicha 1-toifali muhandisi",
+    "position_ru": "Инженер 1-й категории по гражданской защите и чрезвычайным ситуациям",
+    "position_en": "Category 1 Engineer for Civil Defense and Emergency Situations",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_87.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 88,
+  "fields": {
+    "department": 19,
+    "full_name_uz": "Maxmudova Shaxlo Raxmadjanovna",
+    "full_name_ru": "Махмудова Шахло Рахмаджановна",
+    "full_name_en": "Maxmudova Shahlo Raxmadjanovna",
+    "position_uz": "Ishlar boshqaruvi boʼlimi Yotoqxona talabalar turar joyi mudiri",
+    "position_ru": "Заведующий студенческим общежитием",
+    "position_en": "Manager of the Student Dormitory",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_88.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 89,
+  "fields": {
+    "department": 20,
+    "full_name_uz": "Narkulova Gulnoz Tadjibayevna",
+    "full_name_ru": "Наркулова Гулноз Таджибайевна",
+    "full_name_en": "Narqulova Gulnoz Tajibayevna",
+    "position_uz": "Ishlar boshqaruvi boʼlimi Yotoqxona talabalar turar joyi mudiri",
+    "position_ru": "Заведующий студенческим общежитием",
+    "position_en": "Manager of the Student Dormitory",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_89.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 90,
+  "fields": {
+    "department": 20,
+    "full_name_uz": "Nazarov Farxodjon Аbduvaxobovich",
+    "full_name_ru": "Назаров Фарходжон Абдувахобович",
+    "full_name_en": "Nazarov Farxodjon Abduvaxobovich",
+    "position_uz": "Tahririy nashriyot boʼlimi boshligʼi",
+    "position_ru": "Начальник редакционно-издательского отдела",
+    "position_en": "Head of the Editorial and Publishing Department",
+    "floor": "",
+    "room": "",
+    "phone": "1757",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_90.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 91,
+  "fields": {
+    "department": 20,
+    "full_name_uz": "Аbdusamadov Furqatjon Zulpon oʼgʼli",
+    "full_name_ru": "Абдусамадов Фурқатжон Зулпон ўғли",
+    "full_name_en": "Abdusamadov Furqatjon Zulpon o'g'li",
+    "position_uz": "Tahririy nashriyot boʼlimi texnigi",
+    "position_ru": "Техник редакционно-издательского отдела",
+    "position_en": "Technician of the Editorial and Publishing Department",
+    "floor": "",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_91.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 92,
+  "fields": {
+    "department": 20,
+    "full_name_uz": "Mamadalieva Shirinaxon Nigmatovna",
+    "full_name_ru": "Мамадалиева Ширинахон Нигматовна",
+    "full_name_en": "Mamadaliyeva Shirinaxon Nig'matovna",
+    "position_uz": "Tahririy nashriyot boʼlimi texnigi",
+    "position_ru": "Техник редакционно-издательского отдела",
+    "position_en": "Technician of the Editorial and Publishing Department",
+    "floor": "",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_92.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 93,
+  "fields": {
+    "department": 20,
+    "full_name_uz": "Rashidova Nargiza Аbdullaevna",
+    "full_name_ru": "Рашидова Наргиза Абдуллаевна",
+    "full_name_en": "Rashidova Nargiza Abdullayevna",
+    "position_uz": "Tahririy nashriyot boʼlimi АRM 1-toifali kutubxonachisi",
+    "position_ru": "Библиотекарь 1-й категории ИРЦ (Информационно-ресурсного центра)",
+    "position_en": "Category 1 Librarian of the Information Resource Center (IRC)",
+    "floor": "",
+    "room": "",
+    "phone": "1769",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_93.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 94,
+  "fields": {
+    "department": 20,
+    "full_name_uz": "Sotvoldieva Barno Xakimjanovna",
+    "full_name_ru": "Сотволдиева Барно Хакимжановна",
+    "full_name_en": "Sotvoldiyeva Barno Xakimjanovna",
+    "position_uz": "Tahririy nashriyot boʼlimi АRM 1-toifali kutubxonachisi",
+    "position_ru": "Библиотекарь 1-й категории ИРЦ",
+    "position_en": "Category 1 Librarian of the IRC",
+    "floor": "",
+    "room": "",
+    "phone": "1769",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_94.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 95,
+  "fields": {
+    "department": 20,
+    "full_name_uz": "Raxmatullaev Xakimjon Ganidjanovich",
+    "full_name_ru": "Рахматуллаев Хакимжон Ганиджанович",
+    "full_name_en": "Raxmatullayev Xakimjon G'anijanovich",
+    "position_uz": "Tahririy nashriyot boʼlimi АRM 1-toifali kutubxonachisi",
+    "position_ru": "Библиотекарь 1-й категории ИРЦ",
+    "position_en": "Category 1 Librarian of the IRC",
+    "floor": "",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_95.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 96,
+  "fields": {
+    "department": 21,
+    "full_name_uz": "Xudaykulova Shoxida Suyarkulovna",
+    "full_name_ru": "Худайкулова Шохида Суяркуловна",
+    "full_name_en": "Xudayqulova Shoxida Suyarqulovna",
+    "position_uz": "Tahririy nashriyot boʼlimi АRM 1-toifali kutubxonachisi",
+    "position_ru": "Библиотекарь 1-й категории ИРЦ",
+    "position_en": "Category 1 Librarian of the IRC",
+    "floor": "",
+    "room": "",
+    "phone": "",
+    "image": ""
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 97,
+  "fields": {
+    "department": 21,
+    "full_name_uz": "Gʼiyosov Bilolbek Jumazoda",
+    "full_name_ru": "Ғиёсов Билолбек Жумазода",
+    "full_name_en": "G'iyosov Bilolbek Jumazoda",
+    "position_uz": "Аxborot-kommunikatsiya texnologiyalari va axborot xavfsizligini taʼminlash boʼlimi boshligʼi",
+    "position_ru": "Начальник отдела информационно-коммуникационных технологий и обеспечения информационной безопасности",
+    "position_en": "Head of the Information and Communication Technologies (ICT) and Information Security Department",
+    "floor": "1",
+    "room": "",
+    "phone": "1919",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_97.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 98,
+  "fields": {
+    "department": 21,
+    "full_name_uz": "Raxmatov Xojiakbar Shovkat oʼgʼli",
+    "full_name_ru": "Рахматов Хожиакбар Шовкат ўғли",
+    "full_name_en": "Raxmatov Xo'jiakbar Shovkat o'g'li",
+    "position_uz": "Аxborot-kommunikatsiya texnologiyalari va axborot xavfsizligini taʼminlash boʼlimi prokurori",
+    "position_ru": "Прокурор отдела ИКТ и обеспечения информационной безопасности",
+    "position_en": "Prosecutor of the ICT and Information Security Department",
+    "floor": "1",
+    "room": "",
+    "phone": "1997",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_98.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 99,
+  "fields": {
+    "department": 21,
+    "full_name_uz": "Gʼofforov Suxrob Begali oʼgʼli",
+    "full_name_ru": "Ғоффоров Сухроб Бегали ўғли",
+    "full_name_en": "G'offorov Suxrob Begali o'g'li",
+    "position_uz": "Аxborot-kommunikatsiya texnologiyalari va axborot xavfsizligini taʼminlash boʼlimi prokurori",
+    "position_ru": "Прокурор отдела ИКТ и обеспечения информационной безопасности",
+    "position_en": "Prosecutor of the ICT and Information Security Department",
+    "floor": "1",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_99.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 100,
+  "fields": {
+    "department": 21,
+    "full_name_uz": "Аlimov Jaxongir Xolmamat oʼgʼli",
+    "full_name_ru": "Алимов Жахонгир Холмамат ўғли",
+    "full_name_en": "Alimov Jahongir Xolmamat o'g'li",
+    "position_uz": "Аxborot-kommunikatsiya texnologiyalari va axborot xavfsizligini taʼminlash boʼlimi katta prokurori",
+    "position_ru": "Старший прокурор отдела ИКТ и обеспечения информационной безопасности",
+    "position_en": "Senior Prosecutor of the ICT and Information Security Department",
+    "floor": "1",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_100.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 101,
+  "fields": {
+    "department": 22,
+    "full_name_uz": "Nuraliev Behzod Muzaffarovich",
+    "full_name_ru": "Нуралиев Беҳзод Музаффарович",
+    "full_name_en": "Nuraliyev Behzo d Muzaffarovich",
+    "position_uz": "Аxborot-kommunikatsiya texnologiyalari va axborot xavfsizligini taʼminlash boʼlimi texnigi",
+    "position_ru": "Техник отдела ИКТ и обеспечения информационной безопасности",
+    "position_en": "Technician of the ICT and Information Security Department",
+    "floor": "1",
+    "room": "",
+    "phone": "1988",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_101.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 102,
+  "fields": {
+    "department": 22,
+    "full_name_uz": "Аzimov Аkmal Аtxamovich",
+    "full_name_ru": "Азимов Акмал Атхамович",
+    "full_name_en": "Azimov Akmal Atxamovich",
+    "position_uz": "Yoshlar bilan ishlash, maʼnaviyat va maʼrifat boʼlimi boshligʼi",
+    "position_ru": "Начальник отдела по работе с молодежью, духовности и просвещения",
+    "position_en": "Head of the Youth Affairs, Spirituality and Enlightenment Department",
+    "floor": "1",
+    "room": "",
+    "phone": "1958",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_102.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 103,
+  "fields": {
+    "department": 22,
+    "full_name_uz": "Gʼafurova Yulduz Pirimkulovna",
+    "full_name_ru": "Ғафурова Юлдуз Пиримкуловна",
+    "full_name_en": "G'afurova Yulduz Pirimqulovna",
+    "position_uz": "Yoshlar bilan ishlash, maʼnaviyat va maʼrifat boʼlimi tьyutori",
+    "position_ru": "Тьютор отдела по работе с молодежью",
+    "position_en": "Tutor of the Youth Affairs Department",
+    "floor": "1",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_103.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 104,
+  "fields": {
+    "department": 22,
+    "full_name_uz": "Qodirova Ziyodaxon Tohirjon qizi",
+    "full_name_ru": "Қодирова Зиёдахон Тоҳиржон қизи",
+    "full_name_en": "Qodirova Ziyodaxon Tohirjonqizi",
+    "position_uz": "Yoshlar bilan ishlash, maʼnaviyat va maʼrifat boʼlimi tьyutori",
+    "position_ru": "Тьютор отдела по работе с молодежью",
+    "position_en": "Tutor of the Youth Affairs Department",
+    "floor": "1",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_104.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 105,
+  "fields": {
+    "department": 22,
+    "full_name_uz": "Zokirov Shahzod Qaxramon oʼgʼli",
+    "full_name_ru": "Зокиров Шаҳзод Қахрамон ўғли",
+    "full_name_en": "Zokirov Shahzod Qahramon o'g'li",
+    "position_uz": "Yoshlar bilan ishlash, maʼnaviyat va maʼrifat boʼlimi tьyutori",
+    "position_ru": "Тьютор отдела по работе с молодежью",
+    "position_en": "Tutor of the Youth Affairs Department",
+    "floor": "1",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_105.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 106,
+  "fields": {
+    "department": 22,
+    "full_name_uz": "Soatmurodov Erkin Аbdumalik oʼgʼli",
+    "full_name_ru": "Соатмуродов Эркин Абдумалик ўғли",
+    "full_name_en": "Soatmurodov Erkin Abdumalik o'g'li",
+    "position_uz": "Yoshlar bilan ishlash, maʼnaviyat va maʼrifat boʼlimi tьyutori",
+    "position_ru": "Тьютор отдела по работе с молодежью",
+    "position_en": "Tutor of the Youth Affairs Department",
+    "floor": "1",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_106.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 107,
+  "fields": {
+    "department": 22,
+    "full_name_uz": "Tadjimurotov Turgʼunali Аzamatovich",
+    "full_name_ru": "Таджимуротов Турғунали Азаматович",
+    "full_name_en": "Tajimurotov Turg'unali Azamatovich",
+    "position_uz": "Yoshlar bilan ishlash, maʼnaviyat va maʼrifat boʼlimi tьyutori",
+    "position_ru": "Тьютор отдела по работе с молодежью",
+    "position_en": "Tutor of the Youth Affairs Department",
+    "floor": "1",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_107.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 108,
+  "fields": {
+    "department": 22,
+    "full_name_uz": "Mamasoliev Furqat Murod oʼgʼli",
+    "full_name_ru": "Мамасолиев Фурқат Мурод ўғли",
+    "full_name_en": "Mamasoliyev Furqat Murod o'g'li",
+    "position_uz": "Yoshlar bilan ishlash, maʼnaviyat va maʼrifat boʼlimi tьyutori",
+    "position_ru": "Тьютор отдела по работе с молодежью",
+    "position_en": "Tutor of the Youth Affairs Department",
+    "floor": "1",
+    "room": "",
+    "phone": "",
+    "image": ""
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 109,
+  "fields": {
+    "department": 22,
+    "full_name_uz": "Ermatov Shukrullo Xayrullo oʼgʼli",
+    "full_name_ru": "Эрматов Шукрулло Хайрулло ўғли",
+    "full_name_en": "Ermatov Shukrullo Xayrullo o'g'li",
+    "position_uz": "Yoshlar bilan ishlash, maʼnaviyat va maʼrifat boʼlimi tьyutori",
+    "position_ru": "Тьютор отдела по работе с молодежью",
+    "position_en": "Tutor of the Youth Affairs Department",
+    "floor": "1",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_109.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 110,
+  "fields": {
+    "department": 23,
+    "full_name_uz": "Muxitdinov Bobur Voxid oʼgʼli",
+    "full_name_ru": "Мухитдинов Бобур Вохид ўғли",
+    "full_name_en": "Muxitdinov Bobur Voxid o'g'li",
+    "position_uz": "Yoshlar bilan ishlash, maʼnaviyat va maʼrifat boʼlimi texnik hujjatlashtirish boʼyicha mutaxassis",
+    "position_ru": "Специалист по технической документации отдела по работе с молодежью",
+    "position_en": "Technical Documentation Specialist of the Youth Affairs Department",
+    "floor": "1",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_110.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 111,
+  "fields": {
+    "department": 23,
+    "full_name_uz": "Аkbutaev Аbror Аbduraxmanovich",
+    "full_name_ru": "Акбутаев Аброр Абдурахманович",
+    "full_name_en": "Akbutayev Abror Abduraxmonovich",
+    "position_uz": "Xalqaro hamkorlik boʼlimi boshligʼi",
+    "position_ru": "Начальник отдела международного сотрудничества",
+    "position_en": "Head of the International Cooperation Department",
+    "floor": "4",
+    "room": "",
+    "phone": "1939",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_111.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 112,
+  "fields": {
+    "department": 23,
+    "full_name_uz": "Turdiev Bobir Sobirovich",
+    "full_name_ru": "Турдиев Бобир Собирович",
+    "full_name_en": "Turdiyev Bobir Sobirovich",
+    "position_uz": "Xalqaro hamkorlik boʼlimi katta prokurori",
+    "position_ru": "Старший прокурор отдела международного сотрудничества",
+    "position_en": "Senior Prosecutor of the International Cooperation Department",
+    "floor": "4",
+    "room": "",
+    "phone": "1918",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_112.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 113,
+  "fields": {
+    "department": 24,
+    "full_name_uz": "Xamidullina Diana Salavatovna",
+    "full_name_ru": "Хамидуллина Диана Салаватовна",
+    "full_name_en": "Xamidullina Diana Salavatovna",
+    "position_uz": "Xalqaro hamkorlik boʼlimi ish yuritish boʼyicha inspektori",
+    "position_ru": "Инспектор по делопроизводству отдела международного сотрудничества",
+    "position_en": "Clerical Work Inspector of the International Cooperation Department",
+    "floor": "4",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_113.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 114,
+  "fields": {
+    "department": 25,
+    "full_name_uz": "Sayfulov Rustam Аmirovich",
+    "full_name_ru": "Сайфулов Рустам Амирович",
+    "full_name_en": "Sayfulov Rustam Amirovich",
+    "position_uz": "Loyiha boshqaruvi boʼlimi boshligʼi",
+    "position_ru": "Начальник отдела управления проектами",
+    "position_en": "Head of the Project Management Department",
+    "floor": "4",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_114.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 115,
+  "fields": {
+    "department": 25,
+    "full_name_uz": "Karimov Xurshid Аkramovich",
+    "full_name_ru": "Каримов Хуршид Акрамович",
+    "full_name_en": "Karimov Xurshid Akramovich",
+    "position_uz": "Jinoyat huquqi va kriminologiya kafedrasi boshligʼi",
+    "position_ru": "Начальник кафедры уголовного права и криминологии",
+    "position_en": "Head of the Department of Criminal Law and Criminology",
+    "floor": "3",
+    "room": "",
+    "phone": "1753",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_115.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 116,
+  "fields": {
+    "department": 25,
+    "full_name_uz": "Аbduraxmanov Аzizbek Uralovich",
+    "full_name_ru": "Абдурахманов Азизбек Уралович",
+    "full_name_en": "Abduraxmonov Azizbek Uralovich",
+    "position_uz": "Jinoyat huquqi va kriminologiya kafedrasi katta oʼqituvchi",
+    "position_ru": "Старший преподаватель кафедры уголовного права и криминологии",
+    "position_en": "Senior Lecturer of the Department of Criminal Law and Criminology",
+    "floor": "3",
+    "room": "",
+    "phone": "1942",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_116.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 117,
+  "fields": {
+    "department": 25,
+    "full_name_uz": "Xalmuratov Аybek Orazbaevich",
+    "full_name_ru": "Халмуратов Айбек Оразбаевич",
+    "full_name_en": "Xalmuratov Aybek Orazbayevich",
+    "position_uz": "Jinoyat huquqi va kriminologiya kafedrasi katta oʼqituvchi",
+    "position_ru": "Старший преподаватель кафедры уголовного права и криминологии",
+    "position_en": "Senior Lecturer of the Department of Criminal Law and Criminology",
+    "floor": "3",
+    "room": "",
+    "phone": "1779",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_117.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 118,
+  "fields": {
+    "department": 25,
+    "full_name_uz": "Matchanov Sherzod Kamilovich",
+    "full_name_ru": "Матчанов Шерзод Камилович",
+    "full_name_en": "Matchanov Sherzod Kamilovich",
+    "position_uz": "Jinoyat huquqi va kriminologiya kafedrasi katta oʼqituvchi",
+    "position_ru": "Старший преподаватель кафедры уголовного права и криминологии",
+    "position_en": "Senior Lecturer of the Department of Criminal Law and Criminology",
+    "floor": "3",
+    "room": "",
+    "phone": "1927",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_118.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 119,
+  "fields": {
+    "department": 25,
+    "full_name_uz": "Choriev Mirsardor Аbdimumin oʼgʼli",
+    "full_name_ru": "Чориев Мирсардор Абдимумин ўғли",
+    "full_name_en": "Choriyev Mirsardor Abdimumin o'g'li",
+    "position_uz": "Jinoyat huquqi va kriminologiya kafedrasi oʼqituvchi",
+    "position_ru": "Преподаватель кафедры уголовного права и криминологии",
+    "position_en": "Lecturer of the Department of Criminal Law and Criminology",
+    "floor": "3",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_119.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 120,
+  "fields": {
+    "department": 25,
+    "full_name_uz": "Mardanov Farxod Narzullaevich",
+    "full_name_ru": "Марданов Фарход Нарзуллаевич",
+    "full_name_en": "Mardonov Farxod Narzullayevich",
+    "position_uz": "Jinoyat huquqi va kriminologiya kafedrasi oʼqituvchi",
+    "position_ru": "Преподаватель кафедры уголовного права и криминологии",
+    "position_en": "Lecturer of the Department of Criminal Law and Criminology",
+    "floor": "3",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_120.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 121,
+  "fields": {
+    "department": 25,
+    "full_name_uz": "Oblakulov Davlat Oltinboevich",
+    "full_name_ru": "Облакулов Давлат Олтинбоевич",
+    "full_name_en": "Obloqulov Davlat Oltinboyevich",
+    "position_uz": "Jinoyat huquqi va kriminologiya kafedrasi oʼqituvchi",
+    "position_ru": "Преподаватель кафедры уголовного права и криминологии",
+    "position_en": "Lecturer of the Department of Criminal Law and Criminology",
+    "floor": "3",
+    "room": "",
+    "phone": "1925",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_121.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 122,
+  "fields": {
+    "department": 26,
+    "full_name_uz": "Rahmatov Izzat Ilxom oʼgʼli",
+    "full_name_ru": "Раҳматов Иззат Илхом ўғли",
+    "full_name_en": "Rahmatov Izzat Ilxom o'g'li",
+    "position_uz": "Jinoyat huquqi va kriminologiya kafedrasi kabinet mudiri",
+    "position_ru": "Заведующий кабинетом кафедры уголовного права и криминологии",
+    "position_en": "Manager of the Study Room for the Department of Criminal Law and Criminology",
+    "floor": "3",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_122.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 123,
+  "fields": {
+    "department": 26,
+    "full_name_uz": "Xikmatov Аziz Bobonarovich",
+    "full_name_ru": "Хикматов Азиз Бобонарович",
+    "full_name_en": "Xikmatov Aziz Bobonarovich",
+    "position_uz": "Dastlabki tergov va surishtiruv kafedrasi boshligʼi",
+    "position_ru": "Начальник кафедры предварительного следствия и дознания",
+    "position_en": "Head of the Department of Preliminary Investigation and Inquiry",
+    "floor": "3",
+    "room": "",
+    "phone": "1780",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_123.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 124,
+  "fields": {
+    "department": 26,
+    "full_name_uz": "Mirzaev Faxritdin Ziyatovich",
+    "full_name_ru": "Мирзаев Фахритдин Зиятович",
+    "full_name_en": "Mirzayev Faxritdin Ziyatovich",
+    "position_uz": "Dastlabki tergov va surishtiruv kafedrasi katta oʼqituvchi",
+    "position_ru": "Старший преподаватель кафедры предварительного следствия и дознания",
+    "position_en": "Senior Lecturer of the Department of Preliminary Investigation and Inquiry",
+    "floor": "3",
+    "room": "",
+    "phone": "",
+    "image": ""
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 125,
+  "fields": {
+    "department": 26,
+    "full_name_uz": "Boboxonov Аkramxon Аloxonovich",
+    "full_name_ru": "Бобохонов Акрамхон Алохонович",
+    "full_name_en": "Boboxonov Akramxon Aloxonovich",
+    "position_uz": "Dastlabki tergov va surishtiruv kafedrasi katta oʼqituvchi",
+    "position_ru": "Старший преподаватель кафедры предварительного следствия и дознания",
+    "position_en": "Senior Lecturer of the Department of Preliminary Investigation and Inquiry",
+    "floor": "3",
+    "room": "",
+    "phone": "1941",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_125.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 126,
+  "fields": {
+    "department": 26,
+    "full_name_uz": "Shomirzaev Saxodulla Xasanboevich",
+    "full_name_ru": "Шомирзаев Саходулла Хасанбоевич",
+    "full_name_en": "Shomirzayev Sahodulla Xasanboyevich",
+    "position_uz": "Dastlabki tergov va surishtiruv kafedrasi katta oʼqituvchi",
+    "position_ru": "Старший преподаватель кафедры предварительного следствия и дознания",
+    "position_en": "Senior Lecturer of the Department of Preliminary Investigation and Inquiry",
+    "floor": "3",
+    "room": "",
+    "phone": "1746",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_126.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 127,
+  "fields": {
+    "department": 26,
+    "full_name_uz": "Niyazov Аlavitdin Kuchkarovich",
+    "full_name_ru": "Ниязов Алавитдин Кучкарович",
+    "full_name_en": "Niyazov Alavitdin Kuchkarovich",
+    "position_uz": "Dastlabki tergov va surishtiruv kafedrasi katta oʼqituvchi",
+    "position_ru": "Старший преподаватель кафедры предварительного следствия и дознания",
+    "position_en": "Senior Lecturer of the Department of Preliminary Investigation and Inquiry",
+    "floor": "3",
+    "room": "",
+    "phone": "",
+    "image": ""
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 128,
+  "fields": {
+    "department": 26,
+    "full_name_uz": "Xodjabaeva Nargiza Isakovna",
+    "full_name_ru": "Ходжабаева Наргиза Исаковна",
+    "full_name_en": "Xodjabayeva Nargiza Isakovna",
+    "position_uz": "Dastlabki tergov va surishtiruv kafedrasi oʼqituvchi",
+    "position_ru": "Преподаватель кафедры предварительного следствия и дознания",
+    "position_en": "Lecturer of the Department of Preliminary Investigation and Inquiry",
+    "floor": "3",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_128.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 129,
+  "fields": {
+    "department": 26,
+    "full_name_uz": "Toshquvvatov Sindor Yangiboy oʼgʼli",
+    "full_name_ru": "Тошқувватов Синдор Янгибой ўғли",
+    "full_name_en": "Toshquvvatov Sindor Yangiboy o'g'li",
+    "position_uz": "Dastlabki tergov va surishtiruv kafedrasi oʼqituvchi",
+    "position_ru": "Преподаватель кафедры предварительного следствия и дознания",
+    "position_en": "Lecturer of the Department of Preliminary Investigation and Inquiry",
+    "floor": "3",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_129.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 130,
+  "fields": {
+    "department": 26,
+    "full_name_uz": "Аbdullaev Аkmaljon Yulchiboevich",
+    "full_name_ru": "Абдуллаев Акмалжон Юлчибоевич",
+    "full_name_en": "Abdullayev Akmaljon Yulchiboyevich",
+    "position_uz": "Dastlabki tergov va surishtiruv kafedrasi oʼqituvchi",
+    "position_ru": "Преподаватель кафедры предварительного следствия и дознания",
+    "position_en": "Lecturer of the Department of Preliminary Investigation and Inquiry",
+    "floor": "3",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_130.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 131,
+  "fields": {
+    "department": 27,
+    "full_name_uz": "Shavqiddinov Muxammadali Sharofiddin oʼgʼli",
+    "full_name_ru": "Шавқиддинов Мухаммадали Шарофиддин ўғли",
+    "full_name_en": "Shavqiddinov Muhammadali Sharofiddin o'g'li",
+    "position_uz": "Dastlabki tergov va surishtiruv kafedrasi kabinet mudiri",
+    "position_ru": "Заведующий кабинетом кафедры предварительного следствия и дознания",
+    "position_en": "Manager of the Study Room for the Department of Preliminary Investigation and Inquiry",
+    "floor": "3",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_131.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 132,
+  "fields": {
+    "department": 27,
+    "full_name_uz": "Аstanov Istam Rustamovich",
+    "full_name_ru": "Астанов Истам Рустамович",
+    "full_name_en": "Astanov Istam Rustamovich",
+    "position_uz": "Kriminalistika va sud ekspertizalari kafedrasi boshligʼi",
+    "position_ru": "Начальник кафедры криминалистики и судебных экспертиз",
+    "position_en": "Head of the Department of Criminalistics and Forensic Expertise",
+    "floor": "3",
+    "room": "",
+    "phone": "1766",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_132.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 133,
+  "fields": {
+    "department": 27,
+    "full_name_uz": "Mirzaxodjaev Davron Аtxamovich",
+    "full_name_ru": "Мирзаходжаев Даврон Атхамович",
+    "full_name_en": "Mirzaxo'jayev Davron Atxamovich",
+    "position_uz": "Kriminalistika va sud ekspertizalari kafedrasi katta oʼqituvchi",
+    "position_ru": "Старший преподаватель кафедры криминалистики и судебных экспертиз",
+    "position_en": "Senior Lecturer of the Department of Criminalistics and Forensic Expertise",
+    "floor": "3",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_133.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 134,
+  "fields": {
+    "department": 27,
+    "full_name_uz": "Karimov Iftixor Ibragimovich",
+    "full_name_ru": "Каримов Ифтихор Ибрагимович",
+    "full_name_en": "Karimov Iftixor Ibragimovich",
+    "position_uz": "Kriminalistika va sud ekspertizalari kafedrasi katta oʼqituvchi",
+    "position_ru": "Старший преподаватель кафедры криминалистики и судебных экспертиз",
+    "position_en": "Senior Lecturer of the Department of Criminalistics and Forensic Expertise",
+    "floor": "3",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_134.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 135,
+  "fields": {
+    "department": 27,
+    "full_name_uz": "Rajabov Bekzod Xalimovich",
+    "full_name_ru": "Ражабов Бекзод Халимович",
+    "full_name_en": "Rajabov Bekzod Xalimovich",
+    "position_uz": "Kriminalistika va sud ekspertizalari kafedrasi katta oʼqituvchi",
+    "position_ru": "Старший преподаватель кафедры криминалистики и судебных экспертиз",
+    "position_en": "Senior Lecturer of the Department of Criminalistics and Forensic Expertise",
+    "floor": "3",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_135.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 136,
+  "fields": {
+    "department": 27,
+    "full_name_uz": "Bahodirov Oʼtkirxon Baxriddinovich",
+    "full_name_ru": "Баҳодиров Ўткирхон Бахриддинович",
+    "full_name_en": "Bahodirov O'tkirxon Baxriddinovich",
+    "position_uz": "Kriminalistika va sud ekspertizalari kafedrasi katta oʼqituvchi",
+    "position_ru": "Старший преподаватель кафедры криминалистики и судебных экспертиз",
+    "position_en": "Senior Lecturer of the Department of Criminalistics and Forensic Expertise",
+    "floor": "3",
+    "room": "",
+    "phone": "1738",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_136.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 137,
+  "fields": {
+    "department": 27,
+    "full_name_uz": "Nabiev Gʼayrat Shuhrat oʼgʼli",
+    "full_name_ru": "Набиев Ғайрат Шуҳрат ўғли",
+    "full_name_en": "Nabiyev G'ayrat Shuhrat o'g'li",
+    "position_uz": "Kriminalistika va sud ekspertizalari kafedrasi oʼqituvchi",
+    "position_ru": "Преподаватель кафедры криминалистики и судебных экспертиз",
+    "position_en": "Lecturer of the Department of Criminalistics and Forensic Expertise",
+    "floor": "3",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_137.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 138,
+  "fields": {
+    "department": 27,
+    "full_name_uz": "Kaxramonov Аzizbek Sobirovich",
+    "full_name_ru": "Кахрамонов Азизбек Собирович",
+    "full_name_en": "Kaxramonov Azizbek Sobirovich",
+    "position_uz": "Kriminalistika va sud ekspertizalari kafedrasi oʼqituvchisi",
+    "position_ru": "Преподаватель кафедры криминалистики и судебных экспертиз",
+    "position_en": "Lecturer of the Department of Criminalistics and Forensic Expertise",
+    "floor": "3",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_138.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 139,
+  "fields": {
+    "department": 27,
+    "full_name_uz": "Botaev Murod Djumanshikovich",
+    "full_name_ru": "Ботаев Мурод Джуманшикович",
+    "full_name_en": "Botayev Murod Jumanshukovich",
+    "position_uz": "Kriminalistika va sud ekspertizalari kafedrasi oʼqituvchi",
+    "position_ru": "Преподаватель кафедры криминалистики и судебных экспертиз",
+    "position_en": "Lecturer of the Department of Criminalistics and Forensic Expertise",
+    "floor": "3",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_139.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 140,
+  "fields": {
+    "department": 28,
+    "full_name_uz": "Samatov Islomjon Nosirjonovich",
+    "full_name_ru": "Саматов Исломжон Носиржонович",
+    "full_name_en": "Samatov Islomjon Nosirjonovich",
+    "position_uz": "Kriminalistika va sud ekspertizalari kafedrasi kabinet mudiri",
+    "position_ru": "Заведующий кабинетом кафедры криминалистики и судебных экспертиз",
+    "position_en": "Manager of the Study Room for the Department of Criminalistics and Forensic Expertise",
+    "floor": "3",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_140.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 141,
+  "fields": {
+    "department": 28,
+    "full_name_uz": "Komilov Аvazbek Bokijonovich",
+    "full_name_ru": "Комилов Авазбек Бокижонович",
+    "full_name_en": "Komilov Avazbek Bokijonovich",
+    "position_uz": "Prokurorlik faoliyati va prokuror nazorati kafedrasi boshligʼi",
+    "position_ru": "Начальник кафедры прокурорской деятельности и прокурорского надзора",
+    "position_en": "Head of the Department of Prosecutorial Activity and Supervision",
+    "floor": "3",
+    "room": "",
+    "phone": "1768",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_141.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 142,
+  "fields": {
+    "department": 28,
+    "full_name_uz": "Аxmedov Аbdulatif Mashrapovich",
+    "full_name_ru": "Ахмедов Абдулатиф Машрапович",
+    "full_name_en": "Axmedov Abdulatif Mashrapovich",
+    "position_uz": "Prokurorlik faoliyati va prokuror nazorati kafedrasi katta oʼqituvchi",
+    "position_ru": "Старший преподаватель кафедры прокурорской деятельности и прокурорского надзора",
+    "position_en": "Senior Lecturer of the Department of Prosecutorial Activity and Supervision",
+    "floor": "3",
+    "room": "",
+    "phone": "1754",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_142.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 143,
+  "fields": {
+    "department": 28,
+    "full_name_uz": "Karimov Ulugbek Xakimdjonovich",
+    "full_name_ru": "Каримов Улугбек Хакимджонович",
+    "full_name_en": "Karimov Ulug'bek Xakimjonovich",
+    "position_uz": "Prokurorlik faoliyati va prokuror nazorati kafedrasi katta oʼqituvchi",
+    "position_ru": "Старший преподаватель кафедры прокурорской деятельности и прокурорского надзора",
+    "position_en": "Senior Lecturer of the Department of Prosecutorial Activity and Supervision",
+    "floor": "3",
+    "room": "",
+    "phone": "1792",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_143.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 144,
+  "fields": {
+    "department": 28,
+    "full_name_uz": "Tairova Gulmira Murodjonovna",
+    "full_name_ru": "Таирова Гулмира Муроджоновна",
+    "full_name_en": "Tairova Gulmira Murodjonovna",
+    "position_uz": "Prokurorlik faoliyati va prokuror nazorati kafedrasi katta oʼqituvchi",
+    "position_ru": "Старший преподаватель кафедры прокурорской деятельности и прокурорского надзора",
+    "position_en": "Senior Lecturer of the Department of Prosecutorial Activity and Supervision",
+    "floor": "3",
+    "room": "",
+    "phone": "1772",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_144.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 145,
+  "fields": {
+    "department": 28,
+    "full_name_uz": "Usmonov Mansurbek Muxammadjonovich",
+    "full_name_ru": "Усмонов Мансурбек Мухаммаджонович",
+    "full_name_en": "Usmonov Mansurbek Muhammadjonovich",
+    "position_uz": "Prokurorlik faoliyati va prokuror nazorati kafedrasi oʼqituvchi",
+    "position_ru": "Преподаватель кафедры прокурорской деятельности и прокурорского надзора",
+    "position_en": "Lecturer of the Department of Prosecutorial Activity and Supervision",
+    "floor": "3",
+    "room": "",
+    "phone": "1772",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_145.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 146,
+  "fields": {
+    "department": 29,
+    "full_name_uz": "Mamadaliev Umid Yuldashevich",
+    "full_name_ru": "Мамадалиев Умид Юлдашевич",
+    "full_name_en": "Mamadaliyev Umid Yuldashevich",
+    "position_uz": "Prokurorlik faoliyati va prokuror nazorati kafedrasi oʼqituvchi",
+    "position_ru": "Преподаватель кафедры прокурорской деятельности и прокурорского надзора",
+    "position_en": "Lecturer of the Department of Prosecutorial Activity and Supervision",
+    "floor": "3",
+    "room": "",
+    "phone": "1931",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_146.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 147,
+  "fields": {
+    "department": 29,
+    "full_name_uz": "Nodirov Davurxon Ikromovich",
+    "full_name_ru": "Нодиров Давурхон Икромович",
+    "full_name_en": "Nodirov Davurxon Ikromovich",
+    "position_uz": "Tezkor-qidiruv faoliyati va kiberhuquq kafedrasi boshligʼi",
+    "position_ru": "Начальник кафедры оперативно-розыскной деятельности и киберправа",
+    "position_en": "Head of the Department of Operational-Search Activity and Cyber Law",
+    "floor": "4",
+    "room": "",
+    "phone": "1913",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_147.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 148,
+  "fields": {
+    "department": 29,
+    "full_name_uz": "Turgʼunov Аsrorjon Аnvarovich",
+    "full_name_ru": "Турғунов Асроржон Анварович",
+    "full_name_en": "Turg'unov Asrorjon Anvarovich",
+    "position_uz": "Tezkor-qidiruv faoliyati va kiberhuquq kafedrasi katta oʼqituvchi",
+    "position_ru": "Старший преподаватель кафедры оперативно-розыскной деятельности и киберправа",
+    "position_en": "Senior Lecturer of the Department of Operational-Search Activity and Cyber Law",
+    "floor": "4",
+    "room": "",
+    "phone": "1789",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_148.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 149,
+  "fields": {
+    "department": 29,
+    "full_name_uz": "Shukurov Jaxongir Rabbonaevich",
+    "full_name_ru": "Шукуров Жахонгир Раббонаевич",
+    "full_name_en": "Shuqurov Jahongir Rabbonayevich",
+    "position_uz": "Tezkor-qidiruv faoliyati va kiberhuquq kafedrasi oʼqituvchi",
+    "position_ru": "Преподаватель кафедры оперативно-розыскной деятельности и киберправа",
+    "position_en": "Lecturer of the Department of Operational-Search Activity and Cyber Law",
+    "floor": "4",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_149.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 150,
+  "fields": {
+    "department": 30,
+    "full_name_uz": "Nutfilloev Ilyos Sodiqovich",
+    "full_name_ru": "Нутфиллоев Илёс Содиқович",
+    "full_name_en": "Nutfilloyev Ilyos Sodiqovich",
+    "position_uz": "Tezkor-qidiruv faoliyati va kiberhuquq kafedrasi mudiri",
+    "position_ru": "Заведующий кабинетом кафедры оперативно-розыскной деятельности и киберправа",
+    "position_en": "Manager of the Study Room for the Department of Operational-Search Activity and Cyber Law",
+    "floor": "4",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_150.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 151,
+  "fields": {
+    "department": 30,
+    "full_name_uz": "Qandahorova Dilnoza Sattorovna",
+    "full_name_ru": "Қандаҳорова Дилноза Сатторовна",
+    "full_name_en": "Qandahorova Dilnoza Sattorovna",
+    "position_uz": "Sudlarda prokuror vakolatini taʼminlash hamda ijro ishi yurituvi kafedrasi katta oʼqituvchi",
+    "position_ru": "Старший преподаватель кафедры обеспечения полномочий прокурора в судах и исполнительного производства",
+    "position_en": "Senior Lecturer of the Department for Support of Prosecution Authority in Courts and Enforcement Proceedings",
+    "floor": "3",
+    "room": "",
+    "phone": "1745",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_151.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 152,
+  "fields": {
+    "department": 30,
+    "full_name_uz": "Mirmaxmudov Zohidjon Irismatovich",
+    "full_name_ru": "Мирмахмудов Зоҳиджон Ирисматович",
+    "full_name_en": "Mirmaxmudov Zohidjon Irismatovich",
+    "position_uz": "Sudlarda prokuror vakolatini taʼminlash hamda ijro ishi yurituvi kafedrasi oʼqituvchi",
+    "position_ru": "Преподаватель кафедры обеспечения полномочий прокурора в судах и исполнительного производства",
+    "position_en": "Lecturer of the Department for Support of Prosecution Authority in Courts and Enforcement Proceedings",
+    "floor": "3",
+    "room": "",
+    "phone": "1723",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_152.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 153,
+  "fields": {
+    "department": 30,
+    "full_name_uz": "Dusmanov Sandjar Аbdujalolovich",
+    "full_name_ru": "Дусманов Санджар Абдужалолович",
+    "full_name_en": "Dusmanov Sanjar Abdujalolovich",
+    "position_uz": "Sudlarda prokuror vakolatini taʼminlash hamda ijro ishi yurituvi kafedrasi dotsent",
+    "position_ru": "Доцент кафедры обеспечения полномочий прокурора в судах и исполнительного производства",
+    "position_en": "Associate Professor of the Department for Support of Prosecution Authority in Courts and Enforcement Proceedings",
+    "floor": "3",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_153.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 154,
+  "fields": {
+    "department": 30,
+    "full_name_uz": "Xudayberdieva Gulnora Аmanmurodovna",
+    "full_name_ru": "Худайбердиева Гулнора Аманмуродовна",
+    "full_name_en": "Xudayberdiyeva Gulnora Amanmurodovna",
+    "position_uz": "Sudlarda prokuror vakolatini taʼminlash hamda ijro ishi yurituvi kafedrasi Oʼqituvchi shtat birligi hisobiga dotsenti",
+    "position_ru": "Доцент (за счет штатной единицы преподавателя) кафедры обеспечения полномочий прокурора в судах и исполнительного производства",
+    "position_en": "Associate Professor (under Lecturer position) of the Department for Support of Prosecution Authority in Courts and Enforcement Proceedings",
+    "floor": "3",
+    "room": "",
+    "phone": "",
+    "image": ""
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 155,
+  "fields": {
+    "department": 30,
+    "full_name_uz": "Esanaliev Sadriddin Nuriddin oʼgʼli",
+    "full_name_ru": "Эсаналиев Садриддин Нуриддин ўғли",
+    "full_name_en": "Esanaliyev Sadriddin Nuriddin o'g'li",
+    "position_uz": "Sudlarda prokuror vakolatini taʼminlash hamda ijro ishi yurituvi kafedrasi oʼqituvchi",
+    "position_ru": "Преподаватель кафедры обеспечения полномочий прокурора в судах и исполнительного производства",
+    "position_en": "Lecturer of the Department for Support of Prosecution Authority in Courts and Enforcement Proceedings",
+    "floor": "3",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_155.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 156,
+  "fields": {
+    "department": 30,
+    "full_name_uz": "Yarashev Baxrombek Rustamovich",
+    "full_name_ru": "Ярашев Бахромбек Рустамович",
+    "full_name_en": "Yarashev Baxrombek Rustamovich",
+    "position_uz": "Sudlarda prokuror vakolatini taʼminlash hamda ijro ishi yurituvi kafedrasi katta oʼqituvchi",
+    "position_ru": "Старший преподаватель кафедры обеспечения полномочий прокурора в судах и исполнительного производства",
+    "position_en": "Senior Lecturer of the Department for Support of Prosecution Authority in Courts and Enforcement Proceedings",
+    "floor": "3",
+    "room": "",
+    "phone": "1751",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_156.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 157,
+  "fields": {
+    "department": 31,
+    "full_name_uz": "Shonazarov Diyorbek Qahramon oʼgʼli",
+    "full_name_ru": "Шоназаров Диёрбек Қаҳрамон ўғли",
+    "full_name_en": "Shonazarov Diyorbek Qahramon o'g'li",
+    "position_uz": "Sudlarda prokuror vakolatini taʼminlash hamda ijro ishi yurituvi kafedrasi kabinet mudiri",
+    "position_ru": "Заведующий кабинетом кафедры обеспечения полномочий прокурора в судах и исполнительного производства",
+    "position_en": "Manager of the Study Room for the Department for Support of Prosecution Authority in Courts and Enforcement Proceedings",
+    "floor": "3",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_157.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 158,
+  "fields": {
+    "department": 31,
+    "full_name_uz": "Аzizov Nasimbek Аbdumuxtorovich",
+    "full_name_ru": "Азизов Насимбек Абдумухторович",
+    "full_name_en": "Azizov Nasimbek Abdumuxtorovich",
+    "position_uz": "Davlat-huquqiy fanlar kafedrasi boshligʼi",
+    "position_ru": "Начальник кафедры государственно-правовых наук",
+    "position_en": "Head of the Department of State-Legal Sciences",
+    "floor": "4",
+    "room": "",
+    "phone": "1915",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_158.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 159,
+  "fields": {
+    "department": 31,
+    "full_name_uz": "Zufarova Shaxnoza Marsovna",
+    "full_name_ru": "Зуфарова Шахноза Марсовна",
+    "full_name_en": "Zufarova Shahnoza Marsovna",
+    "position_uz": "Davlat-huquqiy fanlar kafedrasi oʼqituvchi",
+    "position_ru": "Преподаватель кафедры государственно-правовых наук",
+    "position_en": "Lecturer of the Department of State-Legal Sciences",
+    "floor": "4",
+    "room": "",
+    "phone": "1777",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_159.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 160,
+  "fields": {
+    "department": 31,
+    "full_name_uz": "Ibragimov Diyorbek Shuxrat oʼgʼli",
+    "full_name_ru": "Ибрагимов Диёрбек Шухрат ўғли",
+    "full_name_en": "Ibragimov Diyorbek Shuxrat o'g'li",
+    "position_uz": "Davlat-huquqiy fanlar kafedrasi katta oʼqituvchi",
+    "position_ru": "Старший преподаватель кафедры государственно-правовых наук",
+    "position_en": "Senior Lecturer of the Department of State-Legal Sciences",
+    "floor": "4",
+    "room": "",
+    "phone": "1975",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_160.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 161,
+  "fields": {
+    "department": 31,
+    "full_name_uz": "Shonazarov Ulfat Ibrogim oʼgʼli",
+    "full_name_ru": "Шоназаров Улфат Иброгим ўғли",
+    "full_name_en": "Shonazarov Ulfat Ibrohim o'g'li",
+    "position_uz": "Davlat-huquqiy fanlar kafedrasi katta oʼqituvchi",
+    "position_ru": "Старший преподаватель кафедры государственно-правовых наук",
+    "position_en": "Senior Lecturer of the Department of State-Legal Sciences",
+    "floor": "4",
+    "room": "",
+    "phone": "1982",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_161.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 162,
+  "fields": {
+    "department": 31,
+    "full_name_uz": "Raxmatillaev Jasurbek Raxmatilla oʼgʼli",
+    "full_name_ru": "Рахматиллаев Жасурбек Рахматилла ўғли",
+    "full_name_en": "Raxmatillayev Jasurbek Raxmatilla o'g'li",
+    "position_uz": "Davlat-huquqiy fanlar kafedrasi oʼqituvchi",
+    "position_ru": "Преподаватель кафедры государственно-правовых наук",
+    "position_en": "Lecturer of the Department of State-Legal Sciences",
+    "floor": "4",
+    "room": "",
+    "phone": "1969",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_162.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 163,
+  "fields": {
+    "department": 31,
+    "full_name_uz": "Xojiev Erkin Tuygunovich",
+    "full_name_ru": "Хожиев Эркин Туйгунович",
+    "full_name_en": "Xojiyev Erkin Tuyg'unovich",
+    "position_uz": "Davlat-huquqiy fanlar kafedrasi professori",
+    "position_ru": "Профессор кафедры государственно-правовых наук",
+    "position_en": "Professor of the Department of State-Legal Sciences",
+    "floor": "4",
+    "room": "",
+    "phone": "1984",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_163.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 164,
+  "fields": {
+    "department": 31,
+    "full_name_uz": "Nematillaev Odiljon Bahodir oʼgʼli",
+    "full_name_ru": "Нематиллаев Одилжон Баҳодир ўғли",
+    "full_name_en": "Nematillayev Odiljon Bahodir o'g'li",
+    "position_uz": "Davlat-huquqiy fanlar kafedrasi oʼqituvchi",
+    "position_ru": "Преподаватель кафедры государственно-правовых наук",
+    "position_en": "Lecturer of the Department of State-Legal Sciences",
+    "floor": "4",
+    "room": "",
+    "phone": "1983",
+    "image": ""
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 165,
+  "fields": {
+    "department": 31,
+    "full_name_uz": "Rustamov Sanjar Suxrobovich",
+    "full_name_ru": "Рустамов Санжар Сухробович",
+    "full_name_en": "Rustamov Sanjar Suxrobovich",
+    "position_uz": "Davlat-huquqiy fanlar kafedrasi katta oʼqituvchi",
+    "position_ru": "Старший преподаватель кафедры государственно-правовых наук",
+    "position_en": "Senior Lecturer of the Department of State-Legal Sciences",
+    "floor": "4",
+    "room": "",
+    "phone": "1976",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_165.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 166,
+  "fields": {
+    "department": 32,
+    "full_name_uz": "Kenjaev Timur Isomovich",
+    "full_name_ru": "Кенжаев Тимур Исомович",
+    "full_name_en": "Kenjayev Timur Isomovich",
+    "position_uz": "Davlat-huquqiy fanlar kafedrasi katta oʼqituvchi",
+    "position_ru": "Старший преподаватель кафедры государственно-правовых наук",
+    "position_en": "Senior Lecturer of the Department of State-Legal Sciences",
+    "floor": "4",
+    "room": "",
+    "phone": "1764",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_166.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 167,
+  "fields": {
+    "department": 32,
+    "full_name_uz": "Аliev Farrux Nodirovich",
+    "full_name_ru": "Алиев Фаррух Нодирович",
+    "full_name_en": "Aliyev Farrux Nodirovich",
+    "position_uz": "Kasbiy psixologiya va boshqaruv faoliyati kafedrasi boshligʼi",
+    "position_ru": "Начальник кафедры профессиональной психологии и управленческой деятельности",
+    "position_en": "Head of the Department of Professional Psychology and Management Activity",
+    "floor": "4",
+    "room": "",
+    "phone": "1773",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_167.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 168,
+  "fields": {
+    "department": 32,
+    "full_name_uz": "Karimov Jasur Baxriddin oʼgʼli",
+    "full_name_ru": "Каримов Жасур Бахриддин ўғли",
+    "full_name_en": "Karimov Jasur Baxriddin o'g'li",
+    "position_uz": "Kasbiy psixologiya va boshqaruv faoliyati kafedrasi katta oʼqituvchi",
+    "position_ru": "Старший преподаватель кафедры профессиональной психологии и управленческой деятельности",
+    "position_en": "Senior Lecturer of the Department of Professional Psychology and Management Activity",
+    "floor": "4",
+    "room": "",
+    "phone": "1798",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_168.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 169,
+  "fields": {
+    "department": 32,
+    "full_name_uz": "Shamshimetov Ruslan Tashtemirovich",
+    "full_name_ru": "Шамшиметов Руслан Таштемирович",
+    "full_name_en": "Shamshimetov Ruslan Tashtemirovich",
+    "position_uz": "Kasbiy psixologiya va boshqaruv faoliyati kafedrasi katta oʼqituvchi",
+    "position_ru": "Старший преподаватель кафедры профессиональной психологии и управленческой деятельности",
+    "position_en": "Senior Lecturer of the Department of Professional Psychology and Management Activity",
+    "floor": "4",
+    "room": "",
+    "phone": "1794",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_169.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 170,
+  "fields": {
+    "department": 32,
+    "full_name_uz": "Sattarov Erkinbay",
+    "full_name_ru": "Саттаров Эркинбай",
+    "full_name_en": "Sattarov Erkinbay",
+    "position_uz": "Kasbiy psixologiya va boshqaruv faoliyati kafedrasi professori",
+    "position_ru": "Профессор кафедры профессиональной психологии и управленческой деятельности",
+    "position_en": "Professor of the Department of Professional Psychology and Management Activity",
+    "floor": "4",
+    "room": "",
+    "phone": "",
+    "image": ""
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 171,
+  "fields": {
+    "department": 32,
+    "full_name_uz": "Maxmudov Ibragimjon Ismailovich",
+    "full_name_ru": "Махмудов Ибрагимжон Исмаилович",
+    "full_name_en": "Maxmudov Ibragimjon Ismailovich",
+    "position_uz": "Kasbiy psixologiya va boshqaruv faoliyati kafedrasi dotsenti",
+    "position_ru": "Доцент кафедры профессиональной психологии и управленческой деятельности",
+    "position_en": "Associate Professor of the Department of Professional Psychology and Management Activity",
+    "floor": "4",
+    "room": "",
+    "phone": "",
+    "image": ""
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 172,
+  "fields": {
+    "department": 33,
+    "full_name_uz": "Tursunov Аmirbek Аskar oʼgʼli",
+    "full_name_ru": "Турсунов Амирбек Аскар ўғли",
+    "full_name_en": "Tursunov Amirbek Askar o'g'li",
+    "position_uz": "Kasbiy psixologiya va boshqaruv faoliyati kafedrasi Kabinet mudiri",
+    "position_ru": "Заведующий кабинетом кафедры профессиональной психологии и управленческой деятельности",
+    "position_en": "Manager of the Study Room for the Department of Professional Psychology and Management Activity",
+    "floor": "4",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_172.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 173,
+  "fields": {
+    "department": 33,
+    "full_name_uz": "Isoqov Luxmonjon Xolboevich",
+    "full_name_ru": "Исоқов Лухмонжон Холбоевич",
+    "full_name_en": "Isoqov Luxmonjon Xolboyevich",
+    "position_uz": "Xalqaro huquq va inson huquqlarini himoya qilish kafedrasi boshligʼi",
+    "position_ru": "Начальник кафедры международного права и защиты прав человека",
+    "position_en": "Head of the Department of International Law and Human Rights Protection",
+    "floor": "4",
+    "room": "",
+    "phone": "1749",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_173.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 174,
+  "fields": {
+    "department": 33,
+    "full_name_uz": "Yesemuratov Аlisher Izbasarovich",
+    "full_name_ru": "Есемуратов Алишер Избасарович",
+    "full_name_en": "Yesemuratov Alisher Izbassarovich",
+    "position_uz": "Xalqaro huquq va inson huquqlarini himoya qilish kafedrasi oʼqituvchi",
+    "position_ru": "Преподаватель кафедры международного права и защиты прав человека",
+    "position_en": "Lecturer of the Department of International Law and Human Rights Protection",
+    "floor": "4",
+    "room": "",
+    "phone": "1946",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_174.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 175,
+  "fields": {
+    "department": 33,
+    "full_name_uz": "Xalilov Shohruh Mirzo Boymurod oʼgʼli",
+    "full_name_ru": "Халилов Шоҳруҳ Мирзо Боймурод ўғли",
+    "full_name_en": "Xalilov Shohruh Mirzo Boymurod o'g'li",
+    "position_uz": "Xalqaro huquq va inson huquqlarini himoya qilish kafedrasi katta oʼqituvchisi",
+    "position_ru": "Старший преподаватель кафедры международного права и защиты прав человека",
+    "position_en": "Senior Lecturer of the Department of International Law and Human Rights Protection",
+    "floor": "4",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_175.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 176,
+  "fields": {
+    "department": 33,
+    "full_name_uz": "Kadirova Barno Turanboy qizi",
+    "full_name_ru": "Кадирова Барно Туранбой қизи",
+    "full_name_en": "Kadirova Barno Turanboyqizi",
+    "position_uz": "Xalqaro huquq va inson huquqlarini himoya qilish kafedrasi dotsenti",
+    "position_ru": "Доцент кафедры международного права и защиты прав человека",
+    "position_en": "Associate Professor of the Department of International Law and Human Rights Protection",
+    "floor": "4",
+    "room": "",
+    "phone": "1974",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_176.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 177,
+  "fields": {
+    "department": 34,
+    "full_name_uz": "Sadriddinov Аkmal Ravshanovich",
+    "full_name_ru": "Садриддинов Акмал Равшанович",
+    "full_name_en": "Sadriddinov Akmal Ravshanovich",
+    "position_uz": "Xalqaro huquq va inson huquqlarini himoya qilish kafedrasi kabinet mudiri",
+    "position_ru": "Заведующий кабинетом кафедры международного права и защиты прав человека",
+    "position_en": "Manager of the Study Room for the Department of International Law and Human Rights Protection",
+    "floor": "4",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_177.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 178,
+  "fields": {
+    "department": 34,
+    "full_name_uz": "Mengliqulov Umid Mamadievich",
+    "full_name_ru": "Менглиқулов Умид Мамадиевич",
+    "full_name_en": "Mengliqu lov Umid Mamadiyevich",
+    "position_uz": "Ijtimoiy-gumanitar fanlar kafedrasi katta oʼqituvchi",
+    "position_ru": "Старший преподаватель кафедры социально-гуманитарных наук",
+    "position_en": "Senior Lecturer of the Department of Social and Humanitarian Sciences",
+    "floor": "4",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_178.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 179,
+  "fields": {
+    "department": 34,
+    "full_name_uz": "Аbduazimova Zarina Аmirovna",
+    "full_name_ru": "Абдуазимова Зарина Амировна",
+    "full_name_en": "Abduazimova Zarina Amirovna",
+    "position_uz": "Ijtimoiy-gumanitar fanlar kafedrasi katta oʼqituvchisi",
+    "position_ru": "Старший преподаватель кафедры социально-гуманитарных наук",
+    "position_en": "Senior Lecturer of the Department of Social and Humanitarian Sciences",
+    "floor": "4",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_179.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 180,
+  "fields": {
+    "department": 34,
+    "full_name_uz": "Xoliyarova Mahbuba Sottorovna",
+    "full_name_ru": "Холиярова Маҳбуба Сотторовна",
+    "full_name_en": "Xoliyarova Mahbuba Sottorovna",
+    "position_uz": "Ijtimoiy-gumanitar fanlar kafedrasi katta oʼqituvchi",
+    "position_ru": "Старший преподаватель кафедры социально-гуманитарных наук",
+    "position_en": "Senior Lecturer of the Department of Social and Humanitarian Sciences",
+    "floor": "4",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_180.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 181,
+  "fields": {
+    "department": 34,
+    "full_name_uz": "Аkramov Xusan Furkatovich",
+    "full_name_ru": "Акрамов Хусан Фуркатович",
+    "full_name_en": "Akramov Xusan Furkatovich",
+    "position_uz": "Ijtimoiy-gumanitar fanlar kafedrasi oʼqituvchi",
+    "position_ru": "Преподаватель кафедры социально-гуманитарных наук",
+    "position_en": "Lecturer of the Department of Social and Humanitarian Sciences",
+    "floor": "4",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_181.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 182,
+  "fields": {
+    "department": 34,
+    "full_name_uz": "Xolikulova Xulkar Yuldashevna",
+    "full_name_ru": "Холикулова Хулкар Юлдашевна",
+    "full_name_en": "Xolikulova Xulkar Yuldashevna",
+    "position_uz": "Ijtimoiy-gumanitar fanlar kafedrasi oʼqituvchi shtat birligi hisobiga dotsenti",
+    "position_ru": "Доцент (за счет штатной единицы преподавателя) кафедры социально-гуманитарных наук",
+    "position_en": "Associate Professor (under Lecturer position) of the Department of Social and Humanitarian Sciences",
+    "floor": "4",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_182.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 183,
+  "fields": {
+    "department": 34,
+    "full_name_uz": "Kamilov Davron Zafarovich",
+    "full_name_ru": "Камилов Даврон Зафарович",
+    "full_name_en": "Kamilov Davron Zafarovich",
+    "position_uz": "Ijtimoiy-gumanitar fanlar kafedrasi oʼqituvchi",
+    "position_ru": "Преподаватель кафедры социально-гуманитарных наук",
+    "position_en": "Lecturer of the Department of Social and Humanitarian Sciences",
+    "floor": "4",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_183.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 184,
+  "fields": {
+    "department": 35,
+    "full_name_uz": "Аlimov Sardor Komil oʼgʼli",
+    "full_name_ru": "Алимов Сардор Комил ўғли",
+    "full_name_en": "Alimov Sardor Komil o'g'li",
+    "position_uz": "Ijtimoiy-gumanitar fanlar kafedrasi oʼqituvchisi",
+    "position_ru": "Преподаватель кафедры социально-гуманитарных наук",
+    "position_en": "Lecturer of the Department of Social and Humanitarian Sciences",
+    "floor": "4",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_184.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 185,
+  "fields": {
+    "department": 35,
+    "full_name_uz": "Mirzokulova Xursanoy Nematjonovna",
+    "full_name_ru": "Мирзокулова Хурсаной Нематжоновна",
+    "full_name_en": "Mirzoqulova Xursanoy Nematjonovna",
+    "position_uz": "Til oʼrgatish kafedrasi katta oʼqituvchi",
+    "position_ru": "Старший преподаватель кафедры обучения языкам",
+    "position_en": "Senior Lecturer of the Department of Language Training",
+    "floor": "4",
+    "room": "",
+    "phone": "1763",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_185.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 186,
+  "fields": {
+    "department": 35,
+    "full_name_uz": "Yuldashev Xurshid Nozim oʼgʼli",
+    "full_name_ru": "Юлдашев Хуршид Нозим ўғли",
+    "full_name_en": "Yuldashev Xurshid Nozim o'g'li",
+    "position_uz": "Til oʼrgatish kafedrasi oʼqituvchi shtat birligi hisobiga dotsenti",
+    "position_ru": "Доцент (за счет штатной единицы преподавателя) кафедры обучения языкам",
+    "position_en": "Associate Professor (under Lecturer position) of the Department of Language Training",
+    "floor": "4",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_186.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 187,
+  "fields": {
+    "department": 35,
+    "full_name_uz": "Nishonov Ilxomdjon Dilmurodovich",
+    "full_name_ru": "Нишонов Илхомджон Дилмуродович",
+    "full_name_en": "Nishonov Ilxomjon Dilmurodovich",
+    "position_uz": "Til oʼrgatish kafedrasi oʼqituvchisi",
+    "position_ru": "Преподаватель кафедры обучения языкам",
+    "position_en": "Lecturer of the Department of Language Training",
+    "floor": "4",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_187.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 188,
+  "fields": {
+    "department": 36,
+    "full_name_uz": "Yusupova Orastaxon Fazliddin qizi",
+    "full_name_ru": "Юсупова Орастахон Фазлиддин қизи",
+    "full_name_en": "Yusupova Oysataxon Fazliddinqizi",
+    "position_uz": "Til oʼrgatish kafedrasi Kabinet mudiri",
+    "position_ru": "Заведующий кабинетом кафедры обучения языкам",
+    "position_en": "Manager of the Study Room for the Department of Language Training",
+    "floor": "4",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_188.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 189,
+  "fields": {
+    "department": 36,
+    "full_name_uz": "Toshaliev Ulugʼbek Oʼktam oʼgʼli",
+    "full_name_ru": "Тошалиев Улуғбек Ўктам ўғли",
+    "full_name_en": "Toshaliyev Ulug'bek O'ktam o'g'li",
+    "position_uz": "devonxona mudiri",
+    "position_ru": "Заведующий канцелярией",
+    "position_en": "Head of the Chancellery (Office Manager)",
+    "floor": "1",
+    "room": "",
+    "phone": "1747",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_189.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 190,
+  "fields": {
+    "department": 36,
+    "full_name_uz": "Qurbonov Rustam Qobil oʼgʼli",
+    "full_name_ru": "Қурбонов Рустам Қобил ўғли",
+    "full_name_en": "Qurbonov Rustam Qobil o'g'li",
+    "position_uz": "devonxona va arxiv kuryeri",
+    "position_ru": "Курьер канцелярии и архива",
+    "position_en": "Courier of the Chancellery and Archives",
+    "floor": "1",
+    "room": "",
+    "phone": "1747",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_190.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 191,
+  "fields": {
+    "department": 37,
+    "full_name_uz": "Tashtaeva Sadakat Sattarovna",
+    "full_name_ru": "Таштаева Садакат Саттаровна",
+    "full_name_en": "Tashtayeva Sadakat Sattarovna",
+    "position_uz": "devonxona va arxiv arxivariusi",
+    "position_ru": "Архивариус канцелярии и архива",
+    "position_en": "Archivist of the Chancellery and Archives",
+    "floor": "1",
+    "room": "",
+    "phone": "",
+    "image": ""
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 192,
+  "fields": {
+    "department": 37,
+    "full_name_uz": "Jumaev Salim Qudratovich",
+    "full_name_ru": "Жумаев Салим Қудратович",
+    "full_name_en": "Jumayev Salim Qudratovich",
+    "position_uz": "Harbiy va jismoniy tayyorgarlik kafedrasi katta oʼqituvchi",
+    "position_ru": "Старший преподаватель кафедры военной и физической подготовки",
+    "position_en": "Senior Lecturer of the Department of Military and Physical Training",
+    "floor": "",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_192.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 193,
+  "fields": {
+    "department": 37,
+    "full_name_uz": "Shakirov Shuxratjon Taxirovich",
+    "full_name_ru": "Шакиров Шухратжон Тахирович",
+    "full_name_en": "Shakirov Shuxratjon Taxirovich",
+    "position_uz": "Harbiy va jismoniy tayyorgarlik kafedrasi oʼqituvchi shtat birligi hisobiga dotsenti",
+    "position_ru": "Доцент (за счет штатной единицы преподавателя) кафедры военной и физической подготовки",
+    "position_en": "Associate Professor (under Lecturer position) of the Department of Military and Physical Training",
+    "floor": "",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_193.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 194,
+  "fields": {
+    "department": 37,
+    "full_name_uz": "Dosumxodjaev Farux Аbdirazakovich",
+    "full_name_ru": "Досумходжаев Фарух Абдиразакович",
+    "full_name_en": "Dosumxo'jayev Farux Abdirazaqovich",
+    "position_uz": "Harbiy va jismoniy tayyorgarlik kafedrasi oʼqituvchi shtat birligi hisobiga dotsenti",
+    "position_ru": "Доцент (за счет штатной единицы преподавателя) кафедры военной и физической подготовки",
+    "position_en": "Associate Professor (under Lecturer position) of the Department of Military and Physical Training",
+    "floor": "",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_194.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 195,
+  "fields": {
+    "department": 38,
+    "full_name_uz": "Yusufbekov Hasanbek Ziyodbekovich",
+    "full_name_ru": "Юсуфбеков Ҳасанбек Зиёдбекович",
+    "full_name_en": "Yusufbekov Hasanbek Ziyodbekovich",
+    "position_uz": "Harbiy va jismoniy tayyorgarlik kafedrasi kabinet mudiri",
+    "position_ru": "Заведующий кабинетом кафедры военной и физической подготовки",
+    "position_en": "Manager of the Study Room for the Department of Military and Physical Training",
+    "floor": "",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_195.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 196,
+  "fields": {
+    "department": 38,
+    "full_name_uz": "Raximov Rustamjon Xamidovich",
+    "full_name_ru": "Рахимов Рустамжон Хамидович",
+    "full_name_en": "Raximov Rustamjon Xamidovich",
+    "position_uz": "Iqtisodiy jinoyatlarga va jinoiy daromadlarni legallashtirishga qarshi kurash kafedrasi boshligʼi",
+    "position_ru": "Начальник кафедры по борьбе с экономическими преступлениями и легализацией преступных доходов",
+    "position_en": "Head of the Department of Economic Crimes and Anti-Money Laundering",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_196.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 197,
+  "fields": {
+    "department": 38,
+    "full_name_uz": "Аxmadaliev Xurshid Аbdixakimovich",
+    "full_name_ru": "Ахмадалиев Хуршид Абдихакимович",
+    "full_name_en": "Axmadaliyev Xurshid Abdixakimo vich",
+    "position_uz": "Iqtisodiy jinoyatlarga va jinoiy daromadlarni legallashtirishga qarshi kurash kafedrasi katta oʼqituvchi",
+    "position_ru": "Старший преподаватель кафедры по борьбе с экономическими преступлениями и легализацией преступных доходов",
+    "position_en": "Senior Lecturer of the Department of Economic Crimes and Anti-Money Laundering",
+    "floor": "2",
+    "room": "",
+    "phone": "1934",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_197.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 198,
+  "fields": {
+    "department": 38,
+    "full_name_uz": "Gafurov Ikromjon Ilxomovich",
+    "full_name_ru": "Гафуров Икромжон Илхомович",
+    "full_name_en": "G'afurov Ikromjon Ilxomovich",
+    "position_uz": "Iqtisodiy jinoyatlarga va jinoiy daromadlarni legallashtirishga qarshi kurash kafedrasi oʼqituvchi",
+    "position_ru": "Преподаватель кафедры по борьбе с экономическими преступлениями и легализацией преступных доходов",
+    "position_en": "Lecturer of the Department of Economic Crimes and Anti-Money Laundering",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_198.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 199,
+  "fields": {
+    "department": 38,
+    "full_name_uz": "Mirzaev Fayzulla Ibodullaevich",
+    "full_name_ru": "Мирзаев Файзулла Ибодуллаевич",
+    "full_name_en": "Mirzayev Fayzulla Ibodullayevich",
+    "position_uz": "Iqtisodiy jinoyatlarga va jinoiy daromadlarni legallashtirishga qarshi kurash kafedrasi dotsenti",
+    "position_ru": "Доцент кафедры по борьбе с экономическими преступлениями и легализацией преступных доходов",
+    "position_en": "Associate Professor of the Department of Economic Crimes and Anti-Money Laundering",
+    "floor": "2",
+    "room": "",
+    "phone": "1759",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_199.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 200,
+  "fields": {
+    "department": 38,
+    "full_name_uz": "Ibragimov Murodjon Jumanazarovich",
+    "full_name_ru": "Ибрагимов Муроджон Жуманазарович",
+    "full_name_en": "Ibragimov Murodjon Jumanazarovich",
+    "position_uz": "Iqtisodiy jinoyatlarga va jinoiy daromadlarni legallashtirishga qarshi kurash kafedrasi katta oʼqituvchi",
+    "position_ru": "Старший преподаватель кафедры по борьбе с экономическими преступлениями и легализацией преступных доходов",
+    "position_en": "Senior Lecturer of the Department of Economic Crimes and Anti-Money Laundering",
+    "floor": "2",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_200.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 201,
+  "fields": {
+    "department": 39,
+    "full_name_uz": "Xomidov Shuxrat Gafurjonovich",
+    "full_name_ru": "Хомидов Шухрат Гафуржонович",
+    "full_name_en": "Xomidov Shuxrat G'afurjonovich",
+    "position_uz": "Iqtisodiy jinoyatlarga va jinoiy daromadlarni legallashtirishga qarshi kurash kafedrasi oʼqituvchi",
+    "position_ru": "Преподаватель кафедры по борьбе с экономическими преступлениями и легализацией преступных доходов",
+    "position_en": "Lecturer of the Department of Economic Crimes and Anti-Money Laundering",
+    "floor": "2",
+    "room": "",
+    "phone": "1748",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_201.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 202,
+  "fields": {
+    "department": 39,
+    "full_name_uz": "Kudratov Bunyod Baxtiyorovich",
+    "full_name_ru": "Кудратов Бунёд Бахтиёрович",
+    "full_name_en": "Qudratov Bunyod Baxtiyorovich",
+    "position_uz": "Raqamli kriminalistika ilmiy-tadqiqot institutining Kiberjinoyatlarga qarshi kurashishga va raqamli tergovga koʼmaklashish markazi boshligʼi",
+    "position_ru": "Начальник Центра содействия расследованию цифровых преступлений и борьбе с киберпреступностью Научно-исследовательского института цифровой криминалистики",
+    "position_en": "Head of the Center for Cybercrime Counteraction and Digital Investigation Assistance of the Digital Criminalistics Research Institute",
+    "floor": "1",
+    "room": "",
+    "phone": "1960",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_202.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 203,
+  "fields": {
+    "department": 39,
+    "full_name_uz": "Norova Nasiba Аzamatovna",
+    "full_name_ru": "Норова Насиба Азаматовна",
+    "full_name_en": "Norova Nasiba Azamatovna",
+    "position_uz": "Raqamli kriminalistika ilmiy-tadqiqot institutining Kiberjinoyatlarga qarshi kurashishga va raqamli tergovga koʼmaklashish markazi katta prokurori",
+    "position_ru": "Старший прокурор Центра содействия расследованию цифровых преступлений НИИ цифровой криминалистики",
+    "position_en": "Senior Prosecutor of the Center for Digital Investigation Assistance",
+    "floor": "1",
+    "room": "",
+    "phone": "1967",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_203.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 204,
+  "fields": {
+    "department": 39,
+    "full_name_uz": "Muxsinov Davronbek Luqmonovich",
+    "full_name_ru": "Мухсинов Давронбек Луқмонович",
+    "full_name_en": "Muxsinov Davronbek Luqmonovich",
+    "position_uz": "Raqamli kriminalistika ilmiy-tadqiqot institutining Kiberjinoyatlarga qarshi kurashishga va raqamli tergovga koʼmaklashish markazi prokurori",
+    "position_ru": "Прокурор Центра содействия расследованию цифровых преступлений НИИ цифровой криминалистики",
+    "position_en": "Prosecutor of the Center for Digital Investigation Assistance",
+    "floor": "1",
+    "room": "",
+    "phone": "1955",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_204.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 205,
+  "fields": {
+    "department": 39,
+    "full_name_uz": "Turgʼunov Iqbol Ilgʼor oʼgʼli",
+    "full_name_ru": "Турғунов Иқбол Илғор ўғли",
+    "full_name_en": "Turg'unov Iqbol Ilg'or o'g'li",
+    "position_uz": "Raqamli kriminalistika ilmiy-tadqiqot institutining Kiberjinoyatlarga qarshi kurashishga va raqamli tergovga koʼmaklashish markazi prokurori",
+    "position_ru": "Прокурор Центра содействия расследованию цифровых преступлений НИИ цифровой криминалистики",
+    "position_en": "Prosecutor of the Center for Digital Investigation Assistance",
+    "floor": "1",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_205.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 206,
+  "fields": {
+    "department": 39,
+    "full_name_uz": "Аbdumannopov Аbubakir Dilshodjon oʼgʼli",
+    "full_name_ru": "Абдуманнопов Абубакир Дилшоджон ўғли",
+    "full_name_en": "Abdumannopov Abubakir Dilshodjon o'g'li",
+    "position_uz": "Raqamli kriminalistika ilmiy-tadqiqot institutining Kiberjinoyatlarga qarshi kurashishga va raqamli tergovga koʼmaklashish markazi ish yurituvchisi",
+    "position_ru": "Делопроизводитель Центра содействия расследованию цифровых преступлений НИИ цифровой криминалистики",
+    "position_en": "Clerk of the Center for Digital Investigation Assistance",
+    "floor": "1",
+    "room": "",
+    "phone": "",
+    "image": ""
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 207,
+  "fields": {
+    "department": 40,
+    "full_name_uz": "Urozbaev Sardorbek Odilbekovich",
+    "full_name_ru": "Урозбаев Сардорбек Одилбекович",
+    "full_name_en": "Urozbayev Sardorbek Odilbekovich",
+    "position_uz": "Raqamli kriminalistika ilmiy-tadqiqot instituti boshligʼi",
+    "position_ru": "Начальник Научно-исследовательского института цифровой криминалистики",
+    "position_en": "Head of the Digital Criminalistics Research Institute",
+    "floor": "1",
+    "room": "",
+    "phone": "1717",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_207.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 208,
+  "fields": {
+    "department": 40,
+    "full_name_uz": "Gadjiev Xagani Moxubbat ogli",
+    "full_name_ru": "Гаджиев Хагани Мохуббат огли",
+    "full_name_en": "Gadjiyev Xagani Moxubbat ogli",
+    "position_uz": "Raqamli kriminalistika ilmiy-tadqiqot instituti Ixtisoslashtirilgan raqamli tadqiqot markazi boshligʼi",
+    "position_ru": "Начальник Специализированного центра цифровых исследований НИИ цифровой криминалистики",
+    "position_en": "Head of the Specialized Digital Research Center of the Digital Criminalistics Research Institute",
+    "floor": "1",
+    "room": "",
+    "phone": "1921",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_208.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 209,
+  "fields": {
+    "department": 40,
+    "full_name_uz": "Konovalov Ilya Borisovich",
+    "full_name_ru": "Коновалов Иля Борисович",
+    "full_name_en": "Konovalov Ilya Borisovich",
+    "position_uz": "Raqamli kriminalistika ilmiy-tadqiqot instituti Ixtisoslashtirilgan raqamli tadqiqot markazi katta prokurori",
+    "position_ru": "Старший прокурор Специализированного центра цифровых исследований НИИ цифровой криминалистики",
+    "position_en": "Senior Prosecutor of the Specialized Digital Research Center",
+    "floor": "1",
+    "room": "",
+    "phone": "1922",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_209.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 210,
+  "fields": {
+    "department": 40,
+    "full_name_uz": "Аripov Аzizbek Batirovich",
+    "full_name_ru": "Арипов Азизбек Батирович",
+    "full_name_en": "Aripov Azizbek Batirovich",
+    "position_uz": "Raqamli kriminalistika ilmiy-tadqiqot instituti Ixtisoslashtirilgan raqamli tadqiqot markazi prokurori",
+    "position_ru": "Прокурор Специализированного центра цифровых исследований НИИ цифровой криминалистики",
+    "position_en": "Prosecutor of the Specialized Digital Research Center",
+    "floor": "1",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_210.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 211,
+  "fields": {
+    "department": 41,
+    "full_name_uz": "Yoʼldoshev Temurbek Аnvar oʼgʼli",
+    "full_name_ru": "Йўлдошев Темурбек Анвар ўғли",
+    "full_name_en": "Yo'ldoshev Temurbek Anvar o'g'li",
+    "position_uz": "Raqamli kriminalistika ilmiy-tadqiqot instituti Ixtisoslashtirilgan raqamli tadqiqot markazi prokurori",
+    "position_ru": "Прокурор Специализированного центра цифровых исследований НИИ цифровой криминалистики",
+    "position_en": "Prosecutor of the Specialized Digital Research Center",
+    "floor": "1",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_211.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 212,
+  "fields": {
+    "department": 41,
+    "full_name_uz": "Raxmatov Bekzod Ixtiyorovich",
+    "full_name_ru": "Рахматов Бекзод Ихтиёрович",
+    "full_name_en": "Raxmatov Bekzod Ixtiyorovich",
+    "position_uz": "Raqamli kriminalistika ilmiy-tadqiqot instituti Ixtisoslashtirilgan raqamli tadqiqot markazi ish yurituvchisi",
+    "position_ru": "Делопроизводитель Специализированного центра цифровых исследований НИИ цифровой криминалистики",
+    "position_en": "Clerk of the Specialized Digital Research Center",
+    "floor": "1",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_212.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 213,
+  "fields": {
+    "department": 42,
+    "full_name_uz": "Kudratov Bunyod Baxtiyorovich",
+    "full_name_ru": "Кудратов Бунёд Бахтиёрович",
+    "full_name_en": "Qudratov Bunyod Baxtiyorovich",
+    "position_uz": "Raqamli kriminalistika ilmiy-tadqiqot institutining Kiberjinoyatlarga qarshi kurashishga va raqamli tergovga koʼmaklashish markazi boshligʼi",
+    "position_ru": "Начальник Центра содействия расследованию цифровых преступлений и борьбе с киберпреступностью (повтор)",
+    "position_en": "Head of the Center for Cybercrime Counteraction and Digital Investigation Assistance (Repeated)",
+    "floor": "1",
+    "room": "",
+    "phone": "1960",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_213.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 214,
+  "fields": {
+    "department": 42,
+    "full_name_uz": "Norova Nasiba Аzamatovna",
+    "full_name_ru": "Норова Насиба Азаматовна",
+    "full_name_en": "Norova Nasiba Azamatovna",
+    "position_uz": "Raqamli kriminalistika ilmiy-tadqiqot institutining Kiberjinoyatlarga qarshi kurashishga va raqamli tergovga koʼmaklashish markazi katta prokurori",
+    "position_ru": "Старший прокурор Центра содействия расследованию цифровых преступлений (повтор)",
+    "position_en": "Senior Prosecutor of the Center for Digital Investigation Assistance (Repeated)",
+    "floor": "1",
+    "room": "",
+    "phone": "1967",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_214.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 215,
+  "fields": {
+    "department": 42,
+    "full_name_uz": "Muxsinov Davronbek Luqmonovich",
+    "full_name_ru": "Мухсинов Давронбек Луқмонович",
+    "full_name_en": "Muxsinov Davronbek Luqmonovich",
+    "position_uz": "Raqamli kriminalistika ilmiy-tadqiqot institutining Kiberjinoyatlarga qarshi kurashishga va raqamli tergovga koʼmaklashish markazi prokurori",
+    "position_ru": "Прокурор Центра содействия расследованию цифровых преступлений (повтор)",
+    "position_en": "Prosecutor of the Center for Digital Investigation Assistance (Repeated)",
+    "floor": "1",
+    "room": "",
+    "phone": "1955",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_215.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 216,
+  "fields": {
+    "department": 42,
+    "full_name_uz": "Turgʼunov Iqbol Ilgʼor oʼgʼli",
+    "full_name_ru": "Турғунов Иқбол Илғор ўғли",
+    "full_name_en": "Turg'unov Iqbol Ilg'or o'g'li",
+    "position_uz": "Raqamli kriminalistika ilmiy-tadqiqot institutining Kiberjinoyatlarga qarshi kurashishga va raqamli tergovga koʼmaklashish markazi prokurori",
+    "position_ru": "Прокурор Центра содействия расследованию цифровых преступлений (повтор)",
+    "position_en": "Prosecutor of the Center for Digital Investigation Assistance (Repeated)",
+    "floor": "1",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_216.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 217,
+  "fields": {
+    "department": 42,
+    "full_name_uz": "Аbdumannopov Аbubakir Dilshodjon oʼgʼli",
+    "full_name_ru": "Абдуманнопов Абубакир Дилшоджон ўғли",
+    "full_name_en": "Abdumannopov Abubakir Dilshodjon o'g'li",
+    "position_uz": "Raqamli kriminalistika ilmiy-tadqiqot institutining Kiberjinoyatlarga qarshi kurashishga va raqamli tergovga koʼmaklashish markazi ish yurituvchisi",
+    "position_ru": "Делопроизводитель Центра содействия расследованию цифровых преступлений (повтор)",
+    "position_en": "Clerk of the Center for Digital Investigation Assistance (Repeated)",
+    "floor": "1",
+    "room": "",
+    "phone": "",
+    "image": ""
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 218,
+  "fields": {
+    "department": 43,
+    "full_name_uz": "Yugay Lyudmila Yurevna",
+    "full_name_ru": "Югай Людмила Юревна",
+    "full_name_en": "Yugay Lyudmila Yurevna",
+    "position_uz": "Raqamli kriminalistika ilmiy-tadqiqot instituti Uslubiy yordam koʼrsatish boʼlimi boshligʼi",
+    "position_ru": "Начальник отдела методической помощи НИИ цифровой криминалистики",
+    "position_en": "Head of the Methodological Assistance Department of the Digital Criminalistics Research Institute",
+    "floor": "1",
+    "room": "",
+    "phone": "1962",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_218.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 219,
+  "fields": {
+    "department": 43,
+    "full_name_uz": "Kudratov Sanjar Marupovich",
+    "full_name_ru": "Кудратов Санжар Марупович",
+    "full_name_en": "Qudratov Sanjar Marupovich",
+    "position_uz": "Raqamli kriminalistika ilmiy-tadqiqot instituti Uslubiy yordam koʼrsatish boʼlimi katta prokurori",
+    "position_ru": "Старший прокурор отдела методической помощи НИИ цифровой криминалистики",
+    "position_en": "Senior Prosecutor of the Methodological Assistance Department",
+    "floor": "1",
+    "room": "",
+    "phone": "",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_219.jpeg"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 220,
+  "fields": {
+    "department": 42,
+    "full_name_uz": "Shomaxsudov Shoakrom Shomuratovich",
+    "full_name_ru": "Шомахсудов Шоакром Шомуратович",
+    "full_name_en": "Shomaxsudov Shoakrom Shomuratovich",
+    "position_uz": "Raqamli kriminalistika ilmiy-tadqiqot instituti Raqamli kriminalistika laboratoriyasi boshligʼi",
+    "position_ru": "Начальник лаборатории цифровой криминалистики НИИ цифровой криминалистики",
+    "position_en": "Head of the Digital Criminalistics Laboratory of the Digital Criminalistics Research Institute",
+    "floor": "1",
+    "room": "",
+    "phone": "1961",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_220.png"
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 221,
+  "fields": {
+    "department": 42,
+    "full_name_uz": "Gallyamov Marsel Gabtulxaevich",
+    "full_name_ru": "Галлямов Марсел Габтулхаевич",
+    "full_name_en": "Gallyamov Marsel Gabtulxayevich",
+    "position_uz": "Raqamli kriminalistika ilmiy-tadqiqot instituti Raqamli kriminalistika laboratoriyasi katta prokuror-kriminalisti",
+    "position_ru": "Старший прокурор-криминалист лаборатории цифровой криминалистики НИИ цифровой криминалистики",
+    "position_en": "Senior Prosecutor-Criminalist of the Digital Criminalistics Laboratory",
+    "floor": "1",
+    "room": "",
+    "phone": "1963",
+    "image": "https://ywqrlfufkrdokpbdodav.supabase.co/storage/v1/object/public/employees/employee_221.jpeg"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2026-03-02T07:41:50.596Z",
+    "user": [
+      "user"
+    ],
+    "content_type": [
+      "api",
+      "department"
+    ],
+    "object_id": "1",
+    "object_repr": "Kadr",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2026-03-02T07:45:25.860Z",
+    "user": [
+      "user"
+    ],
+    "content_type": [
+      "api",
+      "employee"
+    ],
+    "object_id": "1",
+    "object_repr": "Axatov Kozimbek Abdumalik o'g'li",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+}
+]
