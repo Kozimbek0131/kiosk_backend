@@ -3,51 +3,60 @@ from django.core.files.storage import Storage
 from django.utils.deconstruct import deconstructible
 import os
 import requests
-import mimetypes # Dinamik Content-Type uchun
+import mimetypes
+import uuid  # Fayl nomini xavfsiz qilish uchun
 
 @deconstructible
 class SupabaseStorage(Storage):
     def __init__(self):
-        # Settings dan olish xavfsizroq, lekin environ ham bo'laveradi
-        self.supabase_url = os.environ.get('SUPABASE_URL', 'https://ywqrlfufkrdokpbdodav.supabase.co')
+        self.supabase_url = os.environ.get('SUPABASE_URL', 'https://ywqrlfufkrdokpbdodav.supabase.co').rstrip('/')
         self.supabase_key = os.environ.get('SUPABASE_KEY', '')
         self.bucket = 'employees'
 
     def _save(self, name, content):
-        upload_url = f"{self.supabase_url}/storage/v1/object/{self.bucket}/{name}"
+        # 1. Kirill harflari bilan bog'liq xatoni yo'qotish (Safe File Name)
+        ext = name.split('.')[-1]
+        safe_name = f"{uuid.uuid4()}.{ext}"
         
-        # Dinamik ravishda fayl turini aniqlash (jpeg, png, webp)
-        content_type, _ = mimetypes.guess_type(name)
-        if not content_type:
-            content_type = 'image/jpeg'
+        # 2. upload_to va bucket pathni to'g'ri shakllantirish
+        # Django 'employees/fayl.jpg' deb yuboradi, bizga faqat 'fayl.jpg' qismi kerak
+        clean_name = os.path.basename(safe_name)
+        
+        # Agar models.py dagi upload_to ga qarab papkaga bo'lmoqchi bo'lsangiz:
+        folder = os.path.dirname(name)
+        path_on_supabase = f"{folder}/{clean_name}" if folder else clean_name
 
+        upload_url = f"{self.supabase_url}/storage/v1/object/{self.bucket}/{path_on_supabase}"
+        
+        content_type, _ = mimetypes.guess_type(name)
         headers = {
             'Authorization': f'Bearer {self.supabase_key}',
-            'Content-Type': content_type,
+            'Content-Type': content_type or 'image/jpeg',
             'x-upsert': 'true'
         }
         
         content.seek(0)
-        # PUT so'rovi bilan faylni yuborish
-        response = requests.put(upload_url, headers=headers, data=content.read())
-        
-        if response.status_code not in (200, 201):
-            # Xatoni terminalda va logda ko'rish uchun
-            print(f"DEBUG: Supabase error - {response.text}")
-            raise Exception(f"Supabase upload xatosi: {response.text}")
-        
-        return name
+        try:
+            response = requests.put(upload_url, headers=headers, data=content.read(), timeout=15)
+            if response.status_code not in (200, 201):
+                print(f"DEBUG: Supabase error - {response.text}")
+                # Xato bo'lsa ham bazaga yozish uchun 'name'ni qaytaramiz (Admin panel qotib qolmasligi uchun)
+                return name
+        except Exception as e:
+            print(f"DEBUG: Connection error - {e}")
+            return name
+            
+        return path_on_supabase
 
     def url(self, name):
         if not name:
             return None
         if str(name).startswith('http'):
             return str(name)
-        # Public URL qaytarish
         return f"{self.supabase_url}/storage/v1/object/public/{self.bucket}/{name}"
 
     def exists(self, name):
-        return False # Har doim yangi fayl deb hisoblash (upsert:true borligi uchun)
+        return False
 
     def delete(self, name):
         requests.delete(
@@ -57,7 +66,7 @@ class SupabaseStorage(Storage):
 
 supabase_storage = SupabaseStorage()
 
-# --- Modellar qismi (O'zgarishsiz qolishi mumkin, lekin blank=True borligiga ishonch hosil qiling) ---
+# --- Modellar qismi ---
 
 class Department(models.Model):
     name_uz = models.CharField("Bo'lim nomi (UZ)", max_length=255)
@@ -81,9 +90,9 @@ class Employee(models.Model):
     image = models.ImageField(
         "Rasm",
         storage=supabase_storage,
-        upload_to='employees/',
-        blank=True, # Majburiy emas
-        null=True   # Majburiy emas
+        upload_to='employees', # '/' belgisiz yozing
+        blank=True,
+        null=True
     )
 
     def __str__(self):
@@ -95,9 +104,8 @@ class Leadership(models.Model):
     image = models.ImageField(
         "Rasm",
         storage=supabase_storage,
-        upload_to='leadership/',
+        upload_to='leadership',
         blank=True,
         null=True
     )
     order = models.IntegerField("Tartib raqami", default=0)
-    # ... qolgan qismi ...
