@@ -10,7 +10,7 @@ from import_export.widgets import ForeignKeyWidget
 from import_export.admin import ImportExportModelAdmin
 from .models import Employee, Department, Leadership
 
-# Employee uchun resurs (Bo'limlarni to'g'ri bog'lash uchun)
+# Employee uchun resurs
 class EmployeeResource(resources.ModelResource):
     department = fields.Field(
         column_name='department',
@@ -19,26 +19,20 @@ class EmployeeResource(resources.ModelResource):
     )
     class Meta:
         model = Employee
-        fields = ('id', 'full_name_uz', 'full_name_ru', 'full_name_en', 
-                  'position_uz', 'position_ru', 'position_en', 
-                  'department', 'floor', 'room', 'phone')
+        fields = ('id', 'full_name_uz', 'department', 'floor', 'room', 'phone')
 
 @admin.register(Employee)
 class EmployeeAdmin(ImportExportModelAdmin):
     resource_class = EmployeeResource
-    list_display = ('id', 'full_name_uz', 'get_department', 'floor', 'room', 'photo_preview', 'upload_button')
+    list_display = ('id', 'full_name_uz', 'floor', 'room', 'photo_preview', 'upload_button')
     list_filter = ('department', 'floor')
     search_fields = ('full_name_uz', 'phone')
     readonly_fields = ('photo_preview',)
 
-    def get_department(self, obj):
-        return obj.department.name_uz if obj.department else "—"
-    get_department.short_description = 'Bo‘lim'
-
     def photo_preview(self, obj):
         if obj.image:
             return format_html('<img src="{}" width="60" height="75" style="object-fit:cover;border-radius:4px"/>', obj.image.url)
-        return "Rasm yo'q"
+        return "—"
 
     def upload_button(self, obj):
         return format_html(
@@ -66,10 +60,10 @@ class EmployeeAdmin(ImportExportModelAdmin):
 
 @admin.register(Leadership)
 class LeadershipAdmin(ImportExportModelAdmin):
-    # E108 xatosini yo'qotish uchun modelingizdagi bor maydonlarni yozamiz:
-    list_display = ('full_name_uz', 'rank_uz', 'order', 'photo_preview', 'upload_button')
+    # FAQAT 100% BOR MAYDONLARNI QOLDIRDIK:
+    list_display = ('full_name_uz', 'order', 'photo_preview', 'upload_button')
     list_editable = ('order',)
-    search_fields = ('full_name_uz', 'rank_uz')
+    search_fields = ('full_name_uz',)
     readonly_fields = ('photo_preview',)
 
     def photo_preview(self, obj):
@@ -103,4 +97,4 @@ class LeadershipAdmin(ImportExportModelAdmin):
 
 @admin.register(Department)
 class DepartmentAdmin(ImportExportModelAdmin):
-    list_display = ('id', 'name_uz', 'name_ru', 'name_en')
+    list_display = ('id', 'name_uz')
