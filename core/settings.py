@@ -36,16 +36,30 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'core.urls'
 
+# ADMIN PANEL UCHUN TEMPLATES (admin.E403 xatosini yo'qotadi)
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
 DATABASE_URL = os.environ.get('DATABASE_URL', '')
 DATABASES = {'default': dj_database_url.parse(DATABASE_URL)} if DATABASE_URL else {
     'default': {'ENGINE': 'django.db.backends.sqlite3', 'NAME': BASE_DIR / 'db.sqlite3'}
 }
 
 CORS_ALLOW_ALL_ORIGINS = True
-CSRF_TRUSTED_ORIGINS = [
-    'https://web-production-8dce.up.railway.app',
-    'https://akadeyima-kiosk.vercel.app'
-]
+CSRF_TRUSTED_ORIGINS = ['https://web-production-8dce.up.railway.app']
 
 LANGUAGE_CODE = 'uz'
 TIME_ZONE = 'Asia/Tashkent'
@@ -57,9 +71,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# SUPABASE SOZLAMALARI (O'chirib tashlamang!)
+# SUPABASE SOZLAMALARI
 SUPABASE_URL = "https://ywqrlfufkrdokpbdodav.supabase.co"
-SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "YOUR_ANON_KEY_HERE")
+SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "YOUR_KEY_HERE")
 SUPABASE_BUCKET = "employees"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
