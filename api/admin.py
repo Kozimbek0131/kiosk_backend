@@ -4,24 +4,42 @@ from django.utils.html import format_html
 from django.urls import path
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import redirect
-from .models import Employee, Department, Leadership
 from django.contrib import messages
+from import_export import resources, fields
+from import_export.widgets import ForeignKeyWidget
+from import_export.admin import ImportExportModelAdmin
+from .models import Employee, Department, Leadership
+
+# Employee uchun resurs (Bo'limlarni to'g'ri bog'lash uchun)
+class EmployeeResource(resources.ModelResource):
+    department = fields.Field(
+        column_name='department',
+        attribute='department',
+        widget=ForeignKeyWidget(Department, 'name_uz')
+    )
+    class Meta:
+        model = Employee
+        fields = ('id', 'full_name_uz', 'full_name_ru', 'full_name_en', 
+                  'position_uz', 'position_ru', 'position_en', 
+                  'department', 'floor', 'room', 'phone')
 
 @admin.register(Employee)
-class EmployeeAdmin(admin.ModelAdmin):
-    # Admin ro'yxatida ko'rinadigan ustunlar
-    list_display = ('full_name_uz', 'department', 'floor', 'room', 'photo_preview', 'upload_button')
+class EmployeeAdmin(ImportExportModelAdmin):
+    resource_class = EmployeeResource
+    list_display = ('id', 'full_name_uz', 'get_department', 'floor', 'room', 'photo_preview', 'upload_button')
+    list_filter = ('department', 'floor')
     search_fields = ('full_name_uz', 'phone')
-    
-    # Rasmning ko'rinishi
+    readonly_fields = ('photo_preview',)
+
+    def get_department(self, obj):
+        return obj.department.name_uz if obj.department else "—"
+    get_department.short_description = 'Bo‘lim'
+
     def photo_preview(self, obj):
         if obj.image:
-            # Sizning url() metodiz ishga tushadi
             return format_html('<img src="{}" width="60" height="75" style="object-fit:cover;border-radius:4px"/>', obj.image.url)
-        return '—'
-    photo_preview.short_description = 'Rasm'
+        return "Rasm yo'q"
 
-    # Tezkor yuklash tugmasi
     def upload_button(self, obj):
         return format_html(
             '<form method="post" enctype="multipart/form-data" action="/admin/api/employee/upload-photo/{}/">'
@@ -29,7 +47,6 @@ class EmployeeAdmin(admin.ModelAdmin):
             '</form>',
             obj.id
         )
-    upload_button.short_description = 'Tezkor yuklash'
 
     def get_urls(self):
         urls = super().get_urls()
@@ -39,23 +56,21 @@ class EmployeeAdmin(admin.ModelAdmin):
     def upload_photo_view(self, request, employee_id):
         if request.method == 'POST' and request.FILES.get('photo'):
             try:
-                employee = Employee.objects.get(id=employee_id)
-                photo = request.FILES['photo']
-                
-                # SIZNING MODELINGIZDAGI IMAGEFIELD ISHGA TUSHADI
-                # Bu avtomatik SupabaseStorage._save() metodini chaqiradi
-                employee.image = photo
-                employee.save()
-                
-                messages.success(request, f"{employee.full_name_uz} uchun rasm Supabasega yuklandi!")
+                emp = Employee.objects.get(id=employee_id)
+                emp.image = request.FILES['photo']
+                emp.save()
+                messages.success(request, f"{emp.full_name_uz} rasmi yuklandi!")
             except Exception as e:
-                messages.error(request, f"Xatolik: {str(e)}")
+                messages.error(request, f"Xato: {e}")
         return redirect('/admin/api/employee/')
 
 @admin.register(Leadership)
-class LeadershipAdmin(admin.ModelAdmin):
-    list_display = ('full_name_uz', 'position_uz', 'order', 'photo_preview', 'upload_button')
+class LeadershipAdmin(ImportExportModelAdmin):
+    # E108 xatosini yo'qotish uchun modelingizdagi bor maydonlarni yozamiz:
+    list_display = ('full_name_uz', 'rank_uz', 'order', 'photo_preview', 'upload_button')
     list_editable = ('order',)
+    search_fields = ('full_name_uz', 'rank_uz')
+    readonly_fields = ('photo_preview',)
 
     def photo_preview(self, obj):
         if obj.image:
@@ -81,11 +96,11 @@ class LeadershipAdmin(admin.ModelAdmin):
                 leader = Leadership.objects.get(id=leader_id)
                 leader.image = request.FILES['photo']
                 leader.save()
-                messages.success(request, "Rahbar rasmi yangilandi!")
+                messages.success(request, "Rahbar rasmi yuklandi!")
             except Exception as e:
                 messages.error(request, f"Xato: {e}")
         return redirect('/admin/api/leadership/')
 
 @admin.register(Department)
-class DepartmentAdmin(admin.ModelAdmin):
-    list_display = ('name_uz', 'name_ru', 'name_en')
+class DepartmentAdmin(ImportExportModelAdmin):
+    list_display = ('id', 'name_uz', 'name_ru', 'name_en')
