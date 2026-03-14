@@ -1,6 +1,6 @@
 import os
-from pathlib import Path
 import dj_database_url
+from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-your-key-here'
@@ -23,7 +23,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware', # Eng tepada bo'lishi shart
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -36,7 +36,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'core.urls'
 
-# Bazadagi ma'lumotlarni saqlab qolish uchun
 DATABASE_URL = os.environ.get('DATABASE_URL', '')
 DATABASES = {'default': dj_database_url.parse(DATABASE_URL)} if DATABASE_URL else {
     'default': {'ENGINE': 'django.db.backends.sqlite3', 'NAME': BASE_DIR / 'db.sqlite3'}
@@ -57,5 +56,10 @@ STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# SUPABASE SOZLAMALARI (O'chirib tashlamang!)
+SUPABASE_URL = "https://ywqrlfufkrdokpbdodav.supabase.co"
+SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "YOUR_ANON_KEY_HERE")
+SUPABASE_BUCKET = "employees"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

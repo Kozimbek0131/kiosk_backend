@@ -15,6 +15,16 @@ class EmployeeListView(generics.ListAPIView):
     filterset_fields = ['floor', 'department']
     ordering = ['floor', 'room']
 
+    def get_serializer_context(self):
+        context = super().get_serializer_context()
+        context['request'] = self.request
+        return context
+
 class LeadershipListView(generics.ListAPIView):
     queryset = Leadership.objects.all().order_by('order')
     serializer_class = LeadershipSerializer
+
+    def get_serializer_context(self):
+        context = super().get_serializer_context()
+        context['request'] = self.request
+        return context

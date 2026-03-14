@@ -13,7 +13,7 @@ from django.conf import settings
 try:
     from supabase import create_client
     supabase = create_client(settings.SUPABASE_URL, settings.SUPABASE_KEY) if hasattr(settings, 'SUPABASE_KEY') else None
-except ImportError:
+except Exception:
     supabase = None
 
 class EmployeeResource(resources.ModelResource):
@@ -69,23 +69,21 @@ class EmployeeAdmin(ImportExportModelAdmin):
             ext = photo.name.split('.')[-1].lower()
             path_str = f"employees/emp_{employee_id}_{int(time.time())}.{ext}"
             try:
-                # File read() va Supabasega yuborish
                 supabase.storage.from_(settings.SUPABASE_BUCKET).upload(
                     path=path_str, file=photo.read(),
                     file_options={"content-type": photo.content_type, "upsert": "true"}
                 )
                 url = supabase.storage.from_(settings.SUPABASE_BUCKET).get_public_url(path_str)
                 Employee.objects.filter(id=employee_id).update(image=url)
-                self.message_user(request, "Rasm Supabasega muvaffaqiyatli yuklandi!")
+                self.message_user(request, "Rasm yuklandi!")
             except Exception as e:
-                self.message_user(request, f"Supabase Xatosi: {e}", level='error')
+                self.message_user(request, f"Xato: {e}", level='error')
         return redirect('/admin/api/employee/')
 
 @admin.register(Leadership)
 class LeadershipAdmin(ImportExportModelAdmin):
     list_display = ('full_name_uz', 'position_uz', 'order', 'photo_preview', 'upload_button')
     list_editable = ('order',)
-    readonly_fields = ('photo_preview',)
     
     def photo_preview(self, obj):
         if obj.image:
