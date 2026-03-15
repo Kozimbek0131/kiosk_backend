@@ -66,6 +66,13 @@ class Department(models.Model):
     name_uz = models.CharField("Bo'lim nomi (UZ)", max_length=255)
     name_ru = models.CharField("Название (RU)", max_length=255)
     name_en = models.CharField("Department Name (EN)", max_length=255)
+    # BO'LIMLAR TARTIBI (Rahbariyatga 1 bering, qolganiga 2, 3...)
+    order = models.PositiveIntegerField("Bo'lim tartibi", default=100)
+
+    class Meta:
+        verbose_name = "Bo'lim"
+        verbose_name_plural = "Bo'limlar"
+        ordering = ['order', 'name_uz']
 
     def __str__(self):
         return self.name_uz
@@ -79,10 +86,8 @@ class Employee(models.Model):
     position_ru = models.CharField("Должность (RU)", max_length=255)
     position_en = models.CharField("Position (EN)", max_length=255)
     
-    # SHU YERLAR TO'G'IRLANDI (blank=True, null=True)
     floor = models.CharField("Qavat", max_length=10, blank=True, null=True)
     room = models.CharField("Xona", max_length=10, blank=True, null=True)
-    
     phone = models.CharField("Telefon", max_length=20, blank=True, null=True)
     image = models.ImageField(
         "Rasm",
@@ -91,6 +96,14 @@ class Employee(models.Model):
         blank=True,
         null=True
     )
+    # BO'LIM ICHIDAGI TARTIB (Har bir bo'lim boshlig'iga 1 bering, qolganiga 10, 11...)
+    order = models.PositiveIntegerField("Bo'lim ichidagi tartib", default=100)
+
+    class Meta:
+        verbose_name = "Xodim"
+        verbose_name_plural = "Xodimlar"
+        # AVVAL bo'lim tartibi, KEYIN xodim tartibi bo'yicha saralash
+        ordering = ['department__order', 'order', 'full_name_uz']
 
     def __str__(self):
         return self.full_name_uz
@@ -99,11 +112,9 @@ class Leadership(models.Model):
     full_name_uz = models.CharField("F.I.SH (UZ)", max_length=255)
     full_name_ru = models.CharField("Ф.И.О (RU)", max_length=255, blank=True, null=True)
     full_name_en = models.CharField("Full Name (EN)", max_length=255, blank=True, null=True)
-    
     position_uz = models.CharField("Lavozimi (UZ)", max_length=255, blank=True, null=True)
     position_ru = models.CharField("Должность (RU)", max_length=255, blank=True, null=True)
     position_en = models.CharField("Position (EN)", max_length=255, blank=True, null=True)
-    
     image = models.ImageField(
         "Rasm",
         storage=supabase_storage,
@@ -111,7 +122,12 @@ class Leadership(models.Model):
         blank=True,
         null=True
     )
-    order = models.IntegerField("Tartib raqami", default=0)
+    order = models.PositiveIntegerField("Tartib raqami", default=0)
+
+    class Meta:
+        verbose_name = "Rahbariyat"
+        verbose_name_plural = "Rahbariyat"
+        ordering = ['order']
 
     def __str__(self):
         return self.full_name_uz
