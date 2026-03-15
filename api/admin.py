@@ -44,12 +44,12 @@ class EmployeeAdmin(ImportExportModelAdmin):
             try:
                 return format_html('<img src="{}" width="50" height="50" style="object-fit:cover;border-radius:8px;border:1px solid #ddd"/>', obj.image.url)
             except:
-                return "Rasm yuklashda xato"
-        return format_html('<span style="color:#999">Rasm yo‘q</span>')
+                return "Rasmda xato"
+        # Argument qo'shildi
+        return format_html('<span style="color:#999">{}</span>', "Rasm yo‘q")
     photo_preview.short_description = 'Rasm'
 
     def upload_button(self, obj):
-        # URL'ni aniqroq ko'rsatish uchun request'siz ham ishlaydigan path
         return format_html(
             '<form method="post" enctype="multipart/form-data" action="upload-photo/{}/">'
             '<input type="file" name="photo" accept="image/*" style="font-size:10px;width:125px" onchange="this.form.submit()">'
@@ -74,7 +74,7 @@ class EmployeeAdmin(ImportExportModelAdmin):
                 messages.success(request, f"{emp.full_name_uz} rasmi muvaffaqiyatli yangilandi!")
             except Exception as e:
                 messages.error(request, f"Xatolik: {str(e)}")
-        return redirect('..') # Ro'yxatga qaytish
+        return redirect('..')
 
 # --- Leadership Admin ---
 @admin.register(Leadership)
@@ -94,11 +94,12 @@ class LeadershipAdmin(ImportExportModelAdmin):
     def photo_preview(self, obj):
         if obj.image:
             try:
+                # {} o'rniga aniq argument uzatish
                 return format_html('<img src="{}" width="55" height="55" style="object-fit:cover;border-radius:50%;border:2px solid #fbbf24;padding:2px"/>', obj.image.url)
             except:
-                return "Rasm yuklashda xato"
-        # XATO TUZATILDI: Bo'sh qolmasligi uchun aniq HTML argumenti berildi
-        return format_html('<div style="width:50px;height:50px;border-radius:50%;background:#eee;display:flex;align-items:center;justify-content:center;color:#ccc;font-size:10px;">Rasm yo‘q</div>')
+                return "Rasmda xato"
+        # XATO TUZATILDI: {} va "Rasm yo'q" matni alohida argument qilib berildi
+        return format_html('<div style="width:50px;height:50px;border-radius:50%;background:#eee;display:flex;align-items:center;justify-content:center;color:#ccc;font-size:10px;">{}</div>', "Rasm yo‘q")
     photo_preview.short_description = 'Rasm'
 
     def upload_button(self, obj):
