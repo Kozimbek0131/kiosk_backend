@@ -5,6 +5,7 @@ class BaseLanguageSerializer(serializers.ModelSerializer):
     def get_lang(self):
         request = self.context.get('request')
         if request:
+            # Tilni query_param yoki header'dan olish
             return request.query_params.get('lang') or request.headers.get('Accept-Language', 'uz')[:2]
         return 'uz'
 
@@ -19,7 +20,7 @@ class DepartmentSerializer(BaseLanguageSerializer):
     name = serializers.SerializerMethodField()
     class Meta:
         model = Department
-        fields = ['id', 'name', 'name_uz', 'name_ru', 'name_en']
+        fields = ['id', 'name', 'name_uz', 'name_ru', 'name_en', 'order']
     def get_name(self, obj):
         return self.translate(obj, 'name')
 
@@ -36,7 +37,7 @@ class EmployeeSerializer(BaseLanguageSerializer):
             'full_name_uz', 'full_name_ru', 'full_name_en',
             'position', 'position_uz', 'position_ru', 'position_en',
             'floor', 'room', 'phone', 'image', 'image_url',
-            'order'  # Tartiblash uchun maydon joyida
+            'order'
         ]
 
     def get_department_name(self, obj):
@@ -58,22 +59,33 @@ class EmployeeSerializer(BaseLanguageSerializer):
 
 class LeadershipSerializer(BaseLanguageSerializer):
     full_name = serializers.SerializerMethodField()
+    rank = serializers.SerializerMethodField()
     position = serializers.SerializerMethodField()
+    work_hours = serializers.SerializerMethodField()
     image_url = serializers.SerializerMethodField()
 
     class Meta:
         model = Leadership
         fields = [
             'id', 'full_name', 'full_name_uz', 'full_name_ru', 'full_name_en',
+            'rank', 'rank_uz', 'rank_ru', 'rank_en',
             'position', 'position_uz', 'position_ru', 'position_en',
+            'phone', 'email', 
+            'work_hours', 'work_hours_uz', 'work_hours_ru',
             'image', 'image_url', 'order'
         ]
 
     def get_full_name(self, obj):
         return self.translate(obj, 'full_name')
 
+    def get_rank(self, obj):
+        return self.translate(obj, 'rank')
+
     def get_position(self, obj):
         return self.translate(obj, 'position')
+
+    def get_work_hours(self, obj):
+        return self.translate(obj, 'work_hours')
 
     def get_image_url(self, obj):
         if obj.image:
