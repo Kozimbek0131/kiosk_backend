@@ -34,10 +34,8 @@ class SupabaseStorage(Storage):
         try:
             response = requests.put(upload_url, headers=headers, data=content.read(), timeout=15)
             if response.status_code not in (200, 201):
-                print(f"DEBUG ERROR: Supabase status {response.status_code} - {response.text}")
                 return name
-        except Exception as e:
-            print(f"DEBUG CONNECTION ERROR: {e}")
+        except Exception:
             return name
             
         return path_on_supabase
@@ -66,7 +64,6 @@ class Department(models.Model):
     name_uz = models.CharField("Bo'lim nomi (UZ)", max_length=255)
     name_ru = models.CharField("Название (RU)", max_length=255)
     name_en = models.CharField("Department Name (EN)", max_length=255)
-    # BO'LIMLAR TARTIBI (Rahbariyatga 1 bering, qolganiga 2, 3...)
     order = models.PositiveIntegerField("Bo'lim tartibi", default=100)
 
     class Meta:
@@ -96,25 +93,45 @@ class Employee(models.Model):
         blank=True,
         null=True
     )
-    # BO'LIM ICHIDAGI TARTIB (Har bir bo'lim boshlig'iga 1 bering, qolganiga 10, 11...)
     order = models.PositiveIntegerField("Bo'lim ichidagi tartib", default=100)
 
     class Meta:
         verbose_name = "Xodim"
         verbose_name_plural = "Xodimlar"
-        # AVVAL bo'lim tartibi, KEYIN xodim tartibi bo'yicha saralash
         ordering = ['department__order', 'order', 'full_name_uz']
 
     def __str__(self):
         return self.full_name_uz
 
 class Leadership(models.Model):
+    # Unvonlar uchun variantlar
+    RANK_CHOICES = [
+        ('Adliya katta maslahatchisi', 'Adliya katta maslahatchisi'),
+        ('Adliya maslahatchisi', 'Adliya maslahatchisi'),
+        ('Adliya general-mayori', 'Adliya general-mayori'),
+        ('1-darajali adliya maslahatchisi', '1-darajali adliya maslahatchisi'),
+        ('2-darajali adliya maslahatchisi', '2-darajali adliya maslahatchisi'),
+    ]
+
     full_name_uz = models.CharField("F.I.SH (UZ)", max_length=255)
     full_name_ru = models.CharField("Ф.И.О (RU)", max_length=255, blank=True, null=True)
     full_name_en = models.CharField("Full Name (EN)", max_length=255, blank=True, null=True)
+    
+    # UNVON MAYDONLARI (Admin panel qidirayotgan maydonlar)
+    rank_uz = models.CharField("Unvoni (UZ)", max_length=100, choices=RANK_CHOICES, default='Adliya katta maslahatchisi')
+    rank_ru = models.CharField("Звание (RU)", max_length=100, default='Старший советник юстиции')
+    rank_en = models.CharField("Rank (EN)", max_length=100, default='Senior Justice Advisor')
+
     position_uz = models.CharField("Lavozimi (UZ)", max_length=255, blank=True, null=True)
     position_ru = models.CharField("Должность (RU)", max_length=255, blank=True, null=True)
     position_en = models.CharField("Position (EN)", max_length=255, blank=True, null=True)
+    
+    # ALOQA MAYDONLARI
+    phone = models.CharField("Telefon", max_length=25, default="+998712020496")
+    email = models.EmailField("Email", default="info@proacademy.uz")
+    work_hours_uz = models.CharField("Ish vaqti (UZ)", max_length=100, default="Har ish kuni 09:00-18:00")
+    work_hours_ru = models.CharField("График работы (RU)", max_length=100, default="Каждый рабочий день 09:00-18:00")
+
     image = models.ImageField(
         "Rasm",
         storage=supabase_storage,
