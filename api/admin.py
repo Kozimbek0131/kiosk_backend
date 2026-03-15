@@ -41,13 +41,17 @@ class EmployeeAdmin(ImportExportModelAdmin):
 
     def photo_preview(self, obj):
         if obj.image:
-            return format_html('<img src="{}" width="50" height="50" style="object-fit:cover;border-radius:8px;border:1px solid #ddd"/>', obj.image.url)
+            try:
+                return format_html('<img src="{}" width="50" height="50" style="object-fit:cover;border-radius:8px;border:1px solid #ddd"/>', obj.image.url)
+            except:
+                return "Rasm yuklashda xato"
         return format_html('<span style="color:#999">Rasm yo‘q</span>')
     photo_preview.short_description = 'Rasm'
 
     def upload_button(self, obj):
+        # URL'ni aniqroq ko'rsatish uchun request'siz ham ishlaydigan path
         return format_html(
-            '<form method="post" enctype="multipart/form-data" action="/admin/api/employee/upload-photo/{}/">'
+            '<form method="post" enctype="multipart/form-data" action="upload-photo/{}/">'
             '<input type="file" name="photo" accept="image/*" style="font-size:10px;width:125px" onchange="this.form.submit()">'
             '</form>',
             obj.id
@@ -56,7 +60,9 @@ class EmployeeAdmin(ImportExportModelAdmin):
 
     def get_urls(self):
         urls = super().get_urls()
-        custom = [path('upload-photo/<int:employee_id>/', csrf_exempt(self.admin_site.admin_view(self.upload_photo_view)))]
+        custom = [
+            path('upload-photo/<int:employee_id>/', self.admin_site.admin_view(csrf_exempt(self.upload_photo_view)))
+        ]
         return custom + urls
 
     def upload_photo_view(self, request, employee_id):
@@ -68,7 +74,7 @@ class EmployeeAdmin(ImportExportModelAdmin):
                 messages.success(request, f"{emp.full_name_uz} rasmi muvaffaqiyatli yangilandi!")
             except Exception as e:
                 messages.error(request, f"Xatolik: {str(e)}")
-        return redirect('/admin/api/employee/')
+        return redirect('..') # Ro'yxatga qaytish
 
 # --- Leadership Admin ---
 @admin.register(Leadership)
@@ -79,7 +85,6 @@ class LeadershipAdmin(ImportExportModelAdmin):
     readonly_fields = ('photo_preview',)
     ordering = ('order',)
     
-    # Ma'lumot qo'shish oynasini guruhlash
     fieldsets = (
         ("Asosiy", {'fields': ('full_name_uz', 'full_name_ru', 'full_name_en', 'order')}),
         ("Unvon va Lavozim", {'fields': ('rank_uz', 'rank_ru', 'rank_en', 'position_uz', 'position_ru', 'position_en')}),
@@ -88,13 +93,17 @@ class LeadershipAdmin(ImportExportModelAdmin):
 
     def photo_preview(self, obj):
         if obj.image:
-            return format_html('<img src="{}" width="55" height="55" style="object-fit:cover;border-radius:50%;border:2px solid #fbbf24;padding:2px"/>', obj.image.url)
-        return format_html('<div style="width:50px;height:50px;border-radius:50%;background:#eee"></div>')
+            try:
+                return format_html('<img src="{}" width="55" height="55" style="object-fit:cover;border-radius:50%;border:2px solid #fbbf24;padding:2px"/>', obj.image.url)
+            except:
+                return "Rasm yuklashda xato"
+        # XATO TUZATILDI: Bo'sh qolmasligi uchun aniq HTML argumenti berildi
+        return format_html('<div style="width:50px;height:50px;border-radius:50%;background:#eee;display:flex;align-items:center;justify-content:center;color:#ccc;font-size:10px;">Rasm yo‘q</div>')
     photo_preview.short_description = 'Rasm'
 
     def upload_button(self, obj):
         return format_html(
-            '<form method="post" enctype="multipart/form-data" action="/admin/api/leadership/upload-leader-photo/{}/">'
+            '<form method="post" enctype="multipart/form-data" action="upload-leader-photo/{}/">'
             '<input type="file" name="photo" accept="image/*" style="font-size:10px;width:125px" onchange="this.form.submit()">'
             '</form>',
             obj.id
@@ -103,7 +112,9 @@ class LeadershipAdmin(ImportExportModelAdmin):
 
     def get_urls(self):
         urls = super().get_urls()
-        custom = [path('upload-leader-photo/<int:leader_id>/', csrf_exempt(self.admin_site.admin_view(self.upload_leader_photo_view)))]
+        custom = [
+            path('upload-leader-photo/<int:leader_id>/', self.admin_site.admin_view(csrf_exempt(self.upload_leader_photo_view)))
+        ]
         return custom + urls
 
     def upload_leader_photo_view(self, request, leader_id):
@@ -115,7 +126,7 @@ class LeadershipAdmin(ImportExportModelAdmin):
                 messages.success(request, f"{leader.full_name_uz} rasmi yuklandi!")
             except Exception as e:
                 messages.error(request, f"Xato: {e}")
-        return redirect('/admin/api/leadership/')
+        return redirect('..')
 
 # --- Department Admin ---
 @admin.register(Department)
