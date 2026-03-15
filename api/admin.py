@@ -27,12 +27,11 @@ class EmployeeResource(resources.ModelResource):
 @admin.register(Employee)
 class EmployeeAdmin(ImportExportModelAdmin):
     resource_class = EmployeeResource
-    list_display = ('order', 'full_name_uz', 'get_dept', 'floor', 'room', 'photo_preview', 'upload_button')
+    list_display = ('order', 'photo_preview', 'full_name_uz', 'get_dept', 'floor', 'room', 'phone', 'upload_button')
     list_editable = ('order',)
-    # MANA SHU QATOR XATONI TO'G'IRLAYDI:
     list_display_links = ('full_name_uz',) 
     list_filter = ('department', 'floor')
-    search_fields = ('full_name_uz', 'phone')
+    search_fields = ('full_name_uz', 'phone', 'position_uz')
     readonly_fields = ('photo_preview',)
     ordering = ('department__order', 'order')
 
@@ -42,8 +41,9 @@ class EmployeeAdmin(ImportExportModelAdmin):
 
     def photo_preview(self, obj):
         if obj.image:
-            return format_html('<img src="{}" width="55" height="70" style="object-fit:cover;border-radius:4px"/>', obj.image.url)
-        return "Rasm yo'q"
+            return format_html('<img src="{}" width="50" height="50" style="object-fit:cover;border-radius:8px;border:1px solid #ddd"/>', obj.image.url)
+        return format_html('<span style="color:#999">Rasm yo‘q</span>')
+    photo_preview.short_description = 'Rasm'
 
     def upload_button(self, obj):
         return format_html(
@@ -52,6 +52,7 @@ class EmployeeAdmin(ImportExportModelAdmin):
             '</form>',
             obj.id
         )
+    upload_button.short_description = 'Rasm yuklash'
 
     def get_urls(self):
         urls = super().get_urls()
@@ -72,17 +73,24 @@ class EmployeeAdmin(ImportExportModelAdmin):
 # --- Leadership Admin ---
 @admin.register(Leadership)
 class LeadershipAdmin(ImportExportModelAdmin):
-    list_display = ('order', 'full_name_uz', 'photo_preview', 'upload_button')
-    list_editable = ('order',)
-    # MANA SHU QATOR XATONI TO'G'IRLAYDI:
+    list_display = ('order', 'photo_preview', 'full_name_uz', 'rank_uz', 'phone', 'upload_button')
+    list_editable = ('order', 'rank_uz')
     list_display_links = ('full_name_uz',)
     readonly_fields = ('photo_preview',)
     ordering = ('order',)
+    
+    # Ma'lumot qo'shish oynasini guruhlash
+    fieldsets = (
+        ("Asosiy", {'fields': ('full_name_uz', 'full_name_ru', 'full_name_en', 'order')}),
+        ("Unvon va Lavozim", {'fields': ('rank_uz', 'rank_ru', 'rank_en', 'position_uz', 'position_ru', 'position_en')}),
+        ("Aloqa", {'fields': ('phone', 'email', 'work_hours_uz', 'work_hours_ru', 'image')}),
+    )
 
     def photo_preview(self, obj):
         if obj.image:
-            return format_html('<img src="{}" width="55" height="70" style="object-fit:cover;border-radius:4px"/>', obj.image.url)
-        return '—'
+            return format_html('<img src="{}" width="55" height="55" style="object-fit:cover;border-radius:50%;border:2px solid #fbbf24;padding:2px"/>', obj.image.url)
+        return format_html('<div style="width:50px;height:50px;border-radius:50%;background:#eee"></div>')
+    photo_preview.short_description = 'Rasm'
 
     def upload_button(self, obj):
         return format_html(
@@ -91,6 +99,7 @@ class LeadershipAdmin(ImportExportModelAdmin):
             '</form>',
             obj.id
         )
+    upload_button.short_description = 'Rasm yuklash'
 
     def get_urls(self):
         urls = super().get_urls()
@@ -103,7 +112,7 @@ class LeadershipAdmin(ImportExportModelAdmin):
                 leader = Leadership.objects.get(id=leader_id)
                 leader.image = request.FILES['photo']
                 leader.save()
-                messages.success(request, "Rahbar rasmi yuklandi!")
+                messages.success(request, f"{leader.full_name_uz} rasmi yuklandi!")
             except Exception as e:
                 messages.error(request, f"Xato: {e}")
         return redirect('/admin/api/leadership/')
@@ -113,6 +122,5 @@ class LeadershipAdmin(ImportExportModelAdmin):
 class DepartmentAdmin(ImportExportModelAdmin):
     list_display = ('order', 'name_uz', 'name_ru', 'name_en')
     list_editable = ('order',)
-    # MANA SHU QATOR XATONI TO'G'IRLAYDI:
     list_display_links = ('name_uz',)
     ordering = ('order',)
