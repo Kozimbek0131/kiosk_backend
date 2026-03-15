@@ -88,7 +88,7 @@ class LeadershipAdmin(ImportExportModelAdmin):
     fieldsets = (
         ("Asosiy", {'fields': ('full_name_uz', 'full_name_ru', 'full_name_en', 'order')}),
         ("Unvon va Lavozim", {'fields': ('rank_uz', 'rank_ru', 'rank_en', 'position_uz', 'position_ru', 'position_en')}),
-        ("Aloqa", {'fields': ('phone', 'email', 'work_hours_uz', 'work_hours_ru', 'image')}),
+         ("Aloqa", {'fields': ('phone', 'email', 'work_hours_uz', 'work_hours_ru', 'work_hours_en', 'image')}), # work_hours_en qo'shildi
     )
 
     def photo_preview(self, obj):

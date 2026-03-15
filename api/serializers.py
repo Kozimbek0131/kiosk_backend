@@ -71,7 +71,7 @@ class LeadershipSerializer(BaseLanguageSerializer):
             'rank', 'rank_uz', 'rank_ru', 'rank_en',
             'position', 'position_uz', 'position_ru', 'position_en',
             'phone', 'email', 
-            'work_hours', 'work_hours_uz', 'work_hours_ru',
+            'work_hours', 'work_hours_uz', 'work_hours_ru', 'work_hours_en', # work_hours_en qo'shildi
             'image', 'image_url', 'order'
         ]
 
