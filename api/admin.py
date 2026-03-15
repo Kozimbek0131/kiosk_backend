@@ -10,7 +10,7 @@ from import_export.widgets import ForeignKeyWidget
 from import_export.admin import ImportExportModelAdmin
 from .models import Employee, Department, Leadership
 
-# Xodimlarni bo'limlari bilan to'g'ri ko'rsatish
+# --- Resource qismi (Excel import/export uchun) ---
 class EmployeeResource(resources.ModelResource):
     department = fields.Field(
         column_name='department',
@@ -21,15 +21,20 @@ class EmployeeResource(resources.ModelResource):
         model = Employee
         fields = ('id', 'full_name_uz', 'full_name_ru', 'full_name_en', 
                   'position_uz', 'position_ru', 'position_en', 
-                  'department', 'floor', 'room', 'phone')
+                  'department', 'floor', 'room', 'phone', 'order')
 
+# --- Employee Admin ---
 @admin.register(Employee)
 class EmployeeAdmin(ImportExportModelAdmin):
     resource_class = EmployeeResource
-    list_display = ('full_name_uz', 'get_dept', 'floor', 'room', 'photo_preview', 'upload_button')
+    list_display = ('order', 'full_name_uz', 'get_dept', 'floor', 'room', 'photo_preview', 'upload_button')
+    list_editable = ('order',)
+    # MANA SHU QATOR XATONI TO'G'IRLAYDI:
+    list_display_links = ('full_name_uz',) 
     list_filter = ('department', 'floor')
     search_fields = ('full_name_uz', 'phone')
     readonly_fields = ('photo_preview',)
+    ordering = ('department__order', 'order')
 
     def get_dept(self, obj):
         return obj.department.name_uz if obj.department else "—"
@@ -64,12 +69,15 @@ class EmployeeAdmin(ImportExportModelAdmin):
                 messages.error(request, f"Xatolik: {str(e)}")
         return redirect('/admin/api/employee/')
 
+# --- Leadership Admin ---
 @admin.register(Leadership)
 class LeadershipAdmin(ImportExportModelAdmin):
-    # Migration logiga ko'ra hozircha faqat bor maydonlarni yozamiz
-    list_display = ('full_name_uz', 'order', 'photo_preview', 'upload_button')
+    list_display = ('order', 'full_name_uz', 'photo_preview', 'upload_button')
     list_editable = ('order',)
+    # MANA SHU QATOR XATONI TO'G'IRLAYDI:
+    list_display_links = ('full_name_uz',)
     readonly_fields = ('photo_preview',)
+    ordering = ('order',)
 
     def photo_preview(self, obj):
         if obj.image:
@@ -100,6 +108,11 @@ class LeadershipAdmin(ImportExportModelAdmin):
                 messages.error(request, f"Xato: {e}")
         return redirect('/admin/api/leadership/')
 
+# --- Department Admin ---
 @admin.register(Department)
 class DepartmentAdmin(ImportExportModelAdmin):
-    list_display = ('id', 'name_uz', 'name_ru', 'name_en')
+    list_display = ('order', 'name_uz', 'name_ru', 'name_en')
+    list_editable = ('order',)
+    # MANA SHU QATOR XATONI TO'G'IRLAYDI:
+    list_display_links = ('name_uz',)
+    ordering = ('order',)
