@@ -4,7 +4,7 @@ from django.utils.deconstruct import deconstructible
 import os
 import requests
 import mimetypes
-import uuid  # Fayl nomini xavfsiz qilish uchun
+import uuid
 
 @deconstructible
 class SupabaseStorage(Storage):
@@ -14,16 +14,11 @@ class SupabaseStorage(Storage):
         self.bucket = 'employees'
 
     def _save(self, name, content):
-        # 1. Kirill harflari bilan bog'liq xatoni yo'qotish (Safe File Name)
         ext = name.split('.')[-1]
         safe_name = f"{uuid.uuid4()}.{ext}"
         
-        # 2. upload_to va bucket pathni to'g'ri shakllantirish
-        # Django 'employees/fayl.jpg' deb yuboradi, bizga faqat 'fayl.jpg' qismi kerak
-        clean_name = os.path.basename(safe_name)
-        
-        # Agar models.py dagi upload_to ga qarab papkaga bo'lmoqchi bo'lsangiz:
         folder = os.path.dirname(name)
+        clean_name = os.path.basename(safe_name)
         path_on_supabase = f"{folder}/{clean_name}" if folder else clean_name
 
         upload_url = f"{self.supabase_url}/storage/v1/object/{self.bucket}/{path_on_supabase}"
@@ -39,11 +34,10 @@ class SupabaseStorage(Storage):
         try:
             response = requests.put(upload_url, headers=headers, data=content.read(), timeout=15)
             if response.status_code not in (200, 201):
-                print(f"DEBUG: Supabase error - {response.text}")
-                # Xato bo'lsa ham bazaga yozish uchun 'name'ni qaytaramiz (Admin panel qotib qolmasligi uchun)
+                print(f"DEBUG ERROR: Supabase status {response.status_code} - {response.text}")
                 return name
         except Exception as e:
-            print(f"DEBUG: Connection error - {e}")
+            print(f"DEBUG CONNECTION ERROR: {e}")
             return name
             
         return path_on_supabase
@@ -66,7 +60,7 @@ class SupabaseStorage(Storage):
 
 supabase_storage = SupabaseStorage()
 
-# --- Modellar qismi ---
+# --- Modellar ---
 
 class Department(models.Model):
     name_uz = models.CharField("Bo'lim nomi (UZ)", max_length=255)
@@ -84,13 +78,16 @@ class Employee(models.Model):
     position_uz = models.CharField("Lavozimi (UZ)", max_length=255)
     position_ru = models.CharField("Должность (RU)", max_length=255)
     position_en = models.CharField("Position (EN)", max_length=255)
-    floor = models.CharField("Qavat", max_length=10)
-    room = models.CharField("Xona", max_length=10)
+    
+    # SHU YERLAR TO'G'IRLANDI (blank=True, null=True)
+    floor = models.CharField("Qavat", max_length=10, blank=True, null=True)
+    room = models.CharField("Xona", max_length=10, blank=True, null=True)
+    
     phone = models.CharField("Telefon", max_length=20, blank=True, null=True)
     image = models.ImageField(
         "Rasm",
         storage=supabase_storage,
-        upload_to='employees', # '/' belgisiz yozing
+        upload_to='employees',
         blank=True,
         null=True
     )
@@ -100,7 +97,13 @@ class Employee(models.Model):
 
 class Leadership(models.Model):
     full_name_uz = models.CharField("F.I.SH (UZ)", max_length=255)
-    # ... boshqa maydonlar ...
+    full_name_ru = models.CharField("Ф.И.О (RU)", max_length=255, blank=True, null=True)
+    full_name_en = models.CharField("Full Name (EN)", max_length=255, blank=True, null=True)
+    
+    position_uz = models.CharField("Lavozimi (UZ)", max_length=255, blank=True, null=True)
+    position_ru = models.CharField("Должность (RU)", max_length=255, blank=True, null=True)
+    position_en = models.CharField("Position (EN)", max_length=255, blank=True, null=True)
+    
     image = models.ImageField(
         "Rasm",
         storage=supabase_storage,
@@ -109,3 +112,6 @@ class Leadership(models.Model):
         null=True
     )
     order = models.IntegerField("Tartib raqami", default=0)
+
+    def __str__(self):
+        return self.full_name_uz
