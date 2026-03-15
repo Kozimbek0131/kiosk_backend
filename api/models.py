@@ -108,6 +108,7 @@ class Leadership(models.Model):
     email = models.EmailField("Email", default="info@proacademy.uz")
     work_hours_uz = models.CharField("Ish vaqti (UZ)", max_length=100, default="Har ish kuni 09:00-18:00")
     work_hours_ru = models.CharField("График работы (RU)", max_length=100, default="Каждый рабочий день 09:00-18:00")
+    work_hours_en = models.CharField("Work hours (EN)", max_length=100, default="Every working day 09:00-18:00") # YANGI
 
     image = models.ImageField("Rasm", storage=supabase_storage, upload_to='leadership', blank=True, null=True)
     order = models.PositiveIntegerField("Tartib raqami", default=0)
